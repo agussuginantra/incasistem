@@ -1,0 +1,102 @@
+[
+  {
+    "id": "usr-owner",
+    "name": "Owner & Direktur Utama",
+    "username": "owner",
+    "password": "123456",
+    "role": "owner",
+    "roleLabel": "Super Admin / Owner",
+    "phone": "0812-8899-0011",
+    "active": true,
+    "createdDate": "12 Okt 2026",
+    "permissions": [
+      "studio_dashboard",
+      "studio_members",
+      "studio_purchases",
+      "studio_packages",
+      "studio_classes",
+      "studio_coaches",
+      "studio_checkin",
+      "studio_leads",
+      "studio_backup",
+      "system_users",
+      "finance_ringkasan",
+      "finance_transaksi",
+      "finance_kas_bank",
+      "finance_buku_besar",
+      "finance_petty_cash",
+      "finance_laporan",
+      "finance_proyeksi",
+      "finance_modal_owner",
+      "finance_daftar_akun",
+      "finance_catatan_sumber",
+      "finance_data_backup"
+    ]
+  },
+  {
+    "id": "usr-admin",
+    "name": "Admin Studio Operasional",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "roleLabel": "Admin Studio",
+    "phone": "0813-2233-4455",
+    "active": true,
+    "createdDate": "12 Okt 2026",
+    "permissions": [
+      "studio_dashboard",
+      "studio_members",
+      "studio_purchases",
+      "studio_packages",
+      "studio_classes",
+      "studio_coaches",
+      "studio_checkin",
+      "studio_leads",
+      "studio_backup",
+      "system_users",
+      "finance_petty_cash"
+    ]
+  },
+  {
+    "id": "usr-finance",
+    "name": "Staff Akuntansi & Finance",
+    "username": "finance",
+    "password": "finance123",
+    "role": "finance",
+    "roleLabel": "Admin Keuangan (Finance)",
+    "phone": "0812-3344-5566",
+    "active": true,
+    "createdDate": "12 Okt 2026",
+    "permissions": [
+      "studio_dashboard",
+      "studio_members",
+      "studio_purchases",
+      "finance_ringkasan",
+      "finance_transaksi",
+      "finance_kas_bank",
+      "finance_buku_besar",
+      "finance_petty_cash",
+      "finance_laporan",
+      "finance_proyeksi",
+      "finance_modal_owner",
+      "finance_daftar_akun",
+      "finance_catatan_sumber",
+      "finance_data_backup"
+    ]
+  },
+  {
+    "id": "usr-coach",
+    "name": "Head Coach & Instruktur",
+    "username": "coach",
+    "password": "coach123",
+    "role": "coach",
+    "roleLabel": "Instruktur / Coach",
+    "phone": "0819-7788-9900",
+    "active": true,
+    "createdDate": "12 Okt 2026",
+    "permissions": [
+      "studio_dashboard",
+      "studio_checkin"
+    ]
+  }
+]

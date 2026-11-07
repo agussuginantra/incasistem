@@ -1045,6 +1045,7 @@ function saveMember(event) {
     };
     appState.members.unshift(newMember);
     showToast(`Member baru ${name} (${newCode}) berhasil didaftarkan!`, 'success');
+    if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushRecord('addMember', newMember);
   }
 
   saveState();
@@ -1252,6 +1253,7 @@ function savePurchasePackage(event) {
   }
 
   appState.packagePurchases.unshift(newPurchase);
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushRecord('addPurchase', newPurchase);
   saveState();
   closePurchaseModal();
   renderPurchasesTable();
@@ -2218,6 +2220,7 @@ function checkInMemberFromModal(attendanceId, scheduleId) {
   renderCalendarGrid();
   updateAdminStats();
   showToast(`Check-In berhasil untuk ${att.memberName}!`, 'success');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushRecord('addAttendance', att);
 }
 
 function undoCheckInMemberFromModal(attendanceId, scheduleId) {

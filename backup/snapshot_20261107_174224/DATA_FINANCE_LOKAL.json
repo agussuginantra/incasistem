@@ -1,0 +1,2012 @@
+{
+  "entries": [
+    {
+      "id": "inca-bb-001",
+      "date": "2026-07-28",
+      "memo": "Setoran Awal modal a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 50000000
+    },
+    {
+      "id": "inca-bb-002",
+      "date": "2026-07-28",
+      "memo": "Setoran Awal modal a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 50000000
+    },
+    {
+      "id": "inca-bb-003",
+      "date": "2026-07-28",
+      "memo": "Setoran Awal modal a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 50000000
+    },
+    {
+      "id": "inca-bb-004",
+      "date": "2026-07-28",
+      "memo": "Pembayaran Ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 145000000
+    },
+    {
+      "id": "inca-bb-005",
+      "date": "2026-07-28",
+      "memo": "Modal Ke-2 a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 25960184
+    },
+    {
+      "id": "inca-bb-006",
+      "date": "2026-07-28",
+      "memo": "Modal Ke-2 a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 25960184
+    },
+    {
+      "id": "inca-bb-007",
+      "date": "2026-07-28",
+      "memo": "Modal Ke-2 a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 25960184
+    },
+    {
+      "id": "inca-bb-008",
+      "date": "2026-07-29",
+      "memo": "DP Pembelian alat pilates",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 75745880
+    },
+    {
+      "id": "inca-bb-009",
+      "date": "2026-07-29",
+      "memo": "Print Out transfer",
+      "party": "Bank",
+      "debit": "5010",
+      "credit": "1002",
+      "amount": 7000
+    },
+    {
+      "id": "inca-bb-010",
+      "date": "2026-08-01",
+      "memo": "Modal Ke-3 a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 10000000
+    },
+    {
+      "id": "inca-bb-011",
+      "date": "2026-08-01",
+      "memo": "Modal Ke-3 a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 10000000
+    },
+    {
+      "id": "inca-bb-012",
+      "date": "2026-08-01",
+      "memo": "Modal Ke-3 a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 10000000
+    },
+    {
+      "id": "inca-bb-013",
+      "date": "2026-08-02",
+      "memo": "Pembayaran tambahan alat",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 30000000
+    },
+    {
+      "id": "inca-bb-014",
+      "date": "2026-08-08",
+      "memo": "Modal Ke-4 a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 15000000
+    },
+    {
+      "id": "inca-bb-015",
+      "date": "2026-08-08",
+      "memo": "Modal Ke-4 a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 15000000
+    },
+    {
+      "id": "inca-bb-016",
+      "date": "2026-08-08",
+      "memo": "Modal Ke-4 a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 15000000
+    },
+    {
+      "id": "inca-bb-017",
+      "date": "2026-08-09",
+      "memo": "Barbel Mini (10 pack)",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 302950
+    },
+    {
+      "id": "inca-bb-018",
+      "date": "2026-08-09",
+      "memo": "Lingkaran resistensi yoga (10 pack)",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 294160
+    },
+    {
+      "id": "inca-bb-019",
+      "date": "2026-08-09",
+      "memo": "Yoga Blok Prick (10 pack)",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 223000
+    },
+    {
+      "id": "inca-bb-020",
+      "date": "2026-08-09",
+      "memo": "Yoga Mini Bakk 25 cm (10 pack)",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 230040
+    },
+    {
+      "id": "inca-bb-021",
+      "date": "2026-08-09",
+      "memo": "Matras yoga/ matt (10 pack)",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 344000
+    },
+    {
+      "id": "inca-bb-022",
+      "date": "2026-08-14",
+      "memo": "Sabun mama lemon (1 pack)",
+      "party": "Operasional Ruko",
+      "debit": "5013",
+      "credit": "1002",
+      "amount": 12500
+    },
+    {
+      "id": "inca-bb-023",
+      "date": "2026-08-14",
+      "memo": "Soklin lantai (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 9500
+    },
+    {
+      "id": "inca-bb-024",
+      "date": "2026-08-14",
+      "memo": "Pewangi molto (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 13000
+    },
+    {
+      "id": "inca-bb-025",
+      "date": "2026-08-14",
+      "memo": "pembersih kaca (1 pack)",
+      "party": "Operasional Ruko",
+      "debit": "5013",
+      "credit": "1002",
+      "amount": 13500
+    },
+    {
+      "id": "inca-bb-026",
+      "date": "2026-08-14",
+      "memo": "plastik sampah (2 pack)",
+      "party": "Operasional Ruko",
+      "debit": "5013",
+      "credit": "1002",
+      "amount": 24000
+    },
+    {
+      "id": "inca-bb-027",
+      "date": "2026-08-14",
+      "memo": "Tempat sabun cuci tangan (3 Pack)",
+      "party": "Operasional Ruko",
+      "debit": "5013",
+      "credit": "1002",
+      "amount": 31500
+    },
+    {
+      "id": "inca-bb-028",
+      "date": "2026-08-14",
+      "memo": "Gunting big (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 20500
+    },
+    {
+      "id": "inca-bb-029",
+      "date": "2026-08-14",
+      "memo": "Gunting small (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 15000
+    },
+    {
+      "id": "inca-bb-030",
+      "date": "2026-08-14",
+      "memo": "Penggaris (1 set isi 3)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 9000
+    },
+    {
+      "id": "inca-bb-031",
+      "date": "2026-08-14",
+      "memo": "Stabilo ( 1 set isi 4)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 13000
+    },
+    {
+      "id": "inca-bb-032",
+      "date": "2026-08-14",
+      "memo": "Pensil (1 set isi 3)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 17000
+    },
+    {
+      "id": "inca-bb-033",
+      "date": "2026-08-14",
+      "memo": "Paper Clip Small (2 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 19000
+    },
+    {
+      "id": "inca-bb-034",
+      "date": "2026-08-14",
+      "memo": "Paper Clip Big (2 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 24500
+    },
+    {
+      "id": "inca-bb-035",
+      "date": "2026-08-14",
+      "memo": "Gelas (3 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 66000
+    },
+    {
+      "id": "inca-bb-036",
+      "date": "2026-08-14",
+      "memo": "Cutter ( 1 set isi 3)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 21500
+    },
+    {
+      "id": "inca-bb-037",
+      "date": "2026-08-14",
+      "memo": "Tempat Tissue (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 54500
+    },
+    {
+      "id": "inca-bb-038",
+      "date": "2026-08-14",
+      "memo": "Tempat Pulpen ( 1 set isi 3)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 15500
+    },
+    {
+      "id": "inca-bb-039",
+      "date": "2026-08-14",
+      "memo": "Spons ( 1 set isi 5)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 13000
+    },
+    {
+      "id": "inca-bb-040",
+      "date": "2026-08-14",
+      "memo": "Papan Ujian (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 24000
+    },
+    {
+      "id": "inca-bb-041",
+      "date": "2026-08-14",
+      "memo": "Tip X (2 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 11000
+    },
+    {
+      "id": "inca-bb-042",
+      "date": "2026-08-14",
+      "memo": "Pulpen ( 1 set isi 12 pcs)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 32000
+    },
+    {
+      "id": "inca-bb-043",
+      "date": "2026-08-14",
+      "memo": "Sisir (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 25000
+    },
+    {
+      "id": "inca-bb-044",
+      "date": "2026-08-14",
+      "memo": "Rak alat tulis (1 pack)",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 84500
+    },
+    {
+      "id": "inca-bb-045",
+      "date": "2026-08-14",
+      "memo": "Keranjang penyimpanan (2 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 12500
+    },
+    {
+      "id": "inca-bb-046",
+      "date": "2026-08-14",
+      "memo": "Gantungan baju ( 1 set isi 6)",
+      "party": "Konveksi",
+      "debit": "5012",
+      "credit": "1002",
+      "amount": 16000
+    },
+    {
+      "id": "inca-bb-047",
+      "date": "2026-08-14",
+      "memo": "Map Merah (1 pack)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 15000
+    },
+    {
+      "id": "inca-bb-048",
+      "date": "2026-08-14",
+      "memo": "Map Holder biru (1 pack)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 27000
+    },
+    {
+      "id": "inca-bb-049",
+      "date": "2026-08-14",
+      "memo": "Buku kas (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 6000
+    },
+    {
+      "id": "inca-bb-050",
+      "date": "2026-08-14",
+      "memo": "Buku pers. Barang (2 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 12000
+    },
+    {
+      "id": "inca-bb-051",
+      "date": "2026-08-14",
+      "memo": "Cutton Bud (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 14000
+    },
+    {
+      "id": "inca-bb-052",
+      "date": "2026-08-14",
+      "memo": "Rautan pensil (1 pack)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 3000
+    },
+    {
+      "id": "inca-bb-053",
+      "date": "2026-08-14",
+      "memo": "Staples (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 9500
+    },
+    {
+      "id": "inca-bb-054",
+      "date": "2026-08-14",
+      "memo": "Paper Clip Big (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 11000
+    },
+    {
+      "id": "inca-bb-055",
+      "date": "2026-08-14",
+      "memo": "Jarum pentul (1 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 7000
+    },
+    {
+      "id": "inca-bb-056",
+      "date": "2026-08-14",
+      "memo": "Lem kertas (1 pack)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 5500
+    },
+    {
+      "id": "inca-bb-057",
+      "date": "2026-08-14",
+      "memo": "Penghapus (2 pack)",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 3000
+    },
+    {
+      "id": "inca-bb-058",
+      "date": "2026-08-14",
+      "memo": "Pembatas kertas (2 pack)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 20000
+    },
+    {
+      "id": "inca-bb-059",
+      "date": "2026-08-14",
+      "memo": "SOLARIA",
+      "party": "Konsumsi",
+      "debit": "5008",
+      "credit": "1002",
+      "amount": 151000
+    },
+    {
+      "id": "inca-bb-060",
+      "date": "2026-08-14",
+      "memo": "TOMORROW COFFE",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 52000
+    },
+    {
+      "id": "inca-bb-061",
+      "date": "2026-08-14",
+      "memo": "BBM",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 30000
+    },
+    {
+      "id": "inca-bb-062",
+      "date": "2026-08-16",
+      "memo": "HVS ( 60 LBR)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 10000
+    },
+    {
+      "id": "inca-bb-063",
+      "date": "2026-08-17",
+      "memo": "PEMBELIAN 4 UNIT AC",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 16800000
+    },
+    {
+      "id": "inca-bb-064",
+      "date": "2026-08-19",
+      "memo": "Pipa Ac",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 1000000
+    },
+    {
+      "id": "inca-bb-065",
+      "date": "2026-08-19",
+      "memo": "Stop Kontak",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 170000
+    },
+    {
+      "id": "inca-bb-066",
+      "date": "2026-08-19",
+      "memo": "Kabel 3x2,5",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 390000
+    },
+    {
+      "id": "inca-bb-067",
+      "date": "2026-08-19",
+      "memo": "Kerjaan bobolan",
+      "party": "Kontraktor Renovasi",
+      "debit": "1303",
+      "credit": "1002",
+      "amount": 250000
+    },
+    {
+      "id": "inca-bb-068",
+      "date": "2026-08-19",
+      "memo": "Perubahan daya (770 VA)",
+      "party": "PLN",
+      "debit": "5004",
+      "credit": "1002",
+      "amount": 2684750
+    },
+    {
+      "id": "inca-bb-069",
+      "date": "2026-08-20",
+      "memo": "Modal Ke-5 a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 14707922
+    },
+    {
+      "id": "inca-bb-070",
+      "date": "2026-08-20",
+      "memo": "Modal Ke-5 a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 14707922
+    },
+    {
+      "id": "inca-bb-071",
+      "date": "2026-08-20",
+      "memo": "Modal Ke-5 a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 14707922
+    },
+    {
+      "id": "inca-bb-072",
+      "date": "2026-08-20",
+      "memo": "Pelunasan Alat",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 44123768
+    },
+    {
+      "id": "inca-bb-073",
+      "date": "2026-08-23",
+      "memo": "Kertas HVS A4 160 gr (20 pack)",
+      "party": "ATK & Perlengkapan",
+      "debit": "5006",
+      "credit": "1002",
+      "amount": 168800
+    },
+    {
+      "id": "inca-bb-074",
+      "date": "2026-08-25",
+      "memo": "ongkir gosend krumah ka indah antar kertas hvs",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 41000
+    },
+    {
+      "id": "inca-bb-075",
+      "date": "2026-08-26",
+      "memo": "Nutup dapur kanopi",
+      "party": "Kontraktor Renovasi",
+      "debit": "1303",
+      "credit": "1002",
+      "amount": 8000000
+    },
+    {
+      "id": "inca-bb-076",
+      "date": "2026-08-26",
+      "memo": "Modal Ke-6 a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 20000000
+    },
+    {
+      "id": "inca-bb-077",
+      "date": "2026-08-28",
+      "memo": "Makan",
+      "party": "Konsumsi",
+      "debit": "5008",
+      "credit": "1002",
+      "amount": 511500
+    },
+    {
+      "id": "inca-bb-078",
+      "date": "2026-08-28",
+      "memo": "Biaya operasional",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 500000
+    },
+    {
+      "id": "inca-bb-079",
+      "date": "2026-08-28",
+      "memo": "Handphone & kartu",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 13400000
+    },
+    {
+      "id": "inca-bb-080",
+      "date": "2026-08-28",
+      "memo": "Seragam admin",
+      "party": "Bank",
+      "debit": "5010",
+      "credit": "1002",
+      "amount": 1195000
+    },
+    {
+      "id": "inca-bb-081",
+      "date": "2026-08-28",
+      "memo": "Laptop & Printer",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 5000000
+    },
+    {
+      "id": "inca-bb-082",
+      "date": "2026-08-29",
+      "memo": "kaos & bensin",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 405000
+    },
+    {
+      "id": "inca-bb-083",
+      "date": "2026-08-30",
+      "memo": "Adaptor IP",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 117400
+    },
+    {
+      "id": "inca-bb-084",
+      "date": "2026-08-31",
+      "memo": "Modal Ke-6 a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 20000000
+    },
+    {
+      "id": "inca-bb-085",
+      "date": "2026-08-31",
+      "memo": "BBM",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 50000
+    },
+    {
+      "id": "inca-bb-086",
+      "date": "2026-08-31",
+      "memo": "Cutting Membership",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 2000
+    },
+    {
+      "id": "inca-bb-087",
+      "date": "2026-08-31",
+      "memo": "Modal Ke-6 a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 20000000
+    },
+    {
+      "id": "inca-bb-088",
+      "date": "2026-08-31",
+      "memo": "Biaya Interior Inca",
+      "party": "Kontraktor Renovasi",
+      "debit": "1303",
+      "credit": "1002",
+      "amount": 45758000
+    },
+    {
+      "id": "inca-bb-089",
+      "date": "2026-08-31",
+      "memo": "Makan",
+      "party": "Konsumsi",
+      "debit": "5008",
+      "credit": "1002",
+      "amount": 264858
+    },
+    {
+      "id": "inca-bb-090",
+      "date": "2026-08-31",
+      "memo": "Pernak Pernik Inca",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 2272620
+    },
+    {
+      "id": "inca-bb-091",
+      "date": "2026-08-31",
+      "memo": "Tips & Parkir",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 36000
+    },
+    {
+      "id": "inca-bb-092",
+      "date": "2026-09-03",
+      "memo": "Meja Keperluan Inca",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 626100
+    },
+    {
+      "id": "inca-bb-093",
+      "date": "2026-09-03",
+      "memo": "Kursi atas depan tangga",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 723850
+    },
+    {
+      "id": "inca-bb-094",
+      "date": "2026-09-03",
+      "memo": "Kursi Loby",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 1066372
+    },
+    {
+      "id": "inca-bb-095",
+      "date": "2026-09-05",
+      "memo": "Isi Ulang tinta printer",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 460000
+    },
+    {
+      "id": "inca-bb-096",
+      "date": "2026-09-10",
+      "memo": "showcase, dispenser, kompor & regulator",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 6600000
+    },
+    {
+      "id": "inca-bb-097",
+      "date": "2026-09-14",
+      "memo": "Pembelian Neon box",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 1100000
+    },
+    {
+      "id": "inca-bb-098",
+      "date": "2026-09-22",
+      "memo": "Kekurangan neon box dan DP tulisan Inca",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 1650000
+    },
+    {
+      "id": "inca-bb-099",
+      "date": "2026-09-22",
+      "memo": "Biaya pengantaran kunci ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 28500
+    },
+    {
+      "id": "inca-bb-100",
+      "date": "2026-09-23",
+      "memo": "ongkir kunci",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 15500
+    },
+    {
+      "id": "inca-bb-101",
+      "date": "2026-09-24",
+      "memo": "Modal Ke-7 a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 5000000
+    },
+    {
+      "id": "inca-bb-102",
+      "date": "2026-09-24",
+      "memo": "Modal Ke-7 a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 5000000
+    },
+    {
+      "id": "inca-bb-103",
+      "date": "2026-09-24",
+      "memo": "Modal Ke-7 a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 5000000
+    },
+    {
+      "id": "inca-bb-104",
+      "date": "2026-09-28",
+      "memo": "Konsumsi",
+      "party": "Konsumsi",
+      "debit": "5008",
+      "credit": "1002",
+      "amount": 124000
+    },
+    {
+      "id": "inca-bb-105",
+      "date": "2026-09-28",
+      "memo": "Pembelian kursi admin 2 pcs",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 560125
+    },
+    {
+      "id": "inca-bb-106",
+      "date": "2026-09-29",
+      "memo": "Rak Kompor wastafel",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 1600000
+    },
+    {
+      "id": "inca-bb-107",
+      "date": "2026-09-29",
+      "memo": "Pembelian bahan bangunan",
+      "party": "Kontraktor Renovasi",
+      "debit": "1303",
+      "credit": "1002",
+      "amount": 171000
+    },
+    {
+      "id": "inca-bb-108",
+      "date": "2026-09-29",
+      "memo": "Tambahan pembelian rak",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 771000
+    },
+    {
+      "id": "inca-bb-109",
+      "date": "2026-09-30",
+      "memo": "Pembelian sofa plus ongkir",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 4827000
+    },
+    {
+      "id": "inca-bb-110",
+      "date": "2026-09-30",
+      "memo": "Pembelian token listrik ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 1003000
+    },
+    {
+      "id": "inca-bb-111",
+      "date": "2026-09-30",
+      "memo": "Pelunasan logo dan kaca film INCA",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 1750000
+    },
+    {
+      "id": "inca-bb-112",
+      "date": "2026-10-01",
+      "memo": "Pembelian rak sepatu dan hiasan bunga palsu",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 759000
+    },
+    {
+      "id": "inca-bb-113",
+      "date": "2026-10-01",
+      "memo": "Pembelian peralatan consumable ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 260000
+    },
+    {
+      "id": "inca-bb-114",
+      "date": "2026-10-01",
+      "memo": "Pembelian peralatan consumable ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 164000
+    },
+    {
+      "id": "inca-bb-115",
+      "date": "2026-10-01",
+      "memo": "Pembelian peralatan listrik ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 70000
+    },
+    {
+      "id": "inca-bb-116",
+      "date": "2026-10-01",
+      "memo": "Pembelian consumable ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 85000
+    },
+    {
+      "id": "inca-bb-117",
+      "date": "2026-10-01",
+      "memo": "Pembelian consumable ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 44600
+    },
+    {
+      "id": "inca-bb-118",
+      "date": "2026-10-04",
+      "memo": "Pembelian Rupa - Rupa",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 62112
+    },
+    {
+      "id": "inca-bb-119",
+      "date": "2026-10-04",
+      "memo": "Pembelian Rupa - Rupa",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 13081
+    },
+    {
+      "id": "inca-bb-120",
+      "date": "2026-10-05",
+      "memo": "Modal Ke-8 a/n Indah",
+      "party": "Indah",
+      "debit": "1002",
+      "credit": "3001",
+      "amount": 5000000
+    },
+    {
+      "id": "inca-bb-121",
+      "date": "2026-10-05",
+      "memo": "Modal Ke-8 a/n Nanda",
+      "party": "Nanda",
+      "debit": "1002",
+      "credit": "3003",
+      "amount": 5000000
+    },
+    {
+      "id": "inca-bb-122",
+      "date": "2026-10-05",
+      "memo": "Modal Ke-8 a/n Amel",
+      "party": "Camelia",
+      "debit": "1002",
+      "credit": "3002",
+      "amount": 5000000
+    },
+    {
+      "id": "inca-bb-123",
+      "date": "2026-10-05",
+      "memo": "Pembelian tambahan bangunan",
+      "party": "Kontraktor Renovasi",
+      "debit": "1303",
+      "credit": "1002",
+      "amount": 50000
+    },
+    {
+      "id": "inca-bb-124",
+      "date": "2026-10-06",
+      "memo": "Ongkir Logistik Alat",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 6678300
+    },
+    {
+      "id": "inca-bb-125",
+      "date": "2026-10-06",
+      "memo": "Biaya Transaksi ke Natasia Andriani",
+      "party": "Bank",
+      "debit": "5010",
+      "credit": "1002",
+      "amount": 2500
+    },
+    {
+      "id": "inca-bb-126",
+      "date": "2026-10-06",
+      "memo": "Konsumsi Rapat Inca",
+      "party": "Konsumsi",
+      "debit": "5008",
+      "credit": "1002",
+      "amount": 702840
+    },
+    {
+      "id": "inca-bb-127",
+      "date": "2026-10-07",
+      "memo": "Pemberian Tips Logistik",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 400000
+    },
+    {
+      "id": "inca-bb-128",
+      "date": "2026-10-07",
+      "memo": "Biaya Tranfer ke Rek Camelia",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 2500
+    },
+    {
+      "id": "inca-bb-129",
+      "date": "2026-10-07",
+      "memo": "Biaya pemasangan Wifi",
+      "party": "Provider Internet",
+      "debit": "5011",
+      "credit": "1002",
+      "amount": 100000
+    },
+    {
+      "id": "inca-bb-130",
+      "date": "2026-10-07",
+      "memo": "Tokopedia Akrilik dll",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 528048
+    },
+    {
+      "id": "inca-bb-131",
+      "date": "2026-10-07",
+      "memo": "Tokopedia Gelas 1/2 lusin",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 55190
+    },
+    {
+      "id": "inca-bb-132",
+      "date": "2026-10-07",
+      "memo": "Shopee Jahe 1 dus",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 193450
+    },
+    {
+      "id": "inca-bb-133",
+      "date": "2026-10-08",
+      "memo": "Kabel, Steker",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 240000
+    },
+    {
+      "id": "inca-bb-134",
+      "date": "2026-10-08",
+      "memo": "PPN TF",
+      "party": "Bank",
+      "debit": "5010",
+      "credit": "1002",
+      "amount": 2500
+    },
+    {
+      "id": "inca-bb-135",
+      "date": "2026-10-08",
+      "memo": "Kas Kecil Ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 1000000
+    },
+    {
+      "id": "inca-bb-136",
+      "date": "2026-10-09",
+      "memo": "Konsumsi Rapat Inca",
+      "party": "Konsumsi",
+      "debit": "5008",
+      "credit": "1002",
+      "amount": 325440
+    },
+    {
+      "id": "inca-bb-137",
+      "date": "2026-10-11",
+      "memo": "Pengembalian Kas Kecil",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 37000
+    },
+    {
+      "id": "inca-bb-138",
+      "date": "2026-10-11",
+      "memo": "Tokopedia Pembelian Barbel",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 187032
+    },
+    {
+      "id": "inca-bb-139",
+      "date": "2026-10-12",
+      "memo": "Kekurangan biaya interior tambahan backdrop dll",
+      "party": "Kontraktor Renovasi",
+      "debit": "1303",
+      "credit": "1002",
+      "amount": 4000000
+    },
+    {
+      "id": "inca-bb-140",
+      "date": "2026-10-12",
+      "memo": "Kas Kecil Ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 500000
+    },
+    {
+      "id": "inca-bb-141",
+      "date": "2026-10-12",
+      "memo": "Pembayaran Paket Promo Soft Opening (5 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 495000
+    },
+    {
+      "id": "inca-bb-142",
+      "date": "2026-10-13",
+      "memo": "Pembayaran Paket Promo Soft Opening (2 org 99000 & 100000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 199000
+    },
+    {
+      "id": "inca-bb-143",
+      "date": "2026-10-14",
+      "memo": "Pembayaran Paket Promo Soft Opening (8 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 792000
+    },
+    {
+      "id": "inca-bb-144",
+      "date": "2026-10-14",
+      "memo": "Pembayaran Paket Promo Soft Opening 1 org cadillac",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 275000
+    },
+    {
+      "id": "inca-bb-145",
+      "date": "2026-10-15",
+      "memo": "Pembelian Kaca Film",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 700000
+    },
+    {
+      "id": "inca-bb-146",
+      "date": "2026-10-16",
+      "memo": "Pembelian Paket Promo Soft Opening 2 org cadillac",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 550000
+    },
+    {
+      "id": "inca-bb-147",
+      "date": "2026-10-16",
+      "memo": "Pembelian Paket Promo Soft Opening 1 org cadillac",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 275000
+    },
+    {
+      "id": "inca-bb-148",
+      "date": "2026-10-16",
+      "memo": "Pembelian Mouse Leptop",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 163900
+    },
+    {
+      "id": "inca-bb-149",
+      "date": "2026-10-16",
+      "memo": "Kas Kecil Ruko (Pengajian)",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 1000000
+    },
+    {
+      "id": "inca-bb-150",
+      "date": "2026-10-16",
+      "memo": "Cetak Brosur",
+      "party": "Percetakan Brosur",
+      "debit": "5005",
+      "credit": "1002",
+      "amount": 100000
+    },
+    {
+      "id": "inca-bb-151",
+      "date": "2026-10-16",
+      "memo": "Cetak Brosur",
+      "party": "Percetakan Brosur",
+      "debit": "5005",
+      "credit": "1002",
+      "amount": 211355
+    },
+    {
+      "id": "inca-bb-152",
+      "date": "2026-10-17",
+      "memo": "Pembayaran Paket Promo Soft Opening (7 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 693000
+    },
+    {
+      "id": "inca-bb-153",
+      "date": "2026-10-17",
+      "memo": "Pembelian Matrass",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 386920
+    },
+    {
+      "id": "inca-bb-154",
+      "date": "2026-10-18",
+      "memo": "Pembayaran paket 10x (owner)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 612500
+    },
+    {
+      "id": "inca-bb-155",
+      "date": "2026-10-18",
+      "memo": "Pembayaran Paket Promo Soft Opening (10 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 990000
+    },
+    {
+      "id": "inca-bb-156",
+      "date": "2026-10-18",
+      "memo": "Pembelian Nasi Box",
+      "party": "Konsumsi",
+      "debit": "5008",
+      "credit": "1002",
+      "amount": 970000
+    },
+    {
+      "id": "inca-bb-157",
+      "date": "2026-10-19",
+      "memo": "Pembelian Box Alat",
+      "party": "Vendor Alat Pilates",
+      "debit": "1301",
+      "credit": "1002",
+      "amount": 223475
+    },
+    {
+      "id": "inca-bb-158",
+      "date": "2026-10-18",
+      "memo": "Pembayaran paket 10x (owner)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 612500
+    },
+    {
+      "id": "inca-bb-159",
+      "date": "2026-10-19",
+      "memo": "Kas Kecil Ruko",
+      "party": "Pemilik Ruko",
+      "debit": "1190",
+      "credit": "1002",
+      "amount": 200000
+    },
+    {
+      "id": "inca-bb-160",
+      "date": "2026-10-19",
+      "memo": "Pembayaran Sarung Tangan dan Kaos Kaki",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 327910
+    },
+    {
+      "id": "inca-bb-161",
+      "date": "2026-10-19",
+      "memo": "Pembayaran Paket Promo Soft Opening (5 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 495000
+    },
+    {
+      "id": "inca-bb-162",
+      "date": "2026-10-19",
+      "memo": "Pembayaran Sayur Organik",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 20000
+    },
+    {
+      "id": "inca-bb-163",
+      "date": "2026-10-20",
+      "memo": "Pembayaran Paket Yoga Wheel (4 org @100.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 400000
+    },
+    {
+      "id": "inca-bb-164",
+      "date": "2026-10-20",
+      "memo": "Pembayaran Paket Promo Soft Opening (11 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 1089000
+    },
+    {
+      "id": "inca-bb-165",
+      "date": "2026-10-20",
+      "memo": "Pembayaran Paket 3x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 365000
+    },
+    {
+      "id": "inca-bb-166",
+      "date": "2026-10-20",
+      "memo": "Pembayaran Trial Mamber",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 110000
+    },
+    {
+      "id": "inca-bb-167",
+      "date": "2026-10-21",
+      "memo": "Pembayaran Paket Promo Soft Opening (7 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 693000
+    },
+    {
+      "id": "inca-bb-168",
+      "date": "2026-10-21",
+      "memo": "Pembayaran Trial Mamber (6 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 660000
+    },
+    {
+      "id": "inca-bb-169",
+      "date": "2026-10-21",
+      "memo": "Pembayaran Paket Pilates WYF (4 org @131250)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 525000
+    },
+    {
+      "id": "inca-bb-170",
+      "date": "2026-10-22",
+      "memo": "Pembayaran Trial Mamber (2 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 220000
+    },
+    {
+      "id": "inca-bb-171",
+      "date": "2026-10-22",
+      "memo": "Pembayaran 2 pasang sarung tangan",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 50000
+    },
+    {
+      "id": "inca-bb-172",
+      "date": "2026-10-22",
+      "memo": "Pembayaran Paket Promo Soft Opening",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 99000
+    },
+    {
+      "id": "inca-bb-173",
+      "date": "2026-10-23",
+      "memo": "Pembayaran paket 10x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 1225000
+    },
+    {
+      "id": "inca-bb-174",
+      "date": "2026-10-23",
+      "memo": "Pembayaran Paket Trial (5 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 550000
+    },
+    {
+      "id": "inca-bb-175",
+      "date": "2026-10-23",
+      "memo": "Pembayaran Paket Promo Soft Opening (2 org @99.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 198000
+    },
+    {
+      "id": "inca-bb-176",
+      "date": "2026-10-23",
+      "memo": "Pembayaran paket cadillac",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 325000
+    },
+    {
+      "id": "inca-bb-177",
+      "date": "2026-10-24",
+      "memo": "Pembayaran 5 pasang sarung tangan",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 125000
+    },
+    {
+      "id": "inca-bb-178",
+      "date": "2026-10-24",
+      "memo": "Pembayaran Paket Trial",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 110000
+    },
+    {
+      "id": "inca-bb-179",
+      "date": "2026-10-24",
+      "memo": "Pembayaran paket 1x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 160000
+    },
+    {
+      "id": "inca-bb-180",
+      "date": "2026-10-25",
+      "memo": "Pembayaran Paket Trial (6 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 660000
+    },
+    {
+      "id": "inca-bb-181",
+      "date": "2026-10-26",
+      "memo": "Pembayaran 1 pasang sarung tangan dan aqua",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 35000
+    },
+    {
+      "id": "inca-bb-182",
+      "date": "2026-10-26",
+      "memo": "Pembayaran Paket Trial (19 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 2090000
+    },
+    {
+      "id": "inca-bb-183",
+      "date": "2026-10-26",
+      "memo": "Pembayaran Paket Pilates WYF (4 org @131250)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 525000
+    },
+    {
+      "id": "inca-bb-184",
+      "date": "2026-10-26",
+      "memo": "Pembelian Sarung Tangan",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 335500
+    },
+    {
+      "id": "inca-bb-185",
+      "date": "2026-10-27",
+      "memo": "Pembayaran Sarung Tangan dan Kaos Kaki",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 60000
+    },
+    {
+      "id": "inca-bb-186",
+      "date": "2026-10-27",
+      "memo": "Pembayaran paket 1x (2 org @153.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 306000
+    },
+    {
+      "id": "inca-bb-187",
+      "date": "2026-10-27",
+      "memo": "Pembayaran Paket Yoga Wheel (3 org @100.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 300000
+    },
+    {
+      "id": "inca-bb-188",
+      "date": "2026-10-27",
+      "memo": "Pembayaran paket 3x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 365000
+    },
+    {
+      "id": "inca-bb-189",
+      "date": "2026-10-27",
+      "memo": "Pembayaran Paket Yoga (4 org @85.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 340000
+    },
+    {
+      "id": "inca-bb-190",
+      "date": "2026-10-27",
+      "memo": "Pembayaran Paket Trial (8 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 880000
+    },
+    {
+      "id": "inca-bb-191",
+      "date": "2026-10-27",
+      "memo": "Pembelian Kamera CCTV 1",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 499000
+    },
+    {
+      "id": "inca-bb-192",
+      "date": "2026-10-27",
+      "memo": "Pembelian Kamera CCTV 2",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 899000
+    },
+    {
+      "id": "inca-bb-193",
+      "date": "2026-10-27",
+      "memo": "Pembelian Dispenser Kaca",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 157800
+    },
+    {
+      "id": "inca-bb-194",
+      "date": "2026-10-27",
+      "memo": "Pembelian Bensin",
+      "party": "Logistik",
+      "debit": "5009",
+      "credit": "1002",
+      "amount": 120000
+    },
+    {
+      "id": "inca-bb-195",
+      "date": "2026-10-28",
+      "memo": "Biaya Pemasangan Lampu kaca lt 1",
+      "party": "Operasional",
+      "debit": "5099",
+      "credit": "1002",
+      "amount": 400000
+    },
+    {
+      "id": "inca-bb-196",
+      "date": "2026-10-28",
+      "memo": "Pembayaran Paket Trial (5 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 550000
+    },
+    {
+      "id": "inca-bb-197",
+      "date": "2026-10-28",
+      "memo": "Pembayaran paket cadillac (2org @325000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 650000
+    },
+    {
+      "id": "inca-bb-198",
+      "date": "2026-10-28",
+      "memo": "Pembayaran 1 pasang sarung tangan & 1 pasang kaos kaki",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 60000
+    },
+    {
+      "id": "inca-bb-199",
+      "date": "2026-10-28",
+      "memo": "Pembayaran paket 1x (2 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 220000
+    },
+    {
+      "id": "inca-bb-200",
+      "date": "2026-10-28",
+      "memo": "Pembayaran Paket 3x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 365000
+    },
+    {
+      "id": "inca-bb-201",
+      "date": "2026-10-29",
+      "memo": "Pembayaran Paket Trial (4 org @110.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 440000
+    },
+    {
+      "id": "inca-bb-202",
+      "date": "2026-10-29",
+      "memo": "Pembayaran Paket Promo Soft Opening",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 99000
+    },
+    {
+      "id": "inca-bb-203",
+      "date": "2026-10-29",
+      "memo": "Pembayaran paket 1x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 153000
+    },
+    {
+      "id": "inca-bb-204",
+      "date": "2026-10-29",
+      "memo": "Pembelian SD Card CCTV 2pcs",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 377471
+    },
+    {
+      "id": "inca-bb-205",
+      "date": "2026-10-29",
+      "memo": "Pembelian Kabel Kamera CCTV",
+      "party": "Vendor Perlengkapan",
+      "debit": "1302",
+      "credit": "1002",
+      "amount": 209000
+    },
+    {
+      "id": "inca-bb-206",
+      "date": "2026-10-29",
+      "memo": "Pembayaran 4 pasang sarung tangan & 2 pasang kaos kaki",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 170000
+    },
+    {
+      "id": "inca-bb-207",
+      "date": "2026-10-29",
+      "memo": "Pembayaran 2 Aqua",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 12000
+    },
+    {
+      "id": "inca-bb-208",
+      "date": "2026-10-30",
+      "memo": "Pembayaran Paket Trial",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 110000
+    },
+    {
+      "id": "inca-bb-209",
+      "date": "2026-10-30",
+      "memo": "Pembayaran paket 1x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 153000
+    },
+    {
+      "id": "inca-bb-210",
+      "date": "2026-10-30",
+      "memo": "Pembayaran paket 10x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 1225000
+    },
+    {
+      "id": "inca-bb-211",
+      "date": "2026-10-30",
+      "memo": "Pembelian Token Listrik",
+      "party": "PLN",
+      "debit": "5004",
+      "credit": "1002",
+      "amount": 1003000
+    },
+    {
+      "id": "inca-bb-212",
+      "date": "2026-10-30",
+      "memo": "Pembayaran 2 pasang sarung tangan",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 50000
+    },
+    {
+      "id": "inca-bb-213",
+      "date": "2026-10-30",
+      "memo": "Pembayaran Paket 3x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 365000
+    },
+    {
+      "id": "inca-bb-214",
+      "date": "2026-10-31",
+      "memo": "Pembayaran Paket Trial (4 org @108.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 432000
+    },
+    {
+      "id": "inca-bb-215",
+      "date": "2026-10-31",
+      "memo": "Pembayaran paket 1x (4 org @153.000)",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 612000
+    },
+    {
+      "id": "inca-bb-216",
+      "date": "2026-10-31",
+      "memo": "Pembayaran Paket 3x",
+      "party": "Member Pilates",
+      "debit": "1002",
+      "credit": "4001",
+      "amount": 365000
+    },
+    {
+      "id": "inca-bb-217",
+      "date": "2026-10-31",
+      "memo": "Pembayaran 2 Aqua",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 12000
+    },
+    {
+      "id": "inca-bb-218",
+      "date": "2026-10-31",
+      "memo": "Pembayaran 1 pasang sarung tangan",
+      "party": "Member / Penjualan Merchandise",
+      "debit": "1002",
+      "credit": "4002",
+      "amount": 25000
+    },
+    {
+      "id": "inca-bb-219",
+      "date": "2026-10-31",
+      "memo": "Biaya Admin",
+      "party": "Bank",
+      "debit": "5010",
+      "credit": "1002",
+      "amount": 17000
+    }
+  ],
+  "lpjMeta": {
+    "importId": "lpj-20261021",
+    "asOf": "2026-10-31",
+    "sourceFile": "LPJ_INCA_Revisi.xlsx",
+    "totalCapital": 437004318,
+    "capitalPerOwner": {
+      "Indah": 145668106,
+      "Camelia": 145668106,
+      "Nanda": 145668106
+    },
+    "bankBalance": 17518721,
+    "pettyCashBalance": 33558,
+    "totalInflow": 461583318,
+    "totalOutflow": 444064597,
+    "notes": [
+      "Data keuangan studio INCA Pilates telah disinkronkan 100% dengan Catatan Buku Besar Dana (LPJ_INCA_Revisi.xlsx).",
+      "Setoran modal 3 Owner (Indah, Camelia, Nanda) tercatat sama rata: masing-masing Rp 145.668.106 (Total Rp 437.004.318).",
+      "Seluruh rincian setoran modal ke-1 sampai ke-8 telah diakomodasi dan tercatat dalam buku besar.",
+      "Saldo akhir kas & bank menurut pembukuan adalah Rp 17.518.721 per 31 Oktober 2026.",
+      "Pengeluaran petty cash operasional admin terdata terpisah sebesar saldo fisik Rp 33.558."
+    ],
+    "petty": {
+      "asOf": "2026-10-31",
+      "received": 861000,
+      "expenses": 827442,
+      "closing": 33558,
+      "ceremony": 1000000,
+      "ceremonyRemainder": 0,
+      "unreconciledEarlier": 0,
+      "notes": [
+        "Data kas kecil operasional admin diambil dari laporan pengeluaran ruko admin Oktober 2026.",
+        "Total dana refill diterima admin: Rp 861.000.",
+        "Total belanja operasional ruko: Rp 827.442.",
+        "Sisa saldo kas kecil di tangan admin: Rp 33.558."
+      ]
+    }
+  }
+}

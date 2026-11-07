@@ -1,0 +1,38 @@
+================================================================================
+ARSIP CADANGAN LENGKAP SISTEM INCA PILATES (OFFLINE EDISI)
+================================================================================
+Tanggal Pencadangan : 07 November 2026 17:42:24
+Tipe Sistem         : 100% Offline Standalone Web App (Tanpa Database Eksternal)
+Status Operasional  : Berfungsi Normal & Terverifikasi 100%
+Trademark & Lisensi : Trademark PUTI™ · Copyright © 2026
+
+RINGKASAN DATA TERCADANG:
+--------------------------------------------------------------------------------
+1. Database Operasional Studio:
+   - Jumlah Member Aktif/Riwayat : 166 member
+   - Jumlah Transaksi Pembelian  : 230 invoice
+   - Jumlah Presensi & Kehadiran : 230 data presensi
+   - Jumlah Jadwal Kelas         : 65 sesi
+   - Master Paket Studio         : 18 jenis paket
+   - Master Jenis Kelas          : 8 kelas (maks kuota 4 org)
+   - Master Instruktur / Coach   : 4 coach
+   - Leads Calon Member          : 250 prospek
+
+2. Database Pembukuan Keuangan (INCA Finance):
+   - Jurnal Transaksi Rekonsiliasi: 219 entri jurnal
+   - Status LPJ                  : 100% Match dengan LPJ_INCA_Revisi.xlsx
+   - Saldo Kas & Bank            : Rp 17.518.721 per 31 Okt 2026
+   - Saldo Petty Cash Fisik      : Rp 33.558 di tangan Admin
+   - Total Setoran Modal         : Rp 437.004.318 (3 Owner sama rata)
+
+3. Data Akun & Hak Akses (RBAC):
+   - Total Akun Pengguna         : 4 pengguna terdaftar
+   - Akun Resmi                  : owner (Super Admin), admin (Studio), finance (Keuangan), coach (Instruktur)
+
+PETUNJUK PEMULIHAN (RESTORE):
+--------------------------------------------------------------------------------
+Jika ingin memulihkan sistem secara utuh tanpa database eksternal:
+1. Buka folder 'INCA Sistem' hasil ekstrak dari file ZIP cadangan.
+2. Klik ganda file 'Buka_Sistem_INCA.bat' atau buka langsung file 'index.html'.
+3. Sistem akan langsung berjalan 100% seperti semula dengan seluruh data lengkap.
+================================================================================
