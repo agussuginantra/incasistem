@@ -990,6 +990,19 @@ function closeMemberModal() {
   document.getElementById('memberModal').classList.add('hidden');
 }
 
+function getNextMemberCode() {
+  let maxNum = 0;
+  (appState.members || []).forEach(m => {
+    const raw = String(m.memberCode || m.id || '');
+    const num = parseInt(raw.replace(/\D/g, ''), 10);
+    if (!isNaN(num) && num > maxNum) {
+      maxNum = num;
+    }
+  });
+  const nextNum = maxNum > 0 ? (maxNum + 1) : ((appState.members || []).length + 1);
+  return 'INC' + String(nextNum).padStart(3, '0');
+}
+
 function saveMember(event) {
   event.preventDefault();
   const id = document.getElementById('mmMemberId').value;
@@ -1025,8 +1038,8 @@ function saveMember(event) {
     }
     showToast('Data member berhasil diperbarui!', 'success');
   } else {
-    // Tambah baru
-    const newCode = 'INC' + String(appState.members.length + 1).padStart(3, '0');
+    // Tambah baru (Format INC + nomor urut mengikuti baris sebelumnya, misal INC167)
+    const newCode = getNextMemberCode();
     const newMember = {
       id: newCode,
       memberCode: newCode,
@@ -1036,7 +1049,7 @@ function saveMember(event) {
       joinedDate: joinedDate || getTodayString(),
       birthDate,
       address,
-      source,
+      source: source || 'Sistem Web',
       status,
       activePackageId: '',
       packageName: 'Belum ada paket',
@@ -1198,6 +1211,19 @@ function updatePurchaseModalPrice() {
   }
 }
 
+function getNextPurchaseId() {
+  let maxNum = 0;
+  (appState.packagePurchases || []).forEach(p => {
+    const raw = String(p.id || p.invoiceNo || '');
+    const num = parseInt(raw.replace(/\D/g, ''), 10);
+    if (!isNaN(num) && num > maxNum) {
+      maxNum = num;
+    }
+  });
+  const nextNum = maxNum > 0 ? (maxNum + 1) : ((appState.packagePurchases || []).length + 1);
+  return 'ID' + String(nextNum).padStart(3, '0');
+}
+
 function savePurchasePackage(event) {
   event.preventDefault();
   const memberId = document.getElementById('ppmMemberId').value;
@@ -1216,11 +1242,12 @@ function savePurchasePackage(event) {
     return;
   }
 
-  const invoiceNo = 'INV-' + getTodayString().replace(/-/g, '').slice(0, 6) + '-' + String(appState.packagePurchases.length + 1).padStart(3, '0');
+  // Format ID Transaksi & Invoice No: ID + nomor urut mengikuti baris terakhir (misal ID231)
+  const newPurchaseId = getNextPurchaseId();
 
   const newPurchase = {
-    id: 'pur-' + Date.now(),
-    invoiceNo,
+    id: newPurchaseId,
+    invoiceNo: newPurchaseId,
     memberId: member.id,
     memberName: member.name,
     packageId: pkg.id,
@@ -1244,7 +1271,7 @@ function savePurchasePackage(event) {
     const success = window.addStudioIncomeToFinance({
       finalPrice: price,
       className: `Paket ${pkg.name}`,
-      bookingCode: invoiceNo,
+      bookingCode: newPurchaseId,
       paymentOption: 'buy_pack',
       clientName: member.name,
       date: date

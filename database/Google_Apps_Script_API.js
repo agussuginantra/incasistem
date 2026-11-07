@@ -140,9 +140,22 @@ function doPost(e) {
     if (action === 'saveMember' || action === 'addMember') {
       var sh = getOrCreateSheet(ss, 'DB_Member');
       var m = data;
-      var code = m.memberCode || m.id || ('INC' + new Date().getTime());
+      var code = m.memberCode || m.id;
+      // Format INC + nomor urut mengikuti baris terakhir (misal INC167)
+      if (!code || String(code).indexOf('mem-') === 0) {
+        var lastRow = sh.getLastRow();
+        var maxNum = 0;
+        if (lastRow > 1) {
+          var colVals = sh.getRange(2, 1, lastRow - 1, 1).getValues();
+          for (var i = 0; i < colVals.length; i++) {
+            var n = parseInt(String(colVals[i][0]).replace(/\D/g, ''), 10);
+            if (!isNaN(n) && n > maxNum) maxNum = n;
+          }
+        }
+        code = 'INC' + ('000' + (maxNum + 1)).slice(-3);
+      }
       var row = [
-        m.id || code,
+        code,
         code,
         m.name || '',
         m.phone || '',
@@ -156,7 +169,7 @@ function doPost(e) {
         m.notes || ''
       ];
       var res = upsertByCols(sh, [0, 1], [row[0], row[1]], row);
-      return jsonResponse({ status: 'success', action: res.action, message: 'Data member ' + m.name + ' berhasil disimpan ke Google Sheets' });
+      return jsonResponse({ status: 'success', action: res.action, memberId: code, message: 'Data member ' + m.name + ' berhasil disimpan ke Google Sheets' });
     }
 
     if (action === 'deleteMember') {
@@ -185,10 +198,25 @@ function doPost(e) {
     if (action === 'savePurchase' || action === 'addPurchase') {
       var sh = getOrCreateSheet(ss, 'DB_Pembelian');
       var p = data;
+      var purId = p.id;
+      // Format ID + nomor urut mengikuti baris terakhir (misal ID231)
+      if (!purId || String(purId).indexOf('pur-') === 0) {
+        var lastRow = sh.getLastRow();
+        var maxNum = 0;
+        if (lastRow > 1) {
+          var colVals = sh.getRange(2, 1, lastRow - 1, 1).getValues();
+          for (var i = 0; i < colVals.length; i++) {
+            var n = parseInt(String(colVals[i][0]).replace(/\D/g, ''), 10);
+            if (!isNaN(n) && n > maxNum) maxNum = n;
+          }
+        }
+        purId = 'ID' + ('000' + (maxNum + 1)).slice(-3);
+      }
+      var invNo = p.invoiceNo && String(p.invoiceNo).indexOf('INV-') !== 0 ? p.invoiceNo : purId;
       var row = [
-        p.id || ('pur-' + new Date().getTime()),
-        p.invoiceNo || '',
-        p.date || Utilities.formatDate(new Date(), 'Asia/Jakarta', 'yyyy-MM-dd'),
+        purId,
+        invNo,
+        p.date || Utilities.formatDate(new Date(), 'Asia/Jakarta', 'dd/MM/yyyy'),
         p.memberId || '',
         p.memberName || '',
         p.packageId || '',
@@ -197,7 +225,7 @@ function doPost(e) {
         Number(p.normalPrice) || 0,
         Number(p.discount) || 0,
         Number(p.price) || 0,
-        p.paymentMethod || 'Transfer Bank',
+        p.paymentMethod || 'Transfer',
         p.paymentStatus || 'Lunas',
         p.startDate || '',
         p.expireDate || '',
@@ -206,7 +234,7 @@ function doPost(e) {
         p.status || 'Aktif'
       ];
       var res = upsertByCols(sh, [0, 1], [row[0], row[1]], row);
-      return jsonResponse({ status: 'success', action: res.action, message: 'Transaksi paket ' + p.invoiceNo + ' berhasil disimpan ke Google Sheets' });
+      return jsonResponse({ status: 'success', action: res.action, purchaseId: purId, message: 'Transaksi paket ' + purId + ' berhasil disimpan ke Google Sheets' });
     }
 
     // ------------------------------------------------------------------------

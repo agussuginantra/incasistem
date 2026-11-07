@@ -87,79 +87,112 @@ const ROLE_TEMPLATES = {
   }
 };
 
-// 3. DAFTAR PENGGUNA BAWAAN OTENTIK SISTEM
+// 3. DAFTAR PENGGUNA BAWAAN OTENTIK SISTEM (Sesuai Master DB_Pengguna Google Sheets)
 const DEFAULT_SYSTEM_USERS = [
   {
-    id: 'usr-owner',
-    name: 'Owner & Direktur Utama',
-    username: 'owner',
-    password: '123456',
+    id: 'usr-1794058576787',
+    name: 'Putu Agus',
+    username: 'putuagus',
+    password: 'Agu5suginantr@',
     role: 'owner',
     roleLabel: 'Super Admin / Owner',
-    phone: '0812-8899-0011',
+    phone: '',
     active: true,
-    createdDate: '12 Okt 2026',
+    createdDate: '07 Nov 2026',
     permissions: SYSTEM_PERMISSIONS.map(p => p.id)
   },
   {
     id: 'usr-titiswidya',
     name: 'Titis Widya',
     username: 'titiswidya',
-    password: '123456',
-    role: 'owner',
-    roleLabel: 'Super Admin / Owner',
+    password: 'titiswidya@123',
+    role: 'finance',
+    roleLabel: 'Admin Keuangan (Finance)',
     phone: '-',
     active: true,
     createdDate: '07 Nov 2026',
-    permissions: SYSTEM_PERMISSIONS.map(p => p.id)
+    permissions: SYSTEM_PERMISSIONS.filter(p => !['finance_proyeksi', 'finance_modal_owner', 'finance_data_backup'].includes(p.id)).map(p => p.id)
+  },
+  {
+    id: 'usr-owner',
+    name: 'Indah Puspitasari',
+    username: 'indahpus',
+    password: 'indahpus@123',
+    role: 'custom',
+    roleLabel: 'Kustom (Pilihan Bebas)',
+    phone: '',
+    active: true,
+    createdDate: '12 Okt 2026',
+    permissions: SYSTEM_PERMISSIONS.filter(p => !['finance_proyeksi', 'finance_modal_owner', 'finance_data_backup'].includes(p.id)).map(p => p.id)
+  },
+  {
+    id: 'usr-coach',
+    name: 'Coach Yuli',
+    username: 'coachyuli',
+    password: 'coachyuli@123',
+    role: 'coach',
+    roleLabel: 'Instruktur / Coach',
+    phone: '',
+    active: true,
+    createdDate: '12 Okt 2026',
+    permissions: ['studio_dashboard', 'studio_checkin']
+  },
+  {
+    id: 'usr-1794058686757',
+    name: 'Nur Septiana',
+    username: 'nursepti',
+    password: 'nursepti@123',
+    role: 'admin',
+    roleLabel: 'Admin Studio (Operasional)',
+    phone: '',
+    active: true,
+    createdDate: '07 Nov 2026',
+    permissions: [
+      'studio_dashboard', 'studio_members', 'studio_purchases', 'studio_packages',
+      'studio_classes', 'studio_coaches', 'studio_checkin', 'studio_leads', 'studio_backup'
+    ]
   },
   {
     id: 'usr-admin',
-    name: 'Admin Studio Operasional',
-    username: 'admin',
-    password: 'admin123',
+    name: 'Rafina Isma Irawan',
+    username: 'rafina',
+    password: 'rafina@123',
     role: 'admin',
-    roleLabel: 'Admin Studio',
-    phone: '0813-2233-4455',
+    roleLabel: 'Admin Studio (Operasional)',
+    phone: '',
     active: true,
     createdDate: '12 Okt 2026',
     permissions: [
       'studio_dashboard', 'studio_members', 'studio_purchases', 'studio_packages',
-      'studio_classes', 'studio_coaches', 'studio_checkin', 'studio_leads',
-      'studio_backup', 'system_users',
-      'finance_petty_cash'
+      'studio_classes', 'studio_coaches', 'studio_checkin', 'studio_leads'
+    ]
+  },
+  {
+    id: 'usr-1794058985827',
+    name: 'Armandha Murni Chairunisa',
+    username: 'mandha',
+    password: 'mandha@123',
+    role: 'admin',
+    roleLabel: 'Admin Studio (Operasional)',
+    phone: '',
+    active: true,
+    createdDate: '07 Nov 2026',
+    permissions: [
+      'studio_dashboard', 'studio_members', 'studio_purchases', 'studio_packages',
+      'studio_classes', 'studio_coaches', 'studio_checkin', 'studio_leads'
     ]
   },
   {
     id: 'usr-finance',
-    name: 'Staff Akuntansi & Finance',
-    username: 'finance',
-    password: 'finance123',
-    role: 'finance',
-    roleLabel: 'Admin Keuangan',
-    phone: '0815-6677-8899',
+    name: 'Nanda',
+    username: 'nanda',
+    password: 'nanda@123',
+    role: 'custom',
+    roleLabel: 'Kustom (Pilihan Bebas)',
+    phone: '',
     active: true,
     createdDate: '12 Okt 2026',
-    permissions: [
-      'studio_dashboard', 'studio_members', 'studio_purchases',
-      'finance_ringkasan', 'finance_transaksi', 'finance_kas_bank', 'finance_buku_besar',
-      'finance_petty_cash', 'finance_laporan', 'finance_proyeksi', 'finance_modal_owner',
-      'finance_daftar_akun', 'finance_catatan_sumber', 'finance_data_backup'
-    ]
-  },
-  {
-    id: 'usr-coach',
-    name: 'Coach & Instruktur Pilates',
-    username: 'coach',
-    password: 'coach123',
-    role: 'coach',
-    roleLabel: 'Instruktur',
-    phone: '0812-9988-7711',
-    active: true,
-    createdDate: '14 Okt 2026',
-    permissions: [
-      'studio_dashboard', 'studio_checkin'
-    ]
+    permissions: SYSTEM_PERMISSIONS.filter(p => !['finance_proyeksi', 'finance_modal_owner', 'finance_data_backup'].includes(p.id)).map(p => p.id)
   }
 ];
 
@@ -201,7 +234,7 @@ function getSystemAppState() {
   return { users: [] };
 }
 
-// Fetch and sync users directly from Google Sheets DB_Pengguna
+// Fetch and sync users directly from Google Sheets DB_Pengguna (Single Source of Truth)
 async function fetchUsersFromCloudDb() {
   if (!window.GoogleSheetsSync) return null;
   const url = window.GoogleSheetsSync.getUrl();
@@ -216,38 +249,75 @@ async function fetchUsersFromCloudDb() {
       const state = getSystemAppState();
       if (!state.users) state.users = [];
 
+      const cloudUsers = [];
       json.rows.forEach(r => {
         const username = String(r['Username'] || '').trim().toLowerCase();
         if (!username) return;
 
-        const existing = state.users.find(u => u.username.toLowerCase() === username);
+        const id = String(r['ID Pengguna'] || ('usr-' + username));
+        const existing = state.users.find(u => u.username.toLowerCase() === username || u.id === id);
         const role = String(r['Kode Peran'] || 'admin').toLowerCase();
         const tpl = ROLE_TEMPLATES[role] || ROLE_TEMPLATES.admin;
         
+        // Tentukan permissions
+        let perms = [];
+        if (existing && Array.isArray(existing.permissions) && existing.permissions.length > 0) {
+          perms = existing.permissions;
+        } else if (role === 'owner') {
+          perms = SYSTEM_PERMISSIONS.map(p => p.id);
+        } else if (role === 'coach') {
+          perms = ['studio_dashboard', 'studio_checkin'];
+        } else if (role === 'admin') {
+          perms = (tpl && tpl.permissions) ? [...tpl.permissions] : [
+            'studio_dashboard', 'studio_members', 'studio_purchases', 'studio_packages',
+            'studio_classes', 'studio_coaches', 'studio_checkin', 'studio_leads', 'studio_backup'
+          ];
+        } else if (tpl && Array.isArray(tpl.permissions) && tpl.permissions.length > 0) {
+          perms = [...tpl.permissions];
+        } else {
+          // Fallback custom (18 menu)
+          perms = SYSTEM_PERMISSIONS.filter(p => !['finance_proyeksi', 'finance_modal_owner', 'finance_data_backup'].includes(p.id)).map(p => p.id);
+        }
+
         const userData = {
-          id: String(r['ID Pengguna'] || ('usr-' + username)),
+          id: id,
           name: String(r['Nama Lengkap'] || username),
           username: username,
           password: String(r['Kata Sandi'] || ''),
           role: role,
-          roleLabel: String(r['Label Jabatan'] || tpl.label),
+          roleLabel: String(r['Label Jabatan'] || (tpl ? tpl.label : 'Pengguna')),
           phone: String(r['Nomor Telepon'] || ''),
           active: String(r['Status Akun'] || '').toLowerCase() !== 'nonaktif',
-          createdDate: String(r['Tanggal Dibuat'] || '12 Okt 2026'),
-          permissions: (existing && existing.permissions && existing.permissions.length) 
-            ? existing.permissions 
-            : tpl.defaultPermissions
+          createdDate: String(r['Tanggal Dibuat'] || '07 Nov 2026'),
+          permissions: perms
         };
 
-        if (existing) {
-          Object.assign(existing, userData);
-        } else {
-          state.users.push(userData);
-        }
+        cloudUsers.push(userData);
       });
 
-      if (typeof saveState === 'function') saveState();
-      if (document.getElementById('usersTableBody')) renderUsersTable();
+      if (cloudUsers.length > 0) {
+        // GOOGLE SHEETS IS SINGLE SOURCE OF TRUTH:
+        // Gantikan seluruh daftar user lokal dengan data otentik dari Google Sheets
+        state.users = cloudUsers;
+        if (typeof saveState === 'function') saveState();
+        if (document.getElementById('usersTableBody')) renderUsersTable();
+
+        // Segarkan objek currentAuthUser jika sedang aktif
+        if (window.currentAuthUser) {
+          const freshCurrent = state.users.find(u => 
+            u.username.toLowerCase() === window.currentAuthUser.username.toLowerCase() || 
+            u.id === window.currentAuthUser.id
+          );
+          if (freshCurrent) {
+            window.currentAuthUser = freshCurrent;
+            try {
+              sessionStorage.setItem('INCA_AUTH_USER', JSON.stringify(freshCurrent));
+            } catch (e) {}
+            if (typeof applyUserMenuPermissions === 'function') applyUserMenuPermissions();
+          }
+        }
+      }
+
       return json.rows;
     }
   } catch (err) {
@@ -497,20 +567,24 @@ function applyUserMenuPermissions() {
 function ensureUsersInitialized() {
   const state = getSystemAppState();
   const defUsers = window.DEFAULT_SYSTEM_USERS || (typeof DEFAULT_SYSTEM_USERS !== 'undefined' ? DEFAULT_SYSTEM_USERS : []);
+
+  // 1. Bersihkan akun dummy bawaan lama (@owner, @coach, @admin, @finance) jika di state sudah ada akun nyata
+  const DUMMY_TO_PURGE = ['owner', 'coach', 'admin', 'finance'];
+  if (state.users && Array.isArray(state.users)) {
+    const hasRealUsers = state.users.some(u => !DUMMY_TO_PURGE.includes(u.username.toLowerCase()));
+    if (hasRealUsers) {
+      const beforeLen = state.users.length;
+      state.users = state.users.filter(u => !DUMMY_TO_PURGE.includes(u.username.toLowerCase()));
+      if (state.users.length !== beforeLen && typeof saveState === 'function') {
+        saveState();
+      }
+    }
+  }
+
+  // 2. Jika belum ada akun pengguna sama sekali, isi dengan data bawaan otentik
   if (!state.users || !Array.isArray(state.users) || state.users.length === 0) {
     state.users = JSON.parse(JSON.stringify(defUsers));
     if (typeof saveState === 'function') saveState();
-  } else {
-    // Pastikan user bawaan baru (misal titiswidya) otomatis masuk ke state jika belum ada
-    let changed = false;
-    defUsers.forEach(du => {
-      const exists = state.users.some(u => u.username.toLowerCase() === du.username.toLowerCase());
-      if (!exists) {
-        state.users.push(JSON.parse(JSON.stringify(du)));
-        changed = true;
-      }
-    });
-    if (changed && typeof saveState === 'function') saveState();
   }
 }
 
@@ -606,7 +680,7 @@ function renderUsersTable() {
           <button onclick="promptResetPassword('${u.id}')" class="px-2 py-1 text-xs font-semibold text-gray-700 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition inline-flex items-center gap-1" title="Reset Kata Sandi">
             <i data-lucide="key" class="w-3.5 h-3.5"></i> Sandi
           </button>
-          ${!isOwner ? `
+          ${!isCurrent ? `
             <button onclick="deleteUser('${u.id}')" class="px-2 py-1 text-xs font-semibold text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg transition inline-flex items-center gap-1" title="Hapus Pengguna">
               <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
             </button>
@@ -878,12 +952,15 @@ function deleteUser(userId) {
   const state = getSystemAppState();
   const user = (state.users || []).find(u => u.id === userId);
   if (!user) return;
-  if (user.role === 'owner') {
-    alert('Akun Super Admin / Owner tidak dapat dihapus.');
+
+  if (window.currentAuthUser && (window.currentAuthUser.id === userId || window.currentAuthUser.username.toLowerCase() === user.username.toLowerCase())) {
+    alert('Anda tidak dapat menghapus akun yang sedang Anda gunakan saat ini.');
     return;
   }
-  if (window.currentAuthUser && window.currentAuthUser.id === userId) {
-    alert('Anda tidak dapat menghapus akun yang sedang digunakan saat ini.');
+
+  const activeOwners = (state.users || []).filter(u => u.role === 'owner' && u.id !== userId && u.active !== false);
+  if (user.role === 'owner' && activeOwners.length < 1) {
+    alert('Tidak dapat menghapus akun ini karena harus ada minimal 1 akun Super Admin / Owner yang aktif di sistem.');
     return;
   }
 
