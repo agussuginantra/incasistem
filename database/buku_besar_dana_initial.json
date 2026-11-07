@@ -1,0 +1,2222 @@
+[
+  {
+    "sheet": "JULI'26",
+    "row": 4,
+    "date": "2026-07-28",
+    "uraian": "Setoran Awal modal a/n Indah",
+    "masuk": 50000000.0,
+    "keluar": 0.0,
+    "saldo": 50000000.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 5,
+    "date": "2026-07-28",
+    "uraian": "Setoran Awal modal a/n Amel",
+    "masuk": 50000000.0,
+    "keluar": 0.0,
+    "saldo": 100000000.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 6,
+    "date": "2026-07-28",
+    "uraian": "Setoran Awal modal a/n Nanda",
+    "masuk": 50000000.0,
+    "keluar": 0.0,
+    "saldo": 150000000.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 7,
+    "date": "2026-07-28",
+    "uraian": "Pembayaran Ruko",
+    "masuk": 0.0,
+    "keluar": 145000000.0,
+    "saldo": 5000000.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 8,
+    "date": "2026-07-28",
+    "uraian": "Modal Ke-2 a/n Indah",
+    "masuk": 25960184.0,
+    "keluar": 0.0,
+    "saldo": 30960184.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 9,
+    "date": "2026-07-28",
+    "uraian": "Modal Ke-2 a/n Nanda",
+    "masuk": 25960184.0,
+    "keluar": 0.0,
+    "saldo": 56920368.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 10,
+    "date": "2026-07-28",
+    "uraian": "Modal Ke-2 a/n Amel",
+    "masuk": 25960184.0,
+    "keluar": 0.0,
+    "saldo": 82880552.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 11,
+    "date": "2026-07-29",
+    "uraian": "DP Pembelian alat pilates",
+    "masuk": 0.0,
+    "keluar": 75745880.0,
+    "saldo": 7134672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "JULI'26",
+    "row": 12,
+    "date": "2026-07-29",
+    "uraian": "Print Out transfer",
+    "masuk": 0.0,
+    "keluar": 7000.0,
+    "saldo": 7127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 5,
+    "date": "2026-08-01",
+    "uraian": "Saldo Akhir Bulan Juli 2026",
+    "masuk": 7127672.0,
+    "keluar": 0.0,
+    "saldo": 7127672.0,
+    "isCarryover": true
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 6,
+    "date": "2026-08-01",
+    "uraian": "Modal Ke-3 a/n Indah",
+    "masuk": 10000000.0,
+    "keluar": 0.0,
+    "saldo": 17127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 7,
+    "date": "2026-08-01",
+    "uraian": "Modal Ke-3 a/n Nanda",
+    "masuk": 10000000.0,
+    "keluar": 0.0,
+    "saldo": 27127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 8,
+    "date": "2026-08-01",
+    "uraian": "Modal Ke-3 a/n Amel",
+    "masuk": 10000000.0,
+    "keluar": 0.0,
+    "saldo": 37127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 9,
+    "date": "2026-08-02",
+    "uraian": "Pembayaran tambahan alat",
+    "masuk": 0.0,
+    "keluar": 30000000.0,
+    "saldo": 7127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 10,
+    "date": "2026-08-08",
+    "uraian": "Modal Ke-4 a/n Indah",
+    "masuk": 15000000.0,
+    "keluar": 0.0,
+    "saldo": 22127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 11,
+    "date": "2026-08-08",
+    "uraian": "Modal Ke-4 a/n Nanda",
+    "masuk": 15000000.0,
+    "keluar": 0.0,
+    "saldo": 37127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 12,
+    "date": "2026-08-08",
+    "uraian": "Modal Ke-4 a/n Amel",
+    "masuk": 15000000.0,
+    "keluar": 0.0,
+    "saldo": 52127672.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 13,
+    "date": "2026-08-09",
+    "uraian": "Barbel Mini (10 pack)",
+    "masuk": 0.0,
+    "keluar": 302950.0,
+    "saldo": 51824722.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 14,
+    "date": "2026-08-09",
+    "uraian": "Lingkaran resistensi yoga (10 pack)",
+    "masuk": 0.0,
+    "keluar": 294160.0,
+    "saldo": 51530562.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 15,
+    "date": "2026-08-09",
+    "uraian": "Yoga Blok Prick (10 pack)",
+    "masuk": 0.0,
+    "keluar": 223000.0,
+    "saldo": 51307562.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 16,
+    "date": "2026-08-09",
+    "uraian": "Yoga Mini Bakk 25 cm (10 pack)",
+    "masuk": 0.0,
+    "keluar": 230040.0,
+    "saldo": 51077522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 17,
+    "date": "2026-08-09",
+    "uraian": "Matras yoga/ matt (10 pack)",
+    "masuk": 0.0,
+    "keluar": 344000.0,
+    "saldo": 50733522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 18,
+    "date": "2026-08-14",
+    "uraian": "Sabun mama lemon (1 pack)",
+    "masuk": 0.0,
+    "keluar": 12500.0,
+    "saldo": 50721022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 19,
+    "date": "2026-08-14",
+    "uraian": "Soklin lantai (1 pack)",
+    "masuk": 0.0,
+    "keluar": 9500.0,
+    "saldo": 50711522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 20,
+    "date": "2026-08-14",
+    "uraian": "Pewangi molto (1 pack)",
+    "masuk": 0.0,
+    "keluar": 13000.0,
+    "saldo": 50698522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 21,
+    "date": "2026-08-14",
+    "uraian": "pembersih kaca (1 pack)",
+    "masuk": 0.0,
+    "keluar": 13500.0,
+    "saldo": 50685022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 22,
+    "date": "2026-08-14",
+    "uraian": "plastik sampah (2 pack)",
+    "masuk": 0.0,
+    "keluar": 24000.0,
+    "saldo": 50661022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 23,
+    "date": "2026-08-14",
+    "uraian": "Tempat sabun cuci tangan (3 Pack)",
+    "masuk": 0.0,
+    "keluar": 31500.0,
+    "saldo": 50629522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 24,
+    "date": "2026-08-14",
+    "uraian": "Gunting big (1 pack)",
+    "masuk": 0.0,
+    "keluar": 20500.0,
+    "saldo": 50609022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 25,
+    "date": "2026-08-14",
+    "uraian": "Gunting small (1 pack)",
+    "masuk": 0.0,
+    "keluar": 15000.0,
+    "saldo": 50594022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 26,
+    "date": "2026-08-14",
+    "uraian": "Penggaris (1 set isi 3)",
+    "masuk": 0.0,
+    "keluar": 9000.0,
+    "saldo": 50585022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 27,
+    "date": "2026-08-14",
+    "uraian": "Stabilo ( 1 set isi 4)",
+    "masuk": 0.0,
+    "keluar": 13000.0,
+    "saldo": 50572022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 28,
+    "date": "2026-08-14",
+    "uraian": "Pensil (1 set isi 3)",
+    "masuk": 0.0,
+    "keluar": 17000.0,
+    "saldo": 50555022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 29,
+    "date": "2026-08-14",
+    "uraian": "Paper Clip Small (2 pack)",
+    "masuk": 0.0,
+    "keluar": 19000.0,
+    "saldo": 50536022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 30,
+    "date": "2026-08-14",
+    "uraian": "Paper Clip Big (2 pack)",
+    "masuk": 0.0,
+    "keluar": 24500.0,
+    "saldo": 50511522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 31,
+    "date": "2026-08-14",
+    "uraian": "Gelas (3 pack)",
+    "masuk": 0.0,
+    "keluar": 66000.0,
+    "saldo": 50445522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 32,
+    "date": "2026-08-14",
+    "uraian": "Cutter ( 1 set isi 3)",
+    "masuk": 0.0,
+    "keluar": 21500.0,
+    "saldo": 50424022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 33,
+    "date": "2026-08-14",
+    "uraian": "Tempat Tissue (1 pack)",
+    "masuk": 0.0,
+    "keluar": 54500.0,
+    "saldo": 50369522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 34,
+    "date": "2026-08-14",
+    "uraian": "Tempat Pulpen ( 1 set isi 3)",
+    "masuk": 0.0,
+    "keluar": 15500.0,
+    "saldo": 50354022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 35,
+    "date": "2026-08-14",
+    "uraian": "Spons ( 1 set isi 5)",
+    "masuk": 0.0,
+    "keluar": 13000.0,
+    "saldo": 50341022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 36,
+    "date": "2026-08-14",
+    "uraian": "Papan Ujian (1 pack)",
+    "masuk": 0.0,
+    "keluar": 24000.0,
+    "saldo": 50317022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 37,
+    "date": "2026-08-14",
+    "uraian": "Tip X (2 pack)",
+    "masuk": 0.0,
+    "keluar": 11000.0,
+    "saldo": 50306022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 38,
+    "date": "2026-08-14",
+    "uraian": "Pulpen ( 1 set isi 12 pcs)",
+    "masuk": 0.0,
+    "keluar": 32000.0,
+    "saldo": 50274022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 39,
+    "date": "2026-08-14",
+    "uraian": "Sisir (1 pack)",
+    "masuk": 0.0,
+    "keluar": 25000.0,
+    "saldo": 50249022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 40,
+    "date": "2026-08-14",
+    "uraian": "Rak alat tulis (1 pack)",
+    "masuk": 0.0,
+    "keluar": 84500.0,
+    "saldo": 50164522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 41,
+    "date": "2026-08-14",
+    "uraian": "Keranjang penyimpanan (2 pack)",
+    "masuk": 0.0,
+    "keluar": 12500.0,
+    "saldo": 50152022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 42,
+    "date": "2026-08-14",
+    "uraian": "Gantungan baju ( 1 set isi 6)",
+    "masuk": 0.0,
+    "keluar": 16000.0,
+    "saldo": 50136022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 43,
+    "date": "2026-08-14",
+    "uraian": "Map Merah (1 pack)",
+    "masuk": 0.0,
+    "keluar": 15000.0,
+    "saldo": 50121022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 44,
+    "date": "2026-08-14",
+    "uraian": "Map Holder biru (1 pack)",
+    "masuk": 0.0,
+    "keluar": 27000.0,
+    "saldo": 50094022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 45,
+    "date": "2026-08-14",
+    "uraian": "Buku kas (1 pack)",
+    "masuk": 0.0,
+    "keluar": 6000.0,
+    "saldo": 50088022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 46,
+    "date": "2026-08-14",
+    "uraian": "Buku pers. Barang (2 pack)",
+    "masuk": 0.0,
+    "keluar": 12000.0,
+    "saldo": 50076022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 47,
+    "date": "2026-08-14",
+    "uraian": "Cutton Bud (1 pack)",
+    "masuk": 0.0,
+    "keluar": 14000.0,
+    "saldo": 50062022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 48,
+    "date": "2026-08-14",
+    "uraian": "Rautan pensil (1 pack)",
+    "masuk": 0.0,
+    "keluar": 3000.0,
+    "saldo": 50059022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 49,
+    "date": "2026-08-14",
+    "uraian": "Staples (1 pack)",
+    "masuk": 0.0,
+    "keluar": 9500.0,
+    "saldo": 50049522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 50,
+    "date": "2026-08-14",
+    "uraian": "Paper Clip Big (1 pack)",
+    "masuk": 0.0,
+    "keluar": 11000.0,
+    "saldo": 50038522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 51,
+    "date": "2026-08-14",
+    "uraian": "Jarum pentul (1 pack)",
+    "masuk": 0.0,
+    "keluar": 7000.0,
+    "saldo": 50031522.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 52,
+    "date": "2026-08-14",
+    "uraian": "Lem kertas (1 pack)",
+    "masuk": 0.0,
+    "keluar": 5500.0,
+    "saldo": 50026022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 53,
+    "date": "2026-08-14",
+    "uraian": "Penghapus (2 pack)",
+    "masuk": 0.0,
+    "keluar": 3000.0,
+    "saldo": 50023022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 54,
+    "date": "2026-08-14",
+    "uraian": "Pembatas kertas (2 pack)",
+    "masuk": 0.0,
+    "keluar": 20000.0,
+    "saldo": 50003022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 55,
+    "date": "2026-08-14",
+    "uraian": "SOLARIA",
+    "masuk": 0.0,
+    "keluar": 151000.0,
+    "saldo": 49852022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 56,
+    "date": "2026-08-14",
+    "uraian": "TOMORROW COFFE",
+    "masuk": 0.0,
+    "keluar": 52000.0,
+    "saldo": 49800022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 57,
+    "date": "2026-08-14",
+    "uraian": "BBM",
+    "masuk": 0.0,
+    "keluar": 30000.0,
+    "saldo": 49770022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 58,
+    "date": "2026-08-16",
+    "uraian": "HVS ( 60 LBR)",
+    "masuk": 0.0,
+    "keluar": 10000.0,
+    "saldo": 49760022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 59,
+    "date": "2026-08-17",
+    "uraian": "PEMBELIAN 4 UNIT AC",
+    "masuk": 0.0,
+    "keluar": 16800000.0,
+    "saldo": 32960022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 60,
+    "date": "2026-08-19",
+    "uraian": "Pipa Ac",
+    "masuk": 0.0,
+    "keluar": 1000000.0,
+    "saldo": 31960022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 61,
+    "date": "2026-08-19",
+    "uraian": "Stop Kontak",
+    "masuk": 0.0,
+    "keluar": 170000.0,
+    "saldo": 31790022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 62,
+    "date": "2026-08-19",
+    "uraian": "Kabel 3x2,5",
+    "masuk": 0.0,
+    "keluar": 390000.0,
+    "saldo": 31400022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 63,
+    "date": "2026-08-19",
+    "uraian": "Kerjaan bobolan",
+    "masuk": 0.0,
+    "keluar": 250000.0,
+    "saldo": 31150022.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 64,
+    "date": "2026-08-19",
+    "uraian": "Perubahan daya (770 VA)",
+    "masuk": 0.0,
+    "keluar": 2684750.0,
+    "saldo": 28465272.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 65,
+    "date": "2026-08-20",
+    "uraian": "Modal Ke-5 a/n Indah",
+    "masuk": 14707922.0,
+    "keluar": 0.0,
+    "saldo": 43173194.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 66,
+    "date": "2026-08-20",
+    "uraian": "Modal Ke-5 a/n Nanda",
+    "masuk": 14707922.0,
+    "keluar": 0.0,
+    "saldo": 57881116.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 67,
+    "date": "2026-08-20",
+    "uraian": "Modal Ke-5 a/n Amel",
+    "masuk": 14707922.0,
+    "keluar": 0.0,
+    "saldo": 72589038.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 68,
+    "date": "2026-08-20",
+    "uraian": "Pelunasan Alat",
+    "masuk": 0.0,
+    "keluar": 44123768.0,
+    "saldo": 28465270.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 69,
+    "date": "2026-08-23",
+    "uraian": "Kertas HVS A4 160 gr (20 pack)",
+    "masuk": 0.0,
+    "keluar": 168800.0,
+    "saldo": 28296470.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 70,
+    "date": "2026-08-25",
+    "uraian": "ongkir gosend krumah ka indah antar kertas hvs",
+    "masuk": 0.0,
+    "keluar": 41000.0,
+    "saldo": 28255470.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 71,
+    "date": "2026-08-26",
+    "uraian": "Nutup dapur kanopi",
+    "masuk": 0.0,
+    "keluar": 8000000.0,
+    "saldo": 20255470.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 72,
+    "date": "2026-08-26",
+    "uraian": "Modal Ke-6 a/n Amel",
+    "masuk": 20000000.0,
+    "keluar": 0.0,
+    "saldo": 40255470.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 73,
+    "date": "2026-08-28",
+    "uraian": "Makan",
+    "masuk": 0.0,
+    "keluar": 511500.0,
+    "saldo": 39743970.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 74,
+    "date": "2026-08-28",
+    "uraian": "Biaya operasional",
+    "masuk": 0.0,
+    "keluar": 500000.0,
+    "saldo": 39243970.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 75,
+    "date": "2026-08-28",
+    "uraian": "Handphone & kartu",
+    "masuk": 0.0,
+    "keluar": 13400000.0,
+    "saldo": 25843970.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 76,
+    "date": "2026-08-28",
+    "uraian": "Seragam admin",
+    "masuk": 0.0,
+    "keluar": 1195000.0,
+    "saldo": 24648970.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 77,
+    "date": "2026-08-28",
+    "uraian": "Laptop & Printer",
+    "masuk": 0.0,
+    "keluar": 5000000.0,
+    "saldo": 19648970.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 78,
+    "date": "2026-08-29",
+    "uraian": "kaos & bensin",
+    "masuk": 0.0,
+    "keluar": 405000.0,
+    "saldo": 19243970.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 79,
+    "date": "2026-08-30",
+    "uraian": "Adaptor IP",
+    "masuk": 0.0,
+    "keluar": 117400.0,
+    "saldo": 19126570.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 80,
+    "date": "2026-08-31",
+    "uraian": "Modal Ke-6 a/n Indah",
+    "masuk": 20000000.0,
+    "keluar": 0.0,
+    "saldo": 39126570.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 81,
+    "date": "2026-08-31",
+    "uraian": "BBM",
+    "masuk": 0.0,
+    "keluar": 50000.0,
+    "saldo": 39076570.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 82,
+    "date": "2026-08-31",
+    "uraian": "Cutting Membership",
+    "masuk": 0.0,
+    "keluar": 2000.0,
+    "saldo": 39074570.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 83,
+    "date": "2026-08-31",
+    "uraian": "Modal Ke-6 a/n Nanda",
+    "masuk": 20000000.0,
+    "keluar": 0.0,
+    "saldo": 59074570.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 84,
+    "date": "2026-08-31",
+    "uraian": "Biaya Interior Inca",
+    "masuk": 0.0,
+    "keluar": 45758000.0,
+    "saldo": 13316570.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 85,
+    "date": "2026-08-31",
+    "uraian": "Makan",
+    "masuk": 0.0,
+    "keluar": 264858.0,
+    "saldo": 13051712.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 86,
+    "date": "2026-08-31",
+    "uraian": "Pernak Pernik Inca",
+    "masuk": 0.0,
+    "keluar": 2272620.0,
+    "saldo": 10779092.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "AGST'26",
+    "row": 87,
+    "date": "2026-08-31",
+    "uraian": "Tips & Parkir",
+    "masuk": 0.0,
+    "keluar": 36000.0,
+    "saldo": 10743092.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 5,
+    "date": "2026-09-01",
+    "uraian": "Saldo Akhir Bulan Agustus 2026",
+    "masuk": 10743092.0,
+    "keluar": 0.0,
+    "saldo": 10743092.0,
+    "isCarryover": true
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 6,
+    "date": "2026-09-03",
+    "uraian": "Meja Keperluan Inca",
+    "masuk": 0.0,
+    "keluar": 626100.0,
+    "saldo": 10116992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 7,
+    "date": "2026-09-03",
+    "uraian": "Kursi atas depan tangga",
+    "masuk": 0.0,
+    "keluar": 723850.0,
+    "saldo": 9393142.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 8,
+    "date": "2026-09-03",
+    "uraian": "Kursi Loby",
+    "masuk": 0.0,
+    "keluar": 1066372.0,
+    "saldo": 8326770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 9,
+    "date": "2026-09-05",
+    "uraian": "Isi Ulang tinta printer",
+    "masuk": 0.0,
+    "keluar": 460000.0,
+    "saldo": 7866770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 10,
+    "date": "2026-09-10",
+    "uraian": "showcase, dispenser, kompor & regulator",
+    "masuk": 0.0,
+    "keluar": 6600000.0,
+    "saldo": 1266770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 11,
+    "date": "2026-09-14",
+    "uraian": "Pembelian Neon box",
+    "masuk": 0.0,
+    "keluar": 1100000.0,
+    "saldo": 166770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 12,
+    "date": "2026-09-22",
+    "uraian": "Kekurangan neon box dan DP tulisan Inca",
+    "masuk": 0.0,
+    "keluar": 1650000.0,
+    "saldo": -1483230.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 13,
+    "date": "2026-09-22",
+    "uraian": "Biaya pengantaran kunci ruko",
+    "masuk": 0.0,
+    "keluar": 28500.0,
+    "saldo": -1511730.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 14,
+    "date": "2026-09-23",
+    "uraian": "ongkir kunci",
+    "masuk": 0.0,
+    "keluar": 15500.0,
+    "saldo": -1527230.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 15,
+    "date": "2026-09-24",
+    "uraian": "Modal Ke-7 a/n Indah",
+    "masuk": 5000000.0,
+    "keluar": 0.0,
+    "saldo": 3472770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 16,
+    "date": "2026-09-24",
+    "uraian": "Modal Ke-7 a/n Nanda",
+    "masuk": 5000000.0,
+    "keluar": 0.0,
+    "saldo": 8472770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 17,
+    "date": "2026-09-24",
+    "uraian": "Modal Ke-7 a/n Amel",
+    "masuk": 5000000.0,
+    "keluar": 0.0,
+    "saldo": 13472770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 18,
+    "date": "2026-09-28",
+    "uraian": "Konsumsi",
+    "masuk": 0.0,
+    "keluar": 124000.0,
+    "saldo": 13348770.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 19,
+    "date": "2026-09-28",
+    "uraian": "Pembelian kursi admin 2 pcs",
+    "masuk": 0.0,
+    "keluar": 560125.0,
+    "saldo": 12788645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 20,
+    "date": "2026-09-29",
+    "uraian": "Rak Kompor wastafel",
+    "masuk": 0.0,
+    "keluar": 1600000.0,
+    "saldo": 11188645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 21,
+    "date": "2026-09-29",
+    "uraian": "Pembelian bahan bangunan",
+    "masuk": 0.0,
+    "keluar": 171000.0,
+    "saldo": 11017645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 22,
+    "date": "2026-09-29",
+    "uraian": "Tambahan pembelian rak",
+    "masuk": 0.0,
+    "keluar": 771000.0,
+    "saldo": 10246645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 23,
+    "date": "2026-09-30",
+    "uraian": "Pembelian sofa plus ongkir",
+    "masuk": 0.0,
+    "keluar": 4827000.0,
+    "saldo": 5419645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 24,
+    "date": "2026-09-30",
+    "uraian": "Pembelian token listrik ruko",
+    "masuk": 0.0,
+    "keluar": 1003000.0,
+    "saldo": 4416645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "SEPT'26",
+    "row": 25,
+    "date": "2026-09-30",
+    "uraian": "Pelunasan logo dan kaca film INCA",
+    "masuk": 0.0,
+    "keluar": 1750000.0,
+    "saldo": 2666645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 6,
+    "date": "2026-10-01",
+    "uraian": "Saldo Akhir Bulan September 2026",
+    "masuk": 2666645.0,
+    "keluar": 0.0,
+    "saldo": 2666645.0,
+    "isCarryover": true
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 7,
+    "date": "2026-10-01",
+    "uraian": "Pembelian rak sepatu dan hiasan bunga palsu",
+    "masuk": 0.0,
+    "keluar": 759000.0,
+    "saldo": 1907645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 8,
+    "date": "2026-10-01",
+    "uraian": "Pembelian peralatan consumable ruko",
+    "masuk": 0.0,
+    "keluar": 260000.0,
+    "saldo": 1647645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 9,
+    "date": "2026-10-01",
+    "uraian": "Pembelian peralatan consumable ruko",
+    "masuk": 0.0,
+    "keluar": 164000.0,
+    "saldo": 1483645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 10,
+    "date": "2026-10-01",
+    "uraian": "Pembelian peralatan listrik ruko",
+    "masuk": 0.0,
+    "keluar": 70000.0,
+    "saldo": 1413645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 11,
+    "date": "2026-10-01",
+    "uraian": "Pembelian consumable ruko",
+    "masuk": 0.0,
+    "keluar": 85000.0,
+    "saldo": 1328645.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 12,
+    "date": "2026-10-01",
+    "uraian": "Pembelian consumable ruko",
+    "masuk": 0.0,
+    "keluar": 44600.0,
+    "saldo": 1284045.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 13,
+    "date": "2026-10-04",
+    "uraian": "Pembelian Rupa - Rupa",
+    "masuk": 0.0,
+    "keluar": 62112.0,
+    "saldo": 1221933.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 14,
+    "date": "2026-10-04",
+    "uraian": "Pembelian Rupa - Rupa",
+    "masuk": 0.0,
+    "keluar": 13081.0,
+    "saldo": 1208852.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 15,
+    "date": "2026-10-05",
+    "uraian": "Modal Ke-8 a/n Indah",
+    "masuk": 5000000.0,
+    "keluar": 0.0,
+    "saldo": 6208852.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 16,
+    "date": "2026-10-05",
+    "uraian": "Modal Ke-8 a/n Nanda",
+    "masuk": 5000000.0,
+    "keluar": 0.0,
+    "saldo": 11208852.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 17,
+    "date": "2026-10-05",
+    "uraian": "Modal Ke-8 a/n Amel",
+    "masuk": 5000000.0,
+    "keluar": 0.0,
+    "saldo": 16208852.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 18,
+    "date": "2026-10-05",
+    "uraian": "Pembelian tambahan bangunan",
+    "masuk": 0.0,
+    "keluar": 50000.0,
+    "saldo": 16158852.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 19,
+    "date": "2026-10-06",
+    "uraian": "Ongkir Logistik Alat",
+    "masuk": 0.0,
+    "keluar": 6678300.0,
+    "saldo": 9480552.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 20,
+    "date": "2026-10-06",
+    "uraian": "Biaya Transaksi ke Natasia Andriani",
+    "masuk": 0.0,
+    "keluar": 2500.0,
+    "saldo": 9478052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 21,
+    "date": "2026-10-06",
+    "uraian": "Konsumsi Rapat Inca",
+    "masuk": 0.0,
+    "keluar": 702840.0,
+    "saldo": 8775212.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 22,
+    "date": "2026-10-07",
+    "uraian": "Pemberian Tips Logistik",
+    "masuk": 0.0,
+    "keluar": 400000.0,
+    "saldo": 8375212.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 23,
+    "date": "2026-10-07",
+    "uraian": "Biaya Tranfer ke Rek Camelia",
+    "masuk": 0.0,
+    "keluar": 2500.0,
+    "saldo": 8372712.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 24,
+    "date": "2026-10-07",
+    "uraian": "Biaya pemasangan Wifi",
+    "masuk": 0.0,
+    "keluar": 100000.0,
+    "saldo": 8272712.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 25,
+    "date": "2026-10-07",
+    "uraian": "Tokopedia Akrilik dll",
+    "masuk": 0.0,
+    "keluar": 528048.0,
+    "saldo": 7744664.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 26,
+    "date": "2026-10-07",
+    "uraian": "Tokopedia Gelas 1/2 lusin",
+    "masuk": 0.0,
+    "keluar": 55190.0,
+    "saldo": 7689474.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 27,
+    "date": "2026-10-07",
+    "uraian": "Shopee Jahe 1 dus",
+    "masuk": 0.0,
+    "keluar": 193450.0,
+    "saldo": 7496024.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 28,
+    "date": "2026-10-08",
+    "uraian": "Kabel, Steker",
+    "masuk": 0.0,
+    "keluar": 240000.0,
+    "saldo": 7256024.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 29,
+    "date": "2026-10-08",
+    "uraian": "PPN TF",
+    "masuk": 0.0,
+    "keluar": 2500.0,
+    "saldo": 7253524.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 30,
+    "date": "2026-10-08",
+    "uraian": "Kas Kecil Ruko",
+    "masuk": 0.0,
+    "keluar": 1000000.0,
+    "saldo": 6253524.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 31,
+    "date": "2026-10-09",
+    "uraian": "Konsumsi Rapat Inca",
+    "masuk": 0.0,
+    "keluar": 325440.0,
+    "saldo": 5928084.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 32,
+    "date": "2026-10-11",
+    "uraian": "Pengembalian Kas Kecil",
+    "masuk": 37000.0,
+    "keluar": 0.0,
+    "saldo": 5965084.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 33,
+    "date": "2026-10-11",
+    "uraian": "Tokopedia Pembelian Barbel",
+    "masuk": 0.0,
+    "keluar": 187032.0,
+    "saldo": 5778052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 34,
+    "date": "2026-10-12",
+    "uraian": "Kekurangan biaya interior tambahan backdrop dll",
+    "masuk": 0.0,
+    "keluar": 4000000.0,
+    "saldo": 1778052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 35,
+    "date": "2026-10-12",
+    "uraian": "Kas Kecil Ruko",
+    "masuk": 0.0,
+    "keluar": 500000.0,
+    "saldo": 1278052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 36,
+    "date": "2026-10-12",
+    "uraian": "Pembayaran Paket Promo Soft Opening (5 org @99.000)",
+    "masuk": 495000.0,
+    "keluar": 0.0,
+    "saldo": 1773052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 37,
+    "date": "2026-10-13",
+    "uraian": "Pembayaran Paket Promo Soft Opening (2 org 99000 & 100000)",
+    "masuk": 199000.0,
+    "keluar": 0.0,
+    "saldo": 1972052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 38,
+    "date": "2026-10-14",
+    "uraian": "Pembayaran Paket Promo Soft Opening (8 org @99.000)",
+    "masuk": 792000.0,
+    "keluar": 0.0,
+    "saldo": 2764052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 39,
+    "date": "2026-10-14",
+    "uraian": "Pembayaran Paket Promo Soft Opening 1 org cadillac",
+    "masuk": 275000.0,
+    "keluar": 0.0,
+    "saldo": 3039052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 40,
+    "date": "2026-10-15",
+    "uraian": "Pembelian Kaca Film",
+    "masuk": 0.0,
+    "keluar": 700000.0,
+    "saldo": 2339052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 41,
+    "date": "2026-10-16",
+    "uraian": "Pembelian Paket Promo Soft Opening 2 org cadillac",
+    "masuk": 550000.0,
+    "keluar": 0.0,
+    "saldo": 2889052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 42,
+    "date": "2026-10-16",
+    "uraian": "Pembelian Paket Promo Soft Opening 1 org cadillac",
+    "masuk": 275000.0,
+    "keluar": 0.0,
+    "saldo": 3164052.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 43,
+    "date": "2026-10-16",
+    "uraian": "Pembelian Mouse Leptop",
+    "masuk": 0.0,
+    "keluar": 163900.0,
+    "saldo": 3000152.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 44,
+    "date": "2026-10-16",
+    "uraian": "Kas Kecil Ruko (Pengajian)",
+    "masuk": 0.0,
+    "keluar": 1000000.0,
+    "saldo": 2000152.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 45,
+    "date": "2026-10-16",
+    "uraian": "Cetak Brosur",
+    "masuk": 0.0,
+    "keluar": 100000.0,
+    "saldo": 1900152.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 46,
+    "date": "2026-10-16",
+    "uraian": "Cetak Brosur",
+    "masuk": 0.0,
+    "keluar": 211355.0,
+    "saldo": 1688797.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 47,
+    "date": "2026-10-17",
+    "uraian": "Pembayaran Paket Promo Soft Opening (7 org @99.000)",
+    "masuk": 693000.0,
+    "keluar": 0.0,
+    "saldo": 2381797.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 48,
+    "date": "2026-10-17",
+    "uraian": "Pembelian Matrass",
+    "masuk": 0.0,
+    "keluar": 386920.0,
+    "saldo": 1994877.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 49,
+    "date": "2026-10-18",
+    "uraian": "Pembayaran paket 10x (owner)",
+    "masuk": 612500.0,
+    "keluar": 0.0,
+    "saldo": 2607377.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 50,
+    "date": "2026-10-18",
+    "uraian": "Pembayaran Paket Promo Soft Opening (10 org @99.000)",
+    "masuk": 990000.0,
+    "keluar": 0.0,
+    "saldo": 3597377.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 51,
+    "date": "2026-10-18",
+    "uraian": "Pembelian Nasi Box",
+    "masuk": 0.0,
+    "keluar": 970000.0,
+    "saldo": 2627377.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 52,
+    "date": "2026-10-19",
+    "uraian": "Pembelian Box Alat",
+    "masuk": 0.0,
+    "keluar": 223475.0,
+    "saldo": 2403902.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 53,
+    "date": "2026-10-18",
+    "uraian": "Pembayaran paket 10x (owner)",
+    "masuk": 612500.0,
+    "keluar": 0.0,
+    "saldo": 3016402.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 54,
+    "date": "2026-10-19",
+    "uraian": "Kas Kecil Ruko",
+    "masuk": 0.0,
+    "keluar": 200000.0,
+    "saldo": 2816402.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 55,
+    "date": "2026-10-19",
+    "uraian": "Pembayaran Sarung Tangan dan Kaos Kaki",
+    "masuk": 0.0,
+    "keluar": 327910.0,
+    "saldo": 2488492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 56,
+    "date": "2026-10-19",
+    "uraian": "Pembayaran Paket Promo Soft Opening (5 org @99.000)",
+    "masuk": 495000.0,
+    "keluar": 0.0,
+    "saldo": 2983492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 57,
+    "date": "2026-10-19",
+    "uraian": "Pembayaran Sayur Organik",
+    "masuk": 20000.0,
+    "keluar": 0.0,
+    "saldo": 3003492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 58,
+    "date": "2026-10-20",
+    "uraian": "Pembayaran Paket Yoga Wheel (4 org @100.000)",
+    "masuk": 400000.0,
+    "keluar": 0.0,
+    "saldo": 3403492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 59,
+    "date": "2026-10-20",
+    "uraian": "Pembayaran Paket Promo Soft Opening (11 org @99.000)",
+    "masuk": 1089000.0,
+    "keluar": 0.0,
+    "saldo": 4492492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 60,
+    "date": "2026-10-20",
+    "uraian": "Pembayaran Paket 3x",
+    "masuk": 365000.0,
+    "keluar": 0.0,
+    "saldo": 4857492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 61,
+    "date": "2026-10-20",
+    "uraian": "Pembayaran Trial Mamber",
+    "masuk": 110000.0,
+    "keluar": 0.0,
+    "saldo": 4967492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 62,
+    "date": "2026-10-21",
+    "uraian": "Pembayaran Paket Promo Soft Opening (7 org @99.000)",
+    "masuk": 693000.0,
+    "keluar": 0.0,
+    "saldo": 5660492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 63,
+    "date": "2026-10-21",
+    "uraian": "Pembayaran Trial Mamber (6 org @110.000)",
+    "masuk": 660000.0,
+    "keluar": 0.0,
+    "saldo": 6320492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 64,
+    "date": "2026-10-21",
+    "uraian": "Pembayaran Paket Pilates WYF (4 org @131250)",
+    "masuk": 525000.0,
+    "keluar": 0.0,
+    "saldo": 6845492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 65,
+    "date": "2026-10-22",
+    "uraian": "Pembayaran Trial Mamber (2 org @110.000)",
+    "masuk": 220000.0,
+    "keluar": 0.0,
+    "saldo": 7065492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 66,
+    "date": "2026-10-22",
+    "uraian": "Pembayaran 2 pasang sarung tangan",
+    "masuk": 50000.0,
+    "keluar": 0.0,
+    "saldo": 7115492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 67,
+    "date": "2026-10-22",
+    "uraian": "Pembayaran Paket Promo Soft Opening",
+    "masuk": 99000.0,
+    "keluar": 0.0,
+    "saldo": 7214492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 68,
+    "date": "2026-10-23",
+    "uraian": "Pembayaran paket 10x",
+    "masuk": 1225000.0,
+    "keluar": 0.0,
+    "saldo": 8439492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 69,
+    "date": "2026-10-23",
+    "uraian": "Pembayaran Paket Trial (5 org @110.000)",
+    "masuk": 550000.0,
+    "keluar": 0.0,
+    "saldo": 8989492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 70,
+    "date": "2026-10-23",
+    "uraian": "Pembayaran Paket Promo Soft Opening (2 org @99.000)",
+    "masuk": 198000.0,
+    "keluar": 0.0,
+    "saldo": 9187492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 71,
+    "date": "2026-10-23",
+    "uraian": "Pembayaran paket cadillac",
+    "masuk": 325000.0,
+    "keluar": 0.0,
+    "saldo": 9512492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 72,
+    "date": "2026-10-24",
+    "uraian": "Pembayaran 5 pasang sarung tangan",
+    "masuk": 125000.0,
+    "keluar": 0.0,
+    "saldo": 9637492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 73,
+    "date": "2026-10-24",
+    "uraian": "Pembayaran Paket Trial",
+    "masuk": 110000.0,
+    "keluar": 0.0,
+    "saldo": 9747492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 74,
+    "date": "2026-10-24",
+    "uraian": "Pembayaran paket 1x",
+    "masuk": 160000.0,
+    "keluar": 0.0,
+    "saldo": 9907492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 75,
+    "date": "2026-10-25",
+    "uraian": "Pembayaran Paket Trial (6 org @110.000)",
+    "masuk": 660000.0,
+    "keluar": 0.0,
+    "saldo": 10567492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 76,
+    "date": "2026-10-26",
+    "uraian": "Pembayaran 1 pasang sarung tangan dan aqua",
+    "masuk": 35000.0,
+    "keluar": 0.0,
+    "saldo": 10602492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 77,
+    "date": "2026-10-26",
+    "uraian": "Pembayaran Paket Trial (19 org @110.000)",
+    "masuk": 2090000.0,
+    "keluar": 0.0,
+    "saldo": 12692492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 78,
+    "date": "2026-10-26",
+    "uraian": "Pembayaran Paket Pilates WYF (4 org @131250)",
+    "masuk": 525000.0,
+    "keluar": 0.0,
+    "saldo": 13217492.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 79,
+    "date": "2026-10-26",
+    "uraian": "Pembelian Sarung Tangan",
+    "masuk": 0.0,
+    "keluar": 335500.0,
+    "saldo": 12881992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 80,
+    "date": "2026-10-27",
+    "uraian": "Pembayaran Sarung Tangan dan Kaos Kaki",
+    "masuk": 60000.0,
+    "keluar": 0.0,
+    "saldo": 12941992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 81,
+    "date": "2026-10-27",
+    "uraian": "Pembayaran paket 1x (2 org @153.000)",
+    "masuk": 306000.0,
+    "keluar": 0.0,
+    "saldo": 13247992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 82,
+    "date": "2026-10-27",
+    "uraian": "Pembayaran Paket Yoga Wheel (3 org @100.000)",
+    "masuk": 300000.0,
+    "keluar": 0.0,
+    "saldo": 13547992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 83,
+    "date": "2026-10-27",
+    "uraian": "Pembayaran paket 3x",
+    "masuk": 365000.0,
+    "keluar": 0.0,
+    "saldo": 13912992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 84,
+    "date": "2026-10-27",
+    "uraian": "Pembayaran Paket Yoga (4 org @85.000)",
+    "masuk": 340000.0,
+    "keluar": 0.0,
+    "saldo": 14252992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 85,
+    "date": "2026-10-27",
+    "uraian": "Pembayaran Paket Trial (8 org @110.000)",
+    "masuk": 880000.0,
+    "keluar": 0.0,
+    "saldo": 15132992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 86,
+    "date": "2026-10-27",
+    "uraian": "Pembelian Kamera CCTV 1",
+    "masuk": 0.0,
+    "keluar": 499000.0,
+    "saldo": 14633992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 87,
+    "date": "2026-10-27",
+    "uraian": "Pembelian Kamera CCTV 2",
+    "masuk": 0.0,
+    "keluar": 899000.0,
+    "saldo": 13734992.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 88,
+    "date": "2026-10-27",
+    "uraian": "Pembelian Dispenser Kaca",
+    "masuk": 0.0,
+    "keluar": 157800.0,
+    "saldo": 13577192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 89,
+    "date": "2026-10-27",
+    "uraian": "Pembelian Bensin",
+    "masuk": 0.0,
+    "keluar": 120000.0,
+    "saldo": 13457192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 90,
+    "date": "2026-10-28",
+    "uraian": "Biaya Pemasangan Lampu kaca lt 1",
+    "masuk": 0.0,
+    "keluar": 400000.0,
+    "saldo": 13057192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 91,
+    "date": "2026-10-28",
+    "uraian": "Pembayaran Paket Trial (5 org @110.000)",
+    "masuk": 550000.0,
+    "keluar": 0.0,
+    "saldo": 13607192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 92,
+    "date": "2026-10-28",
+    "uraian": "Pembayaran paket cadillac (2org @325000)",
+    "masuk": 650000.0,
+    "keluar": 0.0,
+    "saldo": 14257192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 93,
+    "date": "2026-10-28",
+    "uraian": "Pembayaran 1 pasang sarung tangan & 1 pasang kaos kaki",
+    "masuk": 60000.0,
+    "keluar": 0.0,
+    "saldo": 14317192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 94,
+    "date": "2026-10-28",
+    "uraian": "Pembayaran paket 1x (2 org @110.000)",
+    "masuk": 220000.0,
+    "keluar": 0.0,
+    "saldo": 14537192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 95,
+    "date": "2026-10-28",
+    "uraian": "Pembayaran Paket 3x",
+    "masuk": 365000.0,
+    "keluar": 0.0,
+    "saldo": 14902192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 96,
+    "date": "2026-10-29",
+    "uraian": "Pembayaran Paket Trial (4 org @110.000)",
+    "masuk": 440000.0,
+    "keluar": 0.0,
+    "saldo": 15342192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 97,
+    "date": "2026-10-29",
+    "uraian": "Pembayaran Paket Promo Soft Opening",
+    "masuk": 99000.0,
+    "keluar": 0.0,
+    "saldo": 15441192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 98,
+    "date": "2026-10-29",
+    "uraian": "Pembayaran paket 1x",
+    "masuk": 153000.0,
+    "keluar": 0.0,
+    "saldo": 15594192.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 99,
+    "date": "2026-10-29",
+    "uraian": "Pembelian SD Card CCTV 2pcs",
+    "masuk": 0.0,
+    "keluar": 377471.0,
+    "saldo": 15216721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 100,
+    "date": "2026-10-29",
+    "uraian": "Pembelian Kabel Kamera CCTV",
+    "masuk": 0.0,
+    "keluar": 209000.0,
+    "saldo": 15007721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 101,
+    "date": "2026-10-29",
+    "uraian": "Pembayaran 4 pasang sarung tangan & 2 pasang kaos kaki",
+    "masuk": 170000.0,
+    "keluar": 0.0,
+    "saldo": 15177721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 102,
+    "date": "2026-10-29",
+    "uraian": "Pembayaran 2 Aqua",
+    "masuk": 12000.0,
+    "keluar": 0.0,
+    "saldo": 15189721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 103,
+    "date": "2026-10-30",
+    "uraian": "Pembayaran Paket Trial",
+    "masuk": 110000.0,
+    "keluar": 0.0,
+    "saldo": 15299721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 104,
+    "date": "2026-10-30",
+    "uraian": "Pembayaran paket 1x",
+    "masuk": 153000.0,
+    "keluar": 0.0,
+    "saldo": 15452721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 105,
+    "date": "2026-10-30",
+    "uraian": "Pembayaran paket 10x",
+    "masuk": 1225000.0,
+    "keluar": 0.0,
+    "saldo": 16677721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 106,
+    "date": "2026-10-30",
+    "uraian": "Pembelian Token Listrik",
+    "masuk": 0.0,
+    "keluar": 1003000.0,
+    "saldo": 15674721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 107,
+    "date": "2026-10-30",
+    "uraian": "Pembayaran 2 pasang sarung tangan",
+    "masuk": 50000.0,
+    "keluar": 0.0,
+    "saldo": 15724721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 108,
+    "date": "2026-10-30",
+    "uraian": "Pembayaran Paket 3x",
+    "masuk": 365000.0,
+    "keluar": 0.0,
+    "saldo": 16089721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 109,
+    "date": "2026-10-31",
+    "uraian": "Pembayaran Paket Trial (4 org @108.000)",
+    "masuk": 432000.0,
+    "keluar": 0.0,
+    "saldo": 16521721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 110,
+    "date": "2026-10-31",
+    "uraian": "Pembayaran paket 1x (4 org @153.000)",
+    "masuk": 612000.0,
+    "keluar": 0.0,
+    "saldo": 17133721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 111,
+    "date": "2026-10-31",
+    "uraian": "Pembayaran Paket 3x",
+    "masuk": 365000.0,
+    "keluar": 0.0,
+    "saldo": 17498721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 112,
+    "date": "2026-10-31",
+    "uraian": "Pembayaran 2 Aqua",
+    "masuk": 12000.0,
+    "keluar": 0.0,
+    "saldo": 17510721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 113,
+    "date": "2026-10-31",
+    "uraian": "Pembayaran 1 pasang sarung tangan",
+    "masuk": 25000.0,
+    "keluar": 0.0,
+    "saldo": 17535721.0,
+    "isCarryover": false
+  },
+  {
+    "sheet": "OKT'26",
+    "row": 114,
+    "date": "2026-10-31",
+    "uraian": "Biaya Admin",
+    "masuk": 0.0,
+    "keluar": 17000.0,
+    "saldo": 17518721.0,
+    "isCarryover": false
+  }
+]

@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INCA Pilates & Mindful Movement | Sistem Terpadu Studio & Keuangan</title>
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Fonts: Plus Jakarta Sans, Playfair Display, Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: {
+              50: '#f4f7f5',
+              100: '#e5ece7',
+              200: '#cddbd1',
+              300: '#a7c1af',
+              400: '#7ba289',
+              500: '#5a866a',
+              600: '#466c54',
+              700: '#395744',
+              800: '#2f4638',
+              900: '#273a2f',
+            },
+            terracotta: {
+              50: '#fbf6f3',
+              100: '#f5ebe3',
+              200: '#ebd8cb',
+              300: '#dcbeaa',
+              400: '#c89980',
+              500: '#b87b5f',
+              600: '#a8654c',
+              700: '#8c523e',
+            },
+            sand: {
+              50: '#faf9f6',
+              100: '#f4f2eb',
+              200: '#e8e4d8',
+              300: '#d7d0be',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/finance-style.css">
+</head>
+<body class="bg-[#FBFBF9] text-gray-800 font-sans min-h-screen flex flex-col antialiased selection:bg-sage-100 selection:text-sage-800">
+
+  <!-- ================= PORTAL LOGIN GATE SCREEN ================= -->
+  <div id="loginGateScreen" class="fixed inset-0 z-[100] bg-gradient-to-br from-[#0c140e] via-[#142318] to-[#0a110c] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="w-full max-w-md bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 relative">
+      <!-- Glow effect -->
+      <div class="absolute -top-12 -left-12 w-40 h-40 bg-sage-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -right-12 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Header & Brand -->
+      <div class="text-center mb-6">
+        <div class="w-20 h-20 rounded-2xl bg-white border border-gray-200/90 shadow-md flex items-center justify-center p-2.5 mx-auto mb-3">
+          <img src="logo.png" alt="INCA Pilates Logo" class="w-full h-full object-contain">
+        </div>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-sage-100 text-sage-800 mb-2">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sage-700"></i> Portal Masuk Resmi
+        </span>
+        <h2 class="font-serif text-2xl font-bold text-gray-900 leading-tight">INCA PILATES & YOGA</h2>
+        <p class="text-xs text-gray-500 mt-1">Sistem Terpadu Studio & Akuntansi Keuangan</p>
+      </div>
+
+      <!-- Alert Message Box -->
+      <div id="gateAlert" class="hidden mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+        <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 text-red-600"></i>
+        <span id="gateAlertText">Username atau kata sandi tidak sesuai.</span>
+      </div>
+
+      <!-- Form Login -->
+      <form id="gateLoginForm" onsubmit="handleGateLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Username / ID Pengguna</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </span>
+            <input type="text" id="gateUsername" required autocomplete="username" placeholder="Masukkan username (contoh: owner)" class="w-full pl-9 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sage-500 focus:bg-white transition font-medium">
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-xs font-semibold text-gray-700">Kata Sandi (Password)</label>
+          </div>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i data-lucide="lock" class="w-4 h-4"></i>
+            </span>
+            <input type="password" id="gatePassword" required autocomplete="current-password" placeholder="Masukkan kata sandi" class="w-full pl-9 pr-10 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-sage-500 focus:bg-white transition font-medium">
+            <button type="button" onclick="togglePasswordVisibility('gatePassword', this)" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs pt-1">
+          <label class="flex items-center gap-2 cursor-pointer text-gray-600 select-none">
+            <input type="checkbox" id="gateRememberMe" checked class="w-4 h-4 rounded text-sage-600 focus:ring-sage-500 border-gray-300">
+            <span>Ingat sesi saya di perangkat ini</span>
+          </label>
+        </div>
+
+        <button type="submit" id="gateSubmitBtn" class="w-full py-3 px-4 rounded-xl bg-sage-700 hover:bg-sage-800 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 group cursor-pointer mt-2">
+          <span>Masuk ke Dashboard</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
+        </button>
+      </form>
+
+      <!-- Footer Trademark & Copyright -->
+      <div class="mt-6 pt-4 border-t border-gray-100 text-center text-[11px] text-gray-400 space-y-0.5">
+        <div>Dirancang khusus untuk Studio Pilates, Yoga & Kebugaran Mandiri. Beroperasi 100% Offline.</div>
+        <div class="text-[10.5px] font-semibold text-gray-600 mt-1">Trademark PUTI™</div>
+        <div class="text-[10px] text-gray-400">Copyright &copy; 2026</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MASTER SYSTEM BANNER & PORTAL SWITCHER ================= -->
+  <header class="bg-gray-950 text-white text-xs h-12 px-3 sm:px-5 sticky top-0 z-50 border-b border-gray-800 shadow-md flex items-center">
+    <div class="w-full flex items-center justify-between gap-2 sm:gap-4 flex-nowrap min-w-0">
+      
+      <!-- Brand & Active Mode Badge -->
+      <div class="flex items-center space-x-2 sm:space-x-3 shrink-0 min-w-0">
+        <div class="flex items-center gap-2 cursor-pointer shrink-0" onclick="switchViewMode('admin')">
+          <img src="favicon.png" alt="INCA Logo" class="w-5 h-5 object-contain">
+          <span class="font-bold tracking-wider text-gray-100 uppercase text-[11px] sm:text-xs whitespace-nowrap">INCA SISTEM TERPADU</span>
+        </div>
+        <span class="text-gray-700 hidden sm:inline">|</span>
+        <span id="currentRoleBadge" class="bg-amber-600/90 text-amber-100 px-2 py-0.5 rounded text-[10.5px] font-semibold whitespace-nowrap">
+          Admin Studio
+        </span>
+        
+        <!-- Live Quick Stats (Hidden on smaller screens to ensure strict single-line fit) -->
+        <div class="hidden xl:flex items-center gap-3 text-[11px] text-gray-400 pl-2.5 border-l border-gray-800 whitespace-nowrap">
+          <span class="flex items-center gap-1"><i data-lucide="wallet" class="w-3 h-3 text-emerald-400"></i> Kas & Bank: <strong id="bannerCashStat" class="text-emerald-300 font-mono">Rp 17.518.721</strong></span>
+          <span class="flex items-center gap-1"><i data-lucide="calendar-check" class="w-3 h-3 text-amber-400"></i> <strong id="bannerBookingsStat" class="text-amber-200 font-mono">0 Presensi Kelas</strong></span>
+        </div>
+      </div>
+
+      <!-- Master Portal Switcher & User Profile (Single Clean Line) -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-nowrap shrink-0">
+        <!-- Segmented Module Switcher -->
+        <div class="flex items-center bg-gray-900/90 p-0.5 rounded-lg border border-gray-800 shrink-0">
+          <button id="btnSwitchToAdmin" onclick="switchViewMode('admin')" class="px-2.5 py-1 rounded-md bg-amber-600 text-white font-medium transition flex items-center gap-1.5 text-xs shadow-xs whitespace-nowrap">
+            <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> <span>Admin Studio</span>
+          </button>
+          <button id="btnSwitchToFinance" onclick="switchViewMode('finance')" class="px-2.5 py-1 rounded-md text-gray-400 hover:text-gray-200 font-medium transition flex items-center gap-1.5 text-xs whitespace-nowrap">
+            <i data-lucide="receipt" class="w-3.5 h-3.5"></i> <span>INCA Finance</span>
+          </button>
+        </div>
+
+        <!-- Current User Profile & Logout -->
+        <div id="masterHeaderUserArea" class="flex items-center gap-2 pl-2 sm:pl-3 border-l border-gray-800 shrink-0">
+          <div class="w-6 h-6 rounded-full bg-sage-800 text-sage-200 border border-sage-600 flex items-center justify-center font-bold text-[10px] shrink-0" id="headerUserAvatar">
+            O
+          </div>
+          <div class="hidden sm:block text-left leading-tight max-w-[130px] md:max-w-[170px] truncate">
+            <div class="font-bold text-gray-200 text-[10.5px] truncate" id="headerUserDisplayName">Owner & Direktur</div>
+            <div class="text-[9px] text-purple-300 font-semibold truncate" id="headerUserRoleBadge">Super Admin / Owner</div>
+          </div>
+          <button type="button" onclick="logoutSystem()" class="px-2.5 py-1 rounded-md bg-red-950/80 hover:bg-red-900 text-red-200 border border-red-800/60 font-semibold transition flex items-center gap-1 text-[11px] shadow-xs cursor-pointer shrink-0 ml-0.5" title="Keluar dari Akun">
+            <i data-lucide="log-out" class="w-3.5 h-3.5"></i> <span class="hidden md:inline">Keluar</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= STUDIO NAVBAR ================= -->
+  <nav id="studioNavBar" class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-10 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo & Brand (INCA Official Logo) -->
+        <div class="flex items-center gap-3 cursor-pointer select-none group" onclick="switchAdminTab('dashboard')" title="Kembali ke Dashboard & Kalender">
+          <div class="w-12 h-12 rounded-2xl bg-white border border-gray-200/90 shadow-2xs flex items-center justify-center p-1.5 group-hover:border-sage-400 group-hover:shadow-sm transition">
+            <img src="logo.png" alt="INCA Pilates Logo" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="font-serif text-xl font-bold tracking-tight text-gray-900 leading-none">INCA</h1>
+              <span class="bg-sage-100 text-sage-800 text-[9.5px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">ADMIN STUDIO</span>
+            </div>
+            <p class="text-[10px] tracking-widest text-sage-600 font-semibold uppercase mt-0.5">Pilates & Mindful Yoga · Back-Office</p>
+          </div>
+        </div>
+
+        <!-- Quick Actions in Studio Navbar -->
+        <div class="flex items-center gap-2">
+          <button onclick="openAddMemberModal()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-sage-700 bg-sage-50 border border-sage-200 hover:bg-sage-100 transition">
+            <i data-lucide="user-plus" class="w-3.5 h-3.5"></i> + Tambah Member
+          </button>
+          <button onclick="openAddPurchaseModal()" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition">
+            <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i> + Beli Paket
+          </button>
+          <button onclick="openAddScheduleModal()" class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm transition flex items-center gap-1.5">
+            <i data-lucide="calendar-plus" class="w-3.5 h-3.5"></i> + Ploting Sesi
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= NOTIFICATION TOAST (STUDIO) ================= -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- ================= MAIN VIEW CONTAINER: ADMIN STUDIO ================= -->
+  <main class="flex-grow">
+    
+    <div id="adminDashboardView" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      <!-- Studio Admin Title Bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-sage-100 text-sage-800 text-[11px] font-semibold mb-1">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sage-700"></i> Studio Management Back-Office
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-gray-900">Operasional INCA Pilates Studio</h2>
+          <p class="text-xs text-gray-500">Pusat kendali agenda kelas, kuota peserta, data member, dan administrasi paket.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="openAddScheduleModal()" class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="calendar-plus" class="w-4 h-4"></i> + Ploting Sesi Baru
+          </button>
+          <button onclick="openAddMemberModal()" class="bg-white hover:bg-gray-50 text-gray-700 text-xs font-semibold px-3.5 py-2 rounded-xl border border-gray-300 transition flex items-center gap-1.5 shadow-2xs">
+            <i data-lucide="user-plus" class="w-4 h-4 text-sage-600"></i> + Member
+          </button>
+          <button onclick="openAddPurchaseModal()" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> + Beli Paket
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Tabs Navigation -->
+      <div class="flex border-b border-gray-200 mb-6 space-x-2 sm:space-x-4 overflow-x-auto text-xs sm:text-sm font-medium pb-px">
+        <button onclick="switchAdminTab('dashboard')" id="adminTabBtnDashboard" class="admin-tab-btn active pb-3 text-sage-800 border-b-2 border-sage-700 font-bold flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i> 1. Dashboard & Kalender
+        </button>
+        <button onclick="switchAdminTab('members')" id="adminTabBtnMembers" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="users" class="w-4 h-4"></i> 2. Pengelolaan Member
+        </button>
+        <button onclick="switchAdminTab('purchases')" id="adminTabBtnPurchases" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="shopping-cart" class="w-4 h-4"></i> 3. Beli Paket Member
+        </button>
+        <button onclick="switchAdminTab('packages')" id="adminTabBtnPackages" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="tag" class="w-4 h-4"></i> 4. Tarif Paket
+        </button>
+        <button onclick="switchAdminTab('classes')" id="adminTabBtnClasses" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="layers" class="w-4 h-4"></i> 5. Jenis Kelas
+        </button>
+        <button onclick="switchAdminTab('coaches')" id="adminTabBtnCoaches" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="award" class="w-4 h-4"></i> 6. Daftar Coach
+        </button>
+        <button onclick="switchAdminTab('checkin')" id="adminTabBtnCheckin" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="check-square" class="w-4 h-4"></i> 7. Check-In & Absensi
+        </button>
+        <button onclick="switchAdminTab('leads')" id="adminTabBtnLeads" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="user-check" class="w-4 h-4"></i> 8. Leads Penawaran
+        </button>
+        <button onclick="switchAdminTab('backup')" id="adminTabBtnBackup" class="admin-tab-btn pb-3 text-gray-500 hover:text-gray-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="file-spreadsheet" class="w-4 h-4"></i> 9. Master Excel & Backup
+        </button>
+        <button onclick="switchAdminTab('users')" id="adminTabBtnUsers" class="admin-tab-btn pb-3 text-gray-500 hover:text-purple-700 flex items-center gap-1.5 whitespace-nowrap">
+          <i data-lucide="user-cog" class="w-4 h-4 text-purple-600"></i> 10. Kelola Pengguna & Hak Akses
+        </button>
+      </div>
+
+      <!-- ================= TAB 1: DASHBOARD & KALENDER (HALAMAN UTAMA) ================= -->
+      <div id="adminTabDashboard" class="block space-y-6">
+        
+        <!-- Dashboard Singkat (KPI Operational Summary) -->
+        <div class="bg-gradient-to-r from-gray-900 via-gray-800 to-sage-900 rounded-2xl text-white p-6 sm:p-7 shadow-lg border border-gray-800/60">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="inline-flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded text-xs text-sage-200 mb-2">
+                <i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400"></i> Ringkasan Utama Studio
+              </div>
+              <h3 class="font-serif text-2xl font-bold">Dashboard Operasional INCA Studio</h3>
+              <p class="text-xs sm:text-sm text-gray-300 mt-1">Pantau agenda kelas harian, kuota peserta, dan ringkasan operasional studio secara terpadu.</p>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <button onclick="openAddScheduleModal()" class="bg-sage-600 hover:bg-sage-500 text-white text-xs font-semibold px-3.5 py-2.5 rounded-xl shadow transition flex items-center gap-1.5">
+                <i data-lucide="calendar-plus" class="w-4 h-4"></i> + Ploting Sesi Baru
+              </button>
+              <button onclick="openAddMemberModal()" class="bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3.5 py-2.5 rounded-xl border border-white/20 transition flex items-center gap-1.5">
+                <i data-lucide="user-plus" class="w-4 h-4"></i> + Member Baru
+              </button>
+              <button onclick="openAddPurchaseModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-3.5 py-2.5 rounded-xl shadow transition flex items-center gap-1.5">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i> + Beli Paket
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Operational Counters -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-white/10">
+            <div class="bg-white/5 rounded-xl p-3 cursor-pointer hover:bg-white/10 transition" onclick="switchAdminTab('members')">
+              <p class="text-[11px] text-gray-400 uppercase tracking-wider flex items-center justify-between">
+                Total Member <i data-lucide="users" class="w-3.5 h-3.5 text-sage-300"></i>
+              </p>
+              <h4 id="statTotalMembers" class="text-xl sm:text-2xl font-bold font-serif text-white mt-0.5">0</h4>
+            </div>
+            <div class="bg-white/5 rounded-xl p-3 cursor-pointer hover:bg-white/10 transition" onclick="switchAdminTab('purchases')">
+              <p class="text-[11px] text-gray-400 uppercase tracking-wider flex items-center justify-between">
+                Paket Terjual <i data-lucide="credit-card" class="w-3.5 h-3.5 text-emerald-300"></i>
+              </p>
+              <h4 id="statTotalPurchases" class="text-xl sm:text-2xl font-bold font-serif text-emerald-300 mt-0.5">0</h4>
+            </div>
+            <div class="bg-white/5 rounded-xl p-3 cursor-pointer hover:bg-white/10 transition" onclick="switchAdminTab('dashboard')">
+              <p class="text-[11px] text-gray-400 uppercase tracking-wider flex items-center justify-between">
+                Sesi Terjadwal <i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-300"></i>
+              </p>
+              <h4 id="statTotalSchedules" class="text-xl sm:text-2xl font-bold font-serif text-white mt-0.5">0</h4>
+            </div>
+            <div class="bg-white/5 rounded-xl p-3 cursor-pointer hover:bg-white/10 transition" onclick="switchAdminTab('checkin')">
+              <p class="text-[11px] text-gray-400 uppercase tracking-wider flex items-center justify-between">
+                Check-In Hadir <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+              </p>
+              <h4 id="statCheckedIn" class="text-xl sm:text-2xl font-bold font-serif text-emerald-400 mt-0.5">0</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kalender Bulanan & Ploting Jadwal Kelas -->
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-5">
+          <!-- Header Tab Kalender -->
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="p-2 rounded-xl bg-sage-100 text-sage-800">
+                  <i data-lucide="calendar" class="w-5 h-5"></i>
+                </span>
+                <div>
+                  <h3 class="font-serif text-lg font-bold text-gray-900">Kalender & Ploting Jadwal Kelas</h3>
+                  <p class="text-xs text-gray-500">Visualisasi kalender bulanan interaktif studio. Klik kartu kelas untuk roster peserta & check-in instan.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- View Switcher & Action Buttons -->
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <div class="bg-gray-100 p-1 rounded-xl flex items-center gap-1 text-xs font-semibold">
+                <button type="button" onclick="switchScheduleViewMode('calendar')" id="btnViewModeCalendar" class="px-3 py-1.5 rounded-lg bg-white text-sage-900 shadow-sm transition flex items-center gap-1.5 font-bold">
+                  <i data-lucide="calendar-days" class="w-3.5 h-3.5"></i> Kalender Bulanan
+                </button>
+                <button type="button" onclick="switchScheduleViewMode('table')" id="btnViewModeTable" class="px-3 py-1.5 rounded-lg text-gray-600 hover:text-gray-900 transition flex items-center gap-1.5">
+                  <i data-lucide="list" class="w-3.5 h-3.5"></i> Daftar Tabel
+                </button>
+              </div>
+
+              <button onclick="openAddScheduleModal()" class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="calendar-plus" class="w-4 h-4"></i> + Ploting Sesi Baru
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= VIEW 1: KALENDER BULANAN (LAPTOP STYLE) ================= -->
+          <div id="scheduleCalendarContainer" class="block space-y-4">
+            <!-- Calendar Navigation & Filter Toolbar -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3.5 bg-gray-50 rounded-2xl border border-gray-200">
+              <!-- Month Navigator -->
+              <div class="flex items-center gap-2">
+                <div class="flex items-center bg-white border border-gray-300 rounded-xl shadow-sm overflow-hidden">
+                  <button type="button" onclick="prevCalendarMonth()" class="p-2 hover:bg-gray-100 text-gray-700 transition" title="Bulan Sebelumnya">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                  </button>
+                  <span id="calendarMonthYearText" class="font-serif font-bold text-sm text-gray-900 px-4 min-w-[160px] text-center select-none">
+                    November 2026
+                  </span>
+                  <button type="button" onclick="nextCalendarMonth()" class="p-2 hover:bg-gray-100 text-gray-700 transition" title="Bulan Berikutnya">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+                <button type="button" onclick="jumpToTodayCalendar()" class="px-3 py-2 bg-white hover:bg-gray-100 text-gray-700 border border-gray-300 rounded-xl text-xs font-semibold shadow-sm transition">
+                  Hari Ini
+                </button>
+
+                <!-- Quick Jump Buttons for Database Months -->
+                <div class="hidden sm:flex items-center gap-1 text-xs">
+                  <span class="text-[11px] text-gray-400 font-medium ml-1">Database:</span>
+                  <button type="button" onclick="setCalendarMonth(2026, 9)" class="px-2.5 py-1.5 rounded-lg bg-white border border-gray-200 hover:border-sage-400 text-sage-800 font-semibold text-[11px] shadow-xs transition">
+                    Okt 2026
+                  </button>
+                  <button type="button" onclick="setCalendarMonth(2026, 10)" class="px-2.5 py-1.5 rounded-lg bg-white border border-gray-200 hover:border-sage-400 text-sage-800 font-semibold text-[11px] shadow-xs transition">
+                    Nov 2026
+                  </button>
+                </div>
+              </div>
+
+              <!-- Filters: Coach & Apparatus (Exact Excel Names) -->
+              <div class="flex items-center gap-2 flex-wrap">
+                <div class="flex items-center gap-1.5 text-xs">
+                  <span class="text-gray-500 font-medium">Coach:</span>
+                  <select id="calendarFilterCoach" onchange="renderCalendarGrid()" class="text-xs border border-gray-300 rounded-xl px-2.5 py-1.5 bg-white font-medium focus:ring-1 focus:ring-sage-500 focus:outline-none">
+                    <option value="all">Semua Coach</option>
+                    <option value="COACH-YULI">Coach Yuli</option>
+                    <option value="COACH-FEBRI">Coach Febri</option>
+                    <option value="COACH-ICHA">Coach Icha</option>
+                    <option value="COACH-KAIFA">Coach Kaifa</option>
+                  </select>
+                </div>
+
+                <div class="flex items-center gap-1.5 text-xs">
+                  <span class="text-gray-500 font-medium">Kelas:</span>
+                  <select id="calendarFilterClass" onchange="renderCalendarGrid()" class="text-xs border border-gray-300 rounded-xl px-2.5 py-1.5 bg-white font-medium focus:ring-1 focus:ring-sage-500 focus:outline-none">
+                    <option value="all">Semua Kelas</option>
+                    <option value="reformer">Reformer</option>
+                    <option value="cadillac">Cadillac</option>
+                    <option value="tower">Tower</option>
+                    <option value="chair">Chair</option>
+                    <option value="yoga_wheel">Yoga Wheel</option>
+                    <option value="yoga">Yoga</option>
+                    <option value="mat">Mat</option>
+                    <option value="yoga_props">Yoga Props</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calendar Month Grid Container -->
+            <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+              <!-- Weekday Header (Senin - Minggu) -->
+              <div class="grid grid-cols-7 bg-gray-100/80 border-b border-gray-200 text-center font-bold text-[11px] text-gray-600 uppercase tracking-wider py-2.5">
+                <div>Senin</div>
+                <div>Selasa</div>
+                <div>Rabu</div>
+                <div>Kamis</div>
+                <div>Jumat</div>
+                <div class="text-sage-800">Sabtu</div>
+                <div class="text-red-700">Minggu</div>
+              </div>
+
+              <!-- Day Cells Grid (Populated dynamically) -->
+              <div id="calendarDaysGrid" class="grid grid-cols-7 divide-x divide-y divide-gray-100">
+                <!-- Injected via studio-app.js renderCalendarGrid() -->
+              </div>
+            </div>
+
+            <!-- Legend & Summary Footer -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 text-xs">
+              <!-- Apparatus Legend (Exact Excel Names) -->
+              <div class="flex items-center gap-3 flex-wrap text-[11px]">
+                <span class="text-gray-400 font-medium">Keterangan:</span>
+                <span class="inline-flex items-center gap-1.5 font-medium text-sage-900">
+                  <span class="w-2.5 h-2.5 rounded-full bg-sage-600"></span> Reformer
+                </span>
+                <span class="inline-flex items-center gap-1.5 font-medium text-purple-900">
+                  <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span> Cadillac
+                </span>
+                <span class="inline-flex items-center gap-1.5 font-medium text-amber-900">
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span> Tower
+                </span>
+                <span class="inline-flex items-center gap-1.5 font-medium text-blue-900">
+                  <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span> Chair
+                </span>
+                <span class="inline-flex items-center gap-1.5 font-medium text-rose-900">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span> Yoga Wheel
+                </span>
+                <span class="inline-flex items-center gap-1.5 font-medium text-emerald-900">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span> Mat
+                </span>
+                <span class="inline-flex items-center gap-1.5 font-medium text-teal-900">
+                  <span class="w-2.5 h-2.5 rounded-full bg-teal-600"></span> Yoga
+                </span>
+              </div>
+
+              <!-- Monthly Counter Badge -->
+              <div id="calendarMonthSummaryBadge" class="text-gray-600 text-[11px] font-semibold bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl self-start sm:self-auto">
+                Memuat data jadwal...
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= VIEW 2: DAFTAR TABEL JADWAL ================= -->
+          <div id="scheduleTableContainer" class="hidden space-y-4">
+            <div class="flex items-center justify-between gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+              <div class="flex items-center gap-1.5 text-xs">
+                <i data-lucide="filter" class="w-3.5 h-3.5 text-gray-500"></i>
+                <span class="text-gray-500 font-medium">Filter Tgl:</span>
+                <input type="date" id="filterScheduleDate" onchange="filterSchedules()" class="text-xs border border-gray-300 rounded-lg px-2 py-1 bg-white focus:outline-none font-medium">
+                <button onclick="document.getElementById('filterScheduleDate').value=''; filterSchedules()" class="text-[10px] text-sage-700 hover:underline ml-1">Reset</button>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs text-gray-700">
+                <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
+                  <tr>
+                    <th class="py-3 px-4">Tanggal & Jam</th>
+                    <th class="py-3 px-3">Jenis Kelas</th>
+                    <th class="py-3 px-3">Coach Bertugas</th>
+                    <th class="py-3 px-3">Ruangan / Mesin</th>
+                    <th class="py-3 px-3">Peserta / Kapasitas</th>
+                    <th class="py-3 px-4 text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="schedulesTableBody" class="divide-y divide-gray-100">
+                  <!-- Populated dynamically via studio-app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 2: PENGELOLAAN MEMBER ================= -->
+      <div id="adminTabMembers" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-gray-900">Database Member Studio</h3>
+              <p class="text-xs text-gray-500">Kelola data identitas member, kontak WhatsApp, catatan medis/postur, dan pantau sisa kuota sesi aktif.</p>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <div class="relative">
+                <input type="text" id="searchMemberInput" oninput="renderMembersTable()" placeholder="Cari nama, kode, no WA..." class="text-xs border border-gray-300 rounded-xl pl-8 pr-3 py-2 w-56 focus:outline-none focus:ring-1 focus:ring-sage-500">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5"></i>
+              </div>
+              <button onclick="openAddMemberModal()" class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="user-plus" class="w-4 h-4"></i> + Tambah Member Baru
+              </button>
+            </div>
+          </div>
+
+          <!-- Table of Members -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-gray-700">
+              <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
+                <tr>
+                  <th class="py-3 px-4">Kode Member</th>
+                  <th class="py-3 px-3">Nama Lengkap & Email</th>
+                  <th class="py-3 px-3">No. WhatsApp</th>
+                  <th class="py-3 px-3">Paket Terakhir</th>
+                  <th class="py-3 px-3">Sisa Kuota Sesi</th>
+                  <th class="py-3 px-3">Alamat & Tgl Daftar</th>
+                  <th class="py-3 px-4 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="membersTableBody" class="divide-y divide-gray-100">
+                <!-- Populated dynamically via studio-app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 2: PENDAFTARAN PEMBELIAN PAKET ================= -->
+      <div id="adminTabPurchases" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-gray-900">Riwayat Pembelian & Top-Up Paket Member</h3>
+              <p class="text-xs text-gray-500">Catat transaksi pembelian paket membership baru. Kuota sesi member akan otomatis bertambah dan pendapatan tercatat ke INCA Finance.</p>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <div class="relative">
+                <input type="text" id="searchPurchaseInput" oninput="filterPurchases()" placeholder="Cari invoice, nama member..." class="text-xs border border-gray-300 rounded-xl pl-8 pr-3 py-2 w-56 focus:outline-none focus:ring-1 focus:ring-sage-500">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5"></i>
+              </div>
+              <button onclick="openAddPurchaseModal()" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="shopping-cart" class="w-4 h-4"></i> + Pendaftaran Beli Paket
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-gray-700">
+              <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
+                <tr>
+                  <th class="py-3 px-4">No. Invoice</th>
+                  <th class="py-3 px-3">Tanggal Beli</th>
+                  <th class="py-3 px-3">Member (ID & Nama)</th>
+                  <th class="py-3 px-3">Paket Dipilih</th>
+                  <th class="py-3 px-3">Sesi & Sisa</th>
+                  <th class="py-3 px-3">Total Nominal</th>
+                  <th class="py-3 px-3">Metode & Status</th>
+                  <th class="py-3 px-3">Status Paket</th>
+                  <th class="py-3 px-4 text-right">Aksi Keuangan</th>
+                </tr>
+              </thead>
+              <tbody id="purchasesTableBody" class="divide-y divide-gray-100">
+                <!-- Populated dynamically via studio-app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 3: DAFTAR PAKET MEMBER ================= -->
+      <div id="adminTabPackages" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-gray-900">Daftar Paket Membership & Promo Studio</h3>
+              <p class="text-xs text-gray-500">Atur paket reguler reformer, mat pilates, paket promosi pemula, harga normal, harga promo, dan masa berlaku hari.</p>
+            </div>
+            <button onclick="openAddPackageModal()" class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm self-start sm:self-auto">
+              <i data-lucide="plus" class="w-4 h-4"></i> + Buat Paket Baru
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-gray-700">
+              <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
+                <tr>
+                  <th class="py-3 px-4">Nama Paket</th>
+                  <th class="py-3 px-3">Kategori</th>
+                  <th class="py-3 px-3">Jumlah Sesi</th>
+                  <th class="py-3 px-3">Harga Normal</th>
+                  <th class="py-3 px-3">Harga Promo</th>
+                  <th class="py-3 px-3">Masa Berlaku</th>
+                  <th class="py-3 px-3">Status</th>
+                  <th class="py-3 px-4 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="packagesTableBody" class="divide-y divide-gray-100">
+                <!-- Populated dynamically via studio-app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 5: DAFTAR KELAS (JENIS KELAS) ================= -->
+      <div id="adminTabClasses" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-gray-900">Master Data Jenis Kelas</h3>
+              <p class="text-xs text-gray-500">Definisikan tipe kelas studio sesuai database Excel (Reformer, Cadillac, Tower, Chair, Yoga Wheel, Yoga, Mat, Yoga Props), durasi sesi, dan kapasitas alat.</p>
+            </div>
+            <button onclick="openAddClassModal()" class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm self-start sm:self-auto">
+              <i data-lucide="plus" class="w-4 h-4"></i> + Tambah Jenis Kelas
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-gray-700">
+              <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
+                <tr>
+                  <th class="py-3 px-4">Nama Kelas</th>
+                  <th class="py-3 px-3">Kategori</th>
+                  <th class="py-3 px-3">Tingkat / Level</th>
+                  <th class="py-3 px-3">Durasi</th>
+                  <th class="py-3 px-3">Kapasitas Maksimal</th>
+                  <th class="py-3 px-3">Tarif Drop-In</th>
+                  <th class="py-3 px-3">Keterangan</th>
+                  <th class="py-3 px-4 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="classesTableBody" class="divide-y divide-gray-100">
+                <!-- Populated dynamically via studio-app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 6: DAFTAR COACH ================= -->
+      <div id="adminTabCoaches" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-gray-900">Daftar Instruktur & Coach Studio</h3>
+              <p class="text-xs text-gray-500">Kelola instruktur yang mengajar di INCA Studio, sertifikasi keahlian, nomor kontak WhatsApp, dan bio pengajar.</p>
+            </div>
+            <button onclick="openAddCoachModal()" class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm self-start sm:self-auto">
+              <i data-lucide="user-plus" class="w-4 h-4"></i> + Tambah Coach Baru
+            </button>
+          </div>
+
+          <div id="coachesGridContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- Populated dynamically via studio-app.js -->
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ================= TAB 7: CHECK-IN MEMBER YANG IKUT KELAS ================= -->
+      <div id="adminTabCheckin" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-gray-900">Presensi & Log Absensi Kelas</h3>
+              <p class="text-xs text-gray-500">Kelola check-in kedatangan per sesi kelas dan telusuri seluruh riwayat absensi member studio dari database Excel.</p>
+            </div>
+            <!-- Subview Switcher -->
+            <div class="flex items-center gap-2 bg-gray-100 p-1 rounded-xl text-xs font-semibold">
+              <button type="button" onclick="switchCheckInSubView('schedule')" id="btnSubViewSchedule" class="px-3 py-1.5 rounded-lg bg-white text-sage-800 shadow-sm transition">
+                Sesi Terjadwal & Presensi
+              </button>
+              <button type="button" onclick="switchCheckInSubView('all_logs')" id="btnSubViewAllLogs" class="px-3 py-1.5 rounded-lg text-gray-500 hover:text-gray-800 transition">
+                Log Seluruh Absensi (<span id="totalAttendanceBadge">222</span>)
+              </button>
+            </div>
+          </div>
+
+          <!-- SUBVIEW 1: Presensi per Sesi Jadwal -->
+          <div id="checkInSubViewSchedule" class="block space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+              <div class="w-full sm:w-auto">
+                <label class="block text-[11px] font-semibold text-gray-500 uppercase mb-1">Pilih Sesi Kelas:</label>
+                <select id="checkinScheduleSelect" onchange="onCheckInScheduleChange()" class="text-xs font-semibold border border-gray-300 rounded-xl px-3 py-2 bg-white w-full sm:w-80 shadow-sm focus:ring-2 focus:ring-sage-500 focus:outline-none">
+                  <!-- Dynamically populated -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Highlight Detail Kartu Sesi Terpilih -->
+            <div id="selectedScheduleCard">
+              <!-- Populated dynamically via studio-app.js -->
+            </div>
+
+            <!-- Table of Participants in Selected Schedule -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs text-gray-700">
+                <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200">
+                  <tr>
+                    <th class="py-3 px-4">No.</th>
+                    <th class="py-3 px-3">Kode & Nama Member</th>
+                    <th class="py-3 px-3">No. WhatsApp</th>
+                    <th class="py-3 px-3">Waktu Sesi</th>
+                    <th class="py-3 px-3">Tipe Paket / Kuota</th>
+                    <th class="py-3 px-3">Status Kehadiran</th>
+                    <th class="py-3 px-4 text-right">Aksi Check-In</th>
+                  </tr>
+                </thead>
+                <tbody id="attendanceParticipantsTableBody" class="divide-y divide-gray-100">
+                  <!-- Populated dynamically via studio-app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- SUBVIEW 2: Log Seluruh Absensi Kelas (Database Asli Excel) -->
+          <div id="checkInSubViewAllLogs" class="hidden space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
+              <div class="relative flex-1">
+                <input type="text" id="searchAttendanceInput" oninput="renderAllAttendancesTable()" placeholder="Cari nama member, kode, transaksi, catatan..." class="text-xs border border-gray-300 rounded-xl pl-8 pr-3 py-2 w-full focus:outline-none focus:ring-1 focus:ring-sage-500 bg-white">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5"></i>
+              </div>
+              <div class="flex items-center gap-2">
+                <select id="filterAttendanceCoach" onchange="renderAllAttendancesTable()" class="text-xs border border-gray-300 rounded-xl px-2.5 py-2 bg-white">
+                  <option value="all">Semua Coach</option>
+                  <option value="YULI">Coach Yuli</option>
+                  <option value="FEBRI">Coach Febri</option>
+                  <option value="ICHA">Coach Icha</option>
+                  <option value="KAIFA">Coach Kaifa</option>
+                </select>
+                <select id="filterAttendanceStatus" onchange="renderAllAttendancesTable()" class="text-xs border border-gray-300 rounded-xl px-2.5 py-2 bg-white">
+                  <option value="all">Semua Status</option>
+                  <option value="Hadir">Hadir</option>
+                  <option value="No Show">No Show (Potong Sesi)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto max-h-[500px]">
+              <table class="w-full text-left text-xs text-gray-700">
+                <thead class="bg-gray-100 text-gray-600 uppercase tracking-wider font-semibold border-b border-gray-200 sticky top-0 z-10">
+                  <tr>
+                    <th class="py-2.5 px-3">Tanggal</th>
+                    <th class="py-2.5 px-2">Jam</th>
+                    <th class="py-2.5 px-3">Kelas & Apparatus</th>
+                    <th class="py-2.5 px-3">Instruktur</th>
+                    <th class="py-2.5 px-3">ID & Nama Member</th>
+                    <th class="py-2.5 px-3">No. Transaksi</th>
+                    <th class="py-2.5 px-3">Status Hadir</th>
+                    <th class="py-2.5 px-2 text-center">Sesi</th>
+                    <th class="py-2.5 px-3">Catatan</th>
+                  </tr>
+                </thead>
+                <tbody id="allAttendancesTableBody" class="divide-y divide-gray-100">
+                  <!-- Populated dynamically via studio-app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= TAB 8: LEADS PENAWARAN (SHEET1 EXCEL) ================= -->
+      <div id="adminTabLeads" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="font-serif text-lg font-bold text-gray-900">Database Leads Penawaran Studio</h3>
+              <p class="text-xs text-gray-500">Daftar calon prospek member dari lembar penawaran Excel (Sheet1). Hubungi via WhatsApp dan konversikan langsung menjadi member terdaftar.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="relative">
+                <input type="text" id="searchLeadsInput" oninput="renderLeadsTable()" placeholder="Cari nama atau telepon..." class="text-xs border border-gray-300 rounded-xl pl-8 pr-3 py-2 w-56 focus:outline-none focus:ring-1 focus:ring-sage-500">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5"></i>
+              </div>
+              <span id="badgeTotalLeads" class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1.5 rounded-xl border border-purple-200">
+                250 Prospek
+              </span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto max-h-[500px]">
+            <table class="w-full text-left text-xs text-gray-700">
+              <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200 sticky top-0 z-10">
+                <tr>
+                  <th class="py-3 px-4">No.</th>
+                  <th class="py-3 px-3">Nama Calon Member</th>
+                  <th class="py-3 px-3">No. WhatsApp</th>
+                  <th class="py-3 px-3">Tgl Pertama Penawaran</th>
+                  <th class="py-3 px-3">Sumber Leads</th>
+                  <th class="py-3 px-4 text-right">Aksi Konversi</th>
+                </tr>
+              </thead>
+              <tbody id="leadsTableBody" class="divide-y divide-gray-100">
+                <!-- Populated dynamically via studio-app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 9: MASTER EXCEL & BACKUP ================= -->
+      <div id="adminTabBackup" class="hidden">
+        <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm max-w-3xl">
+          <h3 class="font-serif text-lg font-bold text-gray-900 mb-2">Sinkronisasi Excel & Cadangan Data Studio</h3>
+          <p class="text-xs text-gray-600 mb-6">
+            Modul Admin Studio INCA terintegrasi penuh dengan berkas <b>Data_Admin_Studio_INCA.xlsx</b> / <b>INCA_PILATES_Administrasi_Member_dan_Paket.xlsx</b>. Anda dapat mengunduh seluruh data live ke berkas Excel, mengunggah pembaruan Excel, atau mengekspor JSON cadangan kapan saja secara offline.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <!-- Download Excel Live -->
+            <div class="p-4 rounded-xl border border-emerald-200 bg-emerald-50/50 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 text-emerald-800 font-bold text-xs mb-1">
+                  <i data-lucide="file-spreadsheet" class="w-4 h-4"></i> Unduh Master Excel Studio
+                </div>
+                <p class="text-[11px] text-gray-600 mb-3">Ekspor seluruh sheet (DATA MEMBER, PEMBELIAN PAKET, ABSENSI KELAS, TARIF PAKET, LEADS, DASHBOARD) ke <b>Data_Admin_Studio_INCA.xlsx</b>.</p>
+              </div>
+              <button onclick="exportStudioToExcel()" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="download" class="w-4 h-4"></i> Unduh Berkas Excel (.xlsx)
+              </button>
+            </div>
+
+            <!-- Upload Excel dengan Drag & Drop dan Model Cerdas -->
+            <div id="studioExcelDropzone" class="p-4 rounded-xl border-2 border-dashed border-sage-300 bg-sage-50/60 flex flex-col justify-between transition hover:border-sage-500 hover:bg-sage-50">
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <div class="flex items-center gap-2 text-sage-800 font-bold text-xs">
+                    <i data-lucide="upload-cloud" class="w-4 h-4"></i> Unggah / Sinkronisasi Excel
+                  </div>
+                  <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 uppercase tracking-wider">Model Cerdas</span>
+                </div>
+                <p class="text-[11px] text-gray-600 mb-3">Impor lembar kerja Excel baru. Otomatis cek data: jika ada data yang dihapus dari Excel akan ikut dihapus dari sistem (Full Sync), atau ditambahkan langsung jika hanya data penambahan baru.</p>
+              </div>
+              <label class="bg-sage-700 hover:bg-sage-800 text-white text-xs font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="file-up" class="w-4 h-4"></i> Pilih Berkas Excel (.xlsx) atau Tarik ke Sini
+                <input type="file" id="studioExcelFileInput" onchange="importStudioFromExcel(event)" class="hidden" accept=".xlsx,.xls">
+              </label>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Export JSON -->
+            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-between">
+              <div>
+                <h5 class="text-xs font-bold text-gray-900">Cadangan Lengkap Studio (Export JSON)</h5>
+                <p class="text-[11px] text-gray-500">Simpan salinan data lengkap studio ke berkas JSON di komputer.</p>
+              </div>
+              <button onclick="exportStudioDataJSON()" class="bg-gray-800 hover:bg-gray-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i> Unduh JSON
+              </button>
+            </div>
+
+            <!-- Import JSON -->
+            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-between">
+              <div>
+                <h5 class="text-xs font-bold text-gray-900">Pulihkan Cadangan (Import JSON)</h5>
+                <p class="text-[11px] text-gray-500">Unggah berkas JSON cadangan untuk memulihkan seluruh data studio.</p>
+              </div>
+              <label class="bg-gray-800 hover:bg-gray-700 text-white text-xs font-semibold px-4 py-2 rounded-xl cursor-pointer transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="upload" class="w-3.5 h-3.5"></i> Pilih File JSON
+                <input type="file" id="importFileInput" onchange="importStudioDataJSON(event)" class="hidden" accept=".json">
+              </label>
+            </div>
+
+            <!-- Reset to Excel Master -->
+            <div class="p-4 rounded-xl border border-amber-200 bg-amber-50/70 flex items-center justify-between">
+              <div>
+                <h5 class="text-xs font-bold text-amber-900">Muat Ulang / Reset ke Master Excel Bawaan</h5>
+                <p class="text-[11px] text-amber-700">Kembalikan seluruh database ke data otentik Excel (166 member, 230 transaksi paket, 230 absensi, 65 jadwal, 18 paket, 250 leads).</p>
+              </div>
+              <button onclick="resetStudioDataToExcel()" class="bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Reset ke Excel
+              </button>
+            </div>
+
+            <!-- Password Admin -->
+            <div class="p-4 rounded-xl border border-gray-200 bg-gray-50 mt-4">
+              <h5 class="text-xs font-bold text-gray-900 mb-1 flex items-center gap-1.5">
+                <i data-lucide="key-round" class="w-3.5 h-3.5 text-sage-700"></i> Pengaturan Password Admin Studio
+              </h5>
+              <p class="text-[11px] text-gray-500 mb-3">Ubah kata sandi untuk melindungi akses menu dan pengaturan studio.</p>
+              <form id="changePasswordForm" onsubmit="saveNewAdminPassword(event)" class="space-y-2">
+                <div class="flex flex-col sm:flex-row gap-2">
+                  <input type="password" id="newAdminPasswordInput" required placeholder="Password Baru (min. 4 karakter)" class="text-xs border border-gray-300 rounded-xl px-3 py-2 bg-white flex-grow focus:outline-none focus:ring-1 focus:ring-sage-500">
+                  <button type="submit" class="bg-gray-900 hover:bg-black text-white text-xs font-semibold px-4 py-2 rounded-xl transition shadow-sm">
+                    Simpan Password
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= TAB 10: KELOLA PENGGUNA & HAK AKSES ================= -->
+      <div id="adminTabUsers" class="hidden space-y-6">
+        
+        <!-- Header Banner -->
+        <div class="bg-gradient-to-r from-gray-900 via-gray-800 to-sage-950 rounded-2xl text-white p-6 shadow-md border border-gray-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded text-xs text-sage-200 mb-2 border border-white/10">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Keamanan & Kontrol Akses Sistem
+            </div>
+            <h3 class="font-serif text-2xl font-bold">Kelola Pengguna & Hak Akses Menu</h3>
+            <p class="text-xs text-gray-300 mt-1 max-w-2xl">Atur akun staf, resepsionis, coach, dan owner yang dapat login ke Sistem Terpadu INCA serta batasi menu mana saja yang dapat dibuka oleh masing-masing peran.</p>
+          </div>
+          <button onclick="openAddUserModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2 shrink-0 cursor-pointer">
+            <i data-lucide="user-plus" class="w-4 h-4"></i> + Tambah Pengguna Baru
+          </button>
+        </div>
+
+        <!-- KPI Mini Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <div class="bg-white p-4 rounded-xl border border-gray-200/90 shadow-2xs">
+            <div class="text-[10px] uppercase font-bold text-gray-400">Total Pengguna</div>
+            <div class="text-2xl font-bold text-gray-900 mt-0.5" id="statTotalUsers">4</div>
+            <div class="text-[10px] text-gray-500 mt-0.5">Akun terdaftar</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-purple-200 shadow-2xs bg-purple-50/30">
+            <div class="text-[10px] uppercase font-bold text-purple-700">Owner / Direktur</div>
+            <div class="text-2xl font-bold text-purple-900 mt-0.5" id="statOwnerUsers">1</div>
+            <div class="text-[10px] text-purple-600 mt-0.5">Akses penuh 21 menu</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-emerald-200 shadow-2xs bg-emerald-50/30">
+            <div class="text-[10px] uppercase font-bold text-emerald-700">Admin Studio</div>
+            <div class="text-2xl font-bold text-emerald-900 mt-0.5" id="statAdminUsers">1</div>
+            <div class="text-[10px] text-emerald-600 mt-0.5">Operasional harian</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-blue-200 shadow-2xs bg-blue-50/30">
+            <div class="text-[10px] uppercase font-bold text-blue-700">Finance & Akun</div>
+            <div class="text-2xl font-bold text-blue-900 mt-0.5" id="statFinanceUsers">1</div>
+            <div class="text-[10px] text-blue-600 mt-0.5">Pembukuan & LPJ</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-2xs bg-amber-50/30">
+            <div class="text-[10px] uppercase font-bold text-amber-700">Instruktur / Coach</div>
+            <div class="text-2xl font-bold text-amber-900 mt-0.5" id="statCoachUsers">1</div>
+            <div class="text-[10px] text-amber-600 mt-0.5">Kalender & Presensi</div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="bg-white p-4 rounded-2xl border border-gray-200/90 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <div class="relative flex-grow sm:w-72">
+              <input type="text" id="searchUserInput" onkeyup="renderUsersTable()" placeholder="Cari nama, username, kontak..." class="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-sage-500">
+              <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-2.5"></i>
+            </div>
+            <select id="filterUserRole" onchange="renderUsersTable()" class="border border-gray-300 rounded-xl px-3 py-2 text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-sage-500 bg-white">
+              <option value="all">Semua Peran</option>
+              <option value="owner">Super Admin / Owner</option>
+              <option value="admin">Admin Studio</option>
+              <option value="finance">Admin Keuangan</option>
+              <option value="coach">Instruktur / Coach</option>
+              <option value="custom">Kustom</option>
+            </select>
+          </div>
+          <div class="text-[11px] text-gray-500 text-right w-full sm:w-auto">
+            Hak akses menu dapat disesuaikan per individu akun pengguna.
+          </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="bg-white rounded-2xl border border-gray-200/90 shadow-2xs overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-gray-50/80 border-b border-gray-200 text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+                  <th class="py-3 px-4">Pengguna & Username</th>
+                  <th class="py-3 px-3">Peran / Jabatan</th>
+                  <th class="py-3 px-3">Cakupan Hak Akses Menu</th>
+                  <th class="py-3 px-3">Nomor Kontak</th>
+                  <th class="py-3 px-3">Status</th>
+                  <th class="py-3 px-4 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody" class="divide-y divide-gray-100">
+                <!-- Rendered by renderUsersTable() -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+  <!-- ================= VIEW CONTAINER: INCA FINANCE WORKSPACE ================= -->
+  <div id="financeView" class="finance-workspace hidden">
+    <aside>
+      <div class="brand-area"><a href="#" style="display:inline-block;text-decoration:none;"><img src="logo.png" alt="INCA Pilates" class="brand-logo-img"></a><span class="brand-finance-badge">FINANCE</span></div>
+      <div class="workspace"><b>INCA Pilates</b><small>Ruang kerja keuangan</small></div>
+      <div class="navlabel">WORKSPACE</div>
+      <nav id="nav"></nav>
+      <div style="padding: 10px 14px; border-top: 1px solid #e5e7eb; display:flex; flex-direction:column; gap:6px;">
+        <button type="button" onclick="switchViewMode('admin')" style="width:100%; padding:7px 10px; font-size:11px; font-weight:700; border-radius:8px; border:1px solid #d1d5db; background:#ffffff; color:#374151; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; transition:all .2s ease;">
+          ← Admin Studio
+        </button>
+        <button type="button" onclick="logoutFinance()" style="width:100%; padding:7px 10px; font-size:11px; font-weight:700; border-radius:8px; border:1px solid #fecaca; background:#fef2f2; color:#b91c1c; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; transition:all .2s ease;">
+          🔒 Kunci / Logout
+        </button>
+      </div>
+      <div class="asidefoot"><span class="dot"></span> Pembukuan lokal<small>Data tersimpan di browser ini</small></div>
+    </aside>
+    <div class="finance-main-content"><header><div>Workspace <span>/</span> <b id="crumb">Ringkasan</b></div><div title="INCA Pilates"><img src="favicon.png" alt="INCA Logo" class="avatar-logo"></div></header><section><div class="heading"><div><div class="eyebrow">INCA PILATES  FINANCE</div><h1 id="title"></h1><p id="subtitle"></p></div><button class="primary" onclick="openEntry()">+ Catat transaksi</button></div><div class="notice">? &nbsp; Data lokal di browser ini. Unduh backup berkala melalui menu Data & backup. <strong id="mode"></strong></div><div class="filters"><label>Periode laporan <input id="month" type="month"></label><button onclick="document.getElementById('month').value='';render()">Semua periode</button><span id="periodLabel"></span></div><div id="content"></div></section><footer>
+        <div>INCA Finance <span>Pembukuan yang lebih tertata, ruang untuk bertumbuh.</span></div>
+        <div style="text-align: right; font-size: 10.5px; line-height: 1.35;">
+          <div style="font-weight: 600; color: #5c4b69;">Trademark PUTI™</div>
+          <div style="color: #a89fb0;">Copyright &copy; 2026</div>
+        </div>
+      </footer></div>
+  </div>
+
+  <!-- ================= STUDIO FOOTER ================= -->
+  <div id="studioFooterContainer"><footer class="bg-white border-t border-gray-200 py-6 px-4 sm:px-6 text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-serif font-bold text-gray-800">INCA PILATES & YOGA</span>
+        <span class="text-gray-300">•</span>
+        <span>Sistem Operasional Studio & INCA Finance</span>
+      </div>
+      <div class="text-[11px] text-gray-400 text-center sm:text-right flex flex-col items-center sm:items-end gap-0.5">
+        <div>Dirancang khusus untuk Studio Pilates, Yoga & Kebugaran Mandiri. Beroperasi 100% Offline.</div>
+        <div class="text-[10.5px] font-semibold text-gray-600 mt-0.5">Trademark PUTI™</div>
+        <div class="text-[10px] text-gray-400">Copyright &copy; 2026</div>
+      </div>
+    </div>
+  </footer></div>
+  <!-- ================= MODALS & DIALOGS ADMIN STUDIO ================= -->
+
+  <!-- 1. MODAL TAMBAH / EDIT MEMBER -->
+  <div id="memberModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <div class="bg-gradient-to-r from-gray-900 to-sage-900 text-white p-5 flex justify-between items-center">
+        <div>
+          <h3 id="mmModalTitle" class="font-serif text-lg font-bold">Tambah Member Baru</h3>
+          <p class="text-xs text-gray-300">Daftarkan member baru ke database studio INCA.</p>
+        </div>
+        <button type="button" onclick="closeMemberModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="memberForm" onsubmit="saveMember(event)" class="p-6 space-y-4 text-xs">
+        <input type="hidden" id="mmMemberId">
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Nama Lengkap Member <span class="text-red-500">*</span></label>
+          <input type="text" id="mmName" required placeholder="Contoh: Aurelia Jessica" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">No. WhatsApp <span class="text-red-500">*</span></label>
+            <input type="tel" id="mmPhone" required placeholder="081234567890" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Email Member</label>
+            <input type="email" id="mmEmail" placeholder="nama@email.com" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Tanggal Bergabung</label>
+            <input type="date" id="mmJoinedDate" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Status Keaktifan</label>
+            <select id="mmStatus" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white focus:ring-2 focus:ring-sage-500 focus:outline-none">
+              <option value="active">Aktif</option>
+              <option value="inactive">Nonaktif</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Tanggal Lahir</label>
+            <input type="text" id="mmBirthDate" placeholder="Contoh: 14 May 1994" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Sumber Member / Penawaran</label>
+            <input type="text" id="mmSource" placeholder="Contoh: K. INDAH, Instagram, Referral" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Alamat / Wilayah Domisili</label>
+          <input type="text" id="mmAddress" placeholder="Contoh: PERMATA DEPOK REGENCY, GRAND DAHLIA" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Catatan Postur / Kondisi Medis / Cedera</label>
+          <textarea id="mmNotes" rows="3" placeholder="Contoh: Skoliosis ringan torakal, keluhan saraf kejepit L4-L5, pasca operasi lutut kanan..." class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none"></textarea>
+          <p class="text-[10px] text-gray-400">Catatan ini akan tampil di daftar absensi coach agar latihan disesuaikan secara aman.</p>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+          <button type="button" onclick="closeMemberModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-sage-700 hover:bg-sage-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Simpan Data Member
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. MODAL PENDAFTARAN PEMBELIAN PAKET MEMBER -->
+  <div id="purchaseModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <div class="bg-gradient-to-r from-emerald-950 to-emerald-800 text-white p-5 flex justify-between items-center">
+        <div>
+          <h3 class="font-serif text-lg font-bold">Pendaftaran Pembelian Paket</h3>
+          <p class="text-xs text-emerald-200">Top-up kuota sesi member dan sinkronkan penerimaan ke INCA Finance.</p>
+        </div>
+        <button type="button" onclick="closePurchaseModal()" class="text-emerald-300 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="purchaseForm" onsubmit="savePurchasePackage(event)" class="p-6 space-y-4 text-xs">
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Pilih Member <span class="text-red-500">*</span></label>
+          <select id="ppmMemberId" required class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            <!-- Dynamically populated via studio-app.js -->
+          </select>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Pilih Paket Membership <span class="text-red-500">*</span></label>
+          <select id="ppmPackageId" required onchange="updatePurchaseModalPrice()" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            <!-- Dynamically populated via studio-app.js -->
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Jumlah Sesi Diperoleh <span class="text-red-500">*</span></label>
+            <input type="number" id="ppmSessions" min="1" required class="w-full border border-gray-300 rounded-xl px-3 py-2 font-bold text-sage-800 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Total Harga / Bayar (Rp) <span class="text-red-500">*</span></label>
+            <input type="number" id="ppmPrice" min="0" required class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono font-bold text-gray-900 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Tanggal Transaksi</label>
+            <input type="date" id="ppmDate" required class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Metode Pembayaran</label>
+            <select id="ppmPaymentMethod" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+              <option value="Transfer BCA">Transfer Bank BCA</option>
+              <option value="QRIS">QRIS / Instant Payment</option>
+              <option value="Tunai / Kasir">Tunai / Kasir Studio</option>
+              <option value="Kartu Debit / EDC">Kartu Debit / EDC</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Checkbox Auto-Sync to INCA Finance -->
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
+          <label class="flex items-start gap-2.5 cursor-pointer">
+            <input type="checkbox" id="ppmRecordFinance" checked class="rounded text-emerald-600 focus:ring-emerald-500 h-4 w-4 mt-0.5">
+            <div>
+              <span class="font-bold text-emerald-900">Otomatis catat pendapatan ke INCA Finance</span>
+              <p class="text-[11px] text-emerald-700 mt-0.5">Membukukan transaksi ke Jurnal Kas & Bank (Debit 1002, Kredit 4001) secara otomatis.</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+          <button type="button" onclick="closePurchaseModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Konfirmasi Pembelian Paket
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. MODAL TAMBAH / EDIT PAKET -->
+  <div id="packageModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <div class="bg-gradient-to-r from-gray-900 to-terracotta-900 text-white p-5 flex justify-between items-center">
+        <div>
+          <h3 id="pmModalTitle" class="font-serif text-lg font-bold">Pengaturan Paket</h3>
+          <p class="text-xs text-gray-300">Konfigurasi paket kelas, harga promo, kuota sesi & masa aktif.</p>
+        </div>
+        <button type="button" onclick="closePackageModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="packageForm" onsubmit="savePackage(event)" class="p-6 space-y-4 text-xs">
+        <input type="hidden" id="pmPackageId">
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Nama Paket <span class="text-red-500">*</span></label>
+          <input type="text" id="pmName" required placeholder="Contoh: Reformer Regular 10 Sesi" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Kategori Paket</label>
+            <select id="pmCategory" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white focus:ring-2 focus:ring-sage-500 focus:outline-none">
+              <option value="reformer">Reformer</option>
+              <option value="cadillac">Cadillac</option>
+              <option value="tower">Tower</option>
+              <option value="chair">Chair</option>
+              <option value="yoga_wheel">Yoga Wheel</option>
+              <option value="yoga">Yoga</option>
+              <option value="mat">Mat</option>
+              <option value="yoga_props">Yoga Props</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Jumlah Kuota Sesi <span class="text-red-500">*</span></label>
+            <input type="number" id="pmSessions" min="1" max="100" required class="w-full border border-gray-300 rounded-xl px-3 py-2 font-bold focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Harga Normal (Rp) <span class="text-red-500">*</span></label>
+            <input type="number" id="pmNormalPrice" min="0" step="1000" required placeholder="1500000" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Harga Promo (Rp)</label>
+            <input type="number" id="pmPromoPrice" min="0" step="1000" placeholder="Biarkan kosong jika tidak promo" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Masa Aktif Paket (Hari)</label>
+            <input type="number" id="pmValidityDays" min="1" max="365" required value="60" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="flex items-center pt-5">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="pmFirstTimerOnly" class="rounded text-sage-600 focus:ring-sage-500 h-4 w-4">
+              <span class="font-medium text-gray-700">Khusus Klien Baru (First Timer)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Benefit Paket (Pisahkan koma)</label>
+          <input type="text" id="pmBenefits" placeholder="Contoh: Bebas pilih jadwal, Konsultasi postur, Free locker" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Deskripsi Singkat</label>
+          <textarea id="pmDescription" rows="2" placeholder="Keterangan paket untuk member..." class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+          <button type="button" onclick="closePackageModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-sage-700 hover:bg-sage-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Simpan Paket
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. MODAL TAMBAH / EDIT MASTER KELAS -->
+  <div id="classModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <div class="bg-gradient-to-r from-gray-900 to-sage-900 text-white p-5 flex justify-between items-center">
+        <div>
+          <h3 id="classModalTitle" class="font-serif text-lg font-bold">Tambah Jenis Kelas Baru</h3>
+          <p class="text-xs text-gray-300">Master jenis latihan, durasi sesi, dan kapasitas alat.</p>
+        </div>
+        <button type="button" onclick="closeClassModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="classForm" onsubmit="saveClass(event)" class="p-6 space-y-4 text-xs">
+        <input type="hidden" id="cmClassId">
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Nama Kelas <span class="text-red-500">*</span></label>
+          <input type="text" id="cmName" required placeholder="Contoh: Reformer Core & Sculpt" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Kategori</label>
+            <select id="cmCategory" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white focus:ring-2 focus:ring-sage-500 focus:outline-none">
+              <option value="reformer">Reformer</option>
+              <option value="cadillac">Cadillac</option>
+              <option value="tower">Tower</option>
+              <option value="chair">Chair</option>
+              <option value="yoga_wheel">Yoga Wheel</option>
+              <option value="yoga">Yoga</option>
+              <option value="mat">Mat</option>
+              <option value="yoga_props">Yoga Props</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Level / Tingkatan</label>
+            <select id="cmLevel" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white focus:ring-2 focus:ring-sage-500 focus:outline-none">
+              <option value="All Levels">All Levels (Semua Tingkat)</option>
+              <option value="Beginner">Beginner (Pemula)</option>
+              <option value="Intermediate">Intermediate (Menengah)</option>
+              <option value="Advanced">Advanced (Lanjutan)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Durasi (Menit)</label>
+            <input type="number" id="cmDuration" min="15" max="180" value="50" required class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Kapasitas Maksimal (4 Orang)</label>
+            <input type="number" id="cmCapacity" min="1" max="4" value="4" required class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Tarif Drop-In (Rp)</label>
+            <input type="number" id="cmDropinPrice" min="0" step="1000" value="200000" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Keterangan / Deskripsi Kelas</label>
+          <textarea id="cmDescription" rows="2" placeholder="Fokus latihan, manfaat postur tubuh, alat penunjang yang dipakai..." class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+          <button type="button" onclick="closeClassModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-sage-700 hover:bg-sage-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Simpan Kelas
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. MODAL TAMBAH / EDIT COACH -->
+  <div id="coachModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <div class="bg-gradient-to-r from-gray-900 to-sage-900 text-white p-5 flex justify-between items-center">
+        <div>
+          <h3 id="coachModalTitle" class="font-serif text-lg font-bold">Tambah Profil Coach</h3>
+          <p class="text-xs text-gray-300">Data instruktur dan kualifikasi mengajar di studio.</p>
+        </div>
+        <button type="button" onclick="closeCoachModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="coachForm" onsubmit="saveCoach(event)" class="p-6 space-y-4 text-xs">
+        <input type="hidden" id="cchCoachId">
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Nama Lengkap Coach <span class="text-red-500">*</span></label>
+          <input type="text" id="cchName" required placeholder="Contoh: Jessica Gunawan" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Jabatan / Role</label>
+            <input type="text" id="cchRole" required placeholder="Lead Pilates Instructor" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">No. WhatsApp</label>
+            <input type="tel" id="cchPhone" placeholder="081234567890" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Keahlian & Sertifikasi (Spesialisasi)</label>
+          <input type="text" id="cchSpecialties" placeholder="Contoh: Comprehensive STOTT Pilates, Spine Rehab, Prenatal" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">URL Foto Profil (Avatar)</label>
+          <input type="url" id="cchAvatar" placeholder="https://..." class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono text-[11px] focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          <p class="text-[10px] text-gray-400">Jika dikosongkan, sistem akan menggunakan avatar estetika bawaan.</p>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Bio Singkat</label>
+          <textarea id="cchBio" rows="2" placeholder="Pengalaman mengajar dan filosofi pergerakan..." class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+          <button type="button" onclick="closeCoachModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-sage-700 hover:bg-sage-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Simpan Profil Coach
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. MODAL TAMBAH / PLOTING JADWAL KELAS -->
+  <div id="scheduleModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <div class="bg-gradient-to-r from-gray-900 to-terracotta-900 text-white p-5 flex justify-between items-center">
+        <div>
+          <h3 id="scheduleModalTitle" class="font-serif text-lg font-bold">Ploting Sesi Kelas & Coach Baru</h3>
+          <p class="text-xs text-gray-300">Tugaskan instruktur mengajar pada hari dan jam yang dipilih.</p>
+        </div>
+        <button type="button" onclick="closeScheduleModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="scheduleForm" onsubmit="saveSchedule(event)" class="p-6 space-y-4 text-xs">
+        <input type="hidden" id="smScheduleId">
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Pilih Jenis Kelas <span class="text-red-500">*</span></label>
+          <select id="smClassId" required onchange="autoFillClassCapacity()" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white font-medium focus:ring-2 focus:ring-sage-500 focus:outline-none">
+            <!-- Dynamically populated via studio-app.js -->
+          </select>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Tugaskan Coach Pengajar <span class="text-red-500">*</span></label>
+          <select id="smCoachId" required class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white font-medium focus:ring-2 focus:ring-sage-500 focus:outline-none">
+            <!-- Dynamically populated via studio-app.js -->
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Tanggal Sesi <span class="text-red-500">*</span></label>
+            <input type="date" id="smDate" required class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Jam Mulai <span class="text-red-500">*</span></label>
+            <input type="time" id="smStartTime" required value="08:00" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Jam Selesai <span class="text-red-500">*</span></label>
+            <input type="time" id="smEndTime" required value="08:50" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-mono focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Ruangan / Mesin</label>
+            <input type="text" id="smRoom" value="Reformer Studio A" class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Kapasitas Alat (Maksimal 4 Peserta)</label>
+            <input type="number" id="smCapacity" min="1" max="4" value="4" required class="w-full border border-gray-300 rounded-xl px-3 py-2 font-bold focus:ring-2 focus:ring-sage-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+          <button type="button" onclick="closeScheduleModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-sage-700 hover:bg-sage-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i> Simpan Ploting Sesi
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. MODAL DAFTARKAN MEMBER KE SESI KELAS (ENROLL) -->
+  <div id="enrollMemberModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <div class="bg-gradient-to-r from-gray-900 to-sage-900 text-white p-5 flex justify-between items-center">
+        <div>
+          <h3 class="font-serif text-lg font-bold">Daftarkan Member ke Sesi Kelas</h3>
+          <p class="text-xs text-gray-300">Potong kuota sesi paket aktif member secara otomatis.</p>
+        </div>
+        <button type="button" onclick="closeEnrollMemberModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="enrollMemberForm" onsubmit="submitEnrollMember(event)" class="p-6 space-y-4 text-xs">
+        <input type="hidden" id="enrollScheduleId">
+
+        <!-- Info Sesi Terpilih -->
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-3">
+          <span class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Sesi Kelas yang Dipilih:</span>
+          <p id="enrollScheduleInfo" class="font-bold text-gray-900 text-xs mt-0.5">-</p>
+        </div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Pilih Member dari Database <span class="text-red-500">*</span></label>
+          <select id="enrollMemberSelect" required onchange="onEnrollMemberChange()" class="w-full border border-gray-300 rounded-xl px-3 py-2 bg-white font-medium focus:ring-2 focus:ring-sage-500 focus:outline-none">
+            <!-- Dynamically populated via studio-app.js -->
+          </select>
+        </div>
+
+        <!-- Quota indicator box -->
+        <div id="enrollMemberQuotaInfo"></div>
+
+        <div class="space-y-1">
+          <label class="block font-semibold text-gray-700">Catatan Khusus Sesi Ini (Opsional)</label>
+          <input type="text" id="enrollNotes" placeholder="Contoh: Menggunakan reformer nomor 3, ada keluhan bahu..." class="w-full border border-gray-300 rounded-xl px-3 py-2 focus:ring-2 focus:ring-sage-500 focus:outline-none">
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+          <button type="button" onclick="closeEnrollMemberModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-sage-700 hover:bg-sage-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Daftarkan Peserta
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 8. MODAL DETAIL JADWAL KELAS & ROSTER PESERTA (SCHEDULE DETAIL) -->
+  <div id="scheduleDetailModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl animate-fade-in border border-gray-100 flex flex-col max-h-[90vh]">
+      <!-- Header Modal -->
+      <div class="bg-gradient-to-r from-gray-900 to-sage-900 text-white p-5 flex justify-between items-start">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span id="sdmCategoryBadge" class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-sage-500/30 text-sage-200 border border-sage-400/30">REFORMER</span>
+            <span id="sdmDateText" class="text-xs text-gray-300 font-mono">2026-11-05</span>
+          </div>
+          <h3 id="sdmClassName" class="font-serif text-lg font-bold">Pilates Reformer Class</h3>
+          <p id="sdmScheduleInfo" class="text-xs text-gray-300">08:00 - 08:50 WIB • Reformer Studio A</p>
+        </div>
+        <button type="button" onclick="closeScheduleDetailModal()" class="text-gray-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Quick Info Bar -->
+      <div class="bg-gray-50 border-b border-gray-200 px-5 py-3 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+        <div>
+          <span class="text-[10px] text-gray-400 font-medium block">INSTRUKTUR / COACH</span>
+          <span id="sdmCoachName" class="font-bold text-gray-800 flex items-center gap-1 mt-0.5">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-sage-600"></i> Coach Febri
+          </span>
+        </div>
+        <div>
+          <span class="text-[10px] text-gray-400 font-medium block">KAPASITAS KELAS</span>
+          <span id="sdmCapacityText" class="font-bold text-gray-800 block mt-0.5">6 Orang</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-gray-400 font-medium block">PESERTA TERDAFTAR</span>
+          <span id="sdmEnrolledCountBadge" class="font-bold text-sage-700 block mt-0.5">6 Peserta</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-gray-400 font-medium block">STATUS KUOTA</span>
+          <span id="sdmStatusBadge" class="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-bold bg-red-100 text-red-800">PENUH</span>
+        </div>
+      </div>
+
+      <!-- Member Roster Body -->
+      <div class="p-5 flex-1 overflow-y-auto space-y-4 text-xs">
+        <div class="flex items-center justify-between">
+          <h4 class="font-bold text-gray-800 flex items-center gap-1.5">
+            <i data-lucide="users" class="w-4 h-4 text-sage-700"></i> Daftar Peserta Terdaftar (<span id="sdmParticipantsCount">0</span>)
+          </h4>
+          <button type="button" id="sdmBtnEnrollMember" onclick="openEnrollFromDetailModal()" class="px-3 py-1.5 bg-sage-700 hover:bg-sage-800 text-white rounded-xl font-semibold transition text-xs flex items-center gap-1 shadow-xs">
+            <i data-lucide="user-plus" class="w-3.5 h-3.5"></i> + Daftarkan Peserta
+          </button>
+        </div>
+
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <table class="w-full text-left text-xs text-gray-700">
+            <thead class="bg-gray-50 text-gray-500 uppercase tracking-wider font-semibold border-b border-gray-200 text-[10px]">
+              <tr>
+                <th class="py-2.5 px-3">No</th>
+                <th class="py-2.5 px-3">Member</th>
+                <th class="py-2.5 px-3">WhatsApp</th>
+                <th class="py-2.5 px-3">Status Presensi</th>
+                <th class="py-2.5 px-3 text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="sdmParticipantsTableBody" class="divide-y divide-gray-100">
+              <!-- Dynamically populated via studio-app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Footer Actions -->
+      <div class="p-4 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+        <button type="button" id="sdmBtnGoToPresensi" onclick="goToPresensiFromDetailModal()" class="w-full sm:w-auto px-4 py-2 bg-sage-800 hover:bg-sage-900 text-white font-semibold rounded-xl transition flex items-center justify-center gap-1.5 text-xs shadow-sm">
+          <i data-lucide="clipboard-check" class="w-4 h-4"></i> Buka Lembar Presensi Lengkap
+        </button>
+        <button type="button" onclick="closeScheduleDetailModal()" class="w-full sm:w-auto px-5 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-white transition text-xs">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 9. MODAL SINKRONISASI MASTER EXCEL CERDAS ================= -->
+  <div id="excelSyncModal" class="fixed inset-0 bg-black/65 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[92vh] flex flex-col shadow-2xl animate-fade-in border border-gray-100 overflow-hidden">
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-gray-900 via-sage-900 to-gray-900 text-white p-5 flex justify-between items-center rounded-t-2xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-emerald-300 font-bold">
+            <i data-lucide="file-spreadsheet" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-serif text-base font-bold">Sinkronisasi Data Master Excel</h3>
+              <span id="esmDetectedModeBadge" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">Otomatis Terdeteksi</span>
+            </div>
+            <p class="text-xs text-gray-300 mt-0.5" id="esmFileSubtitle">Pratinjau cerdas perubahan data antara berkas Excel dan database sistem.</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeExcelSyncModal()" class="text-gray-400 hover:text-white p-1.5 rounded-lg transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-6 overflow-y-auto space-y-5 text-xs font-sans" id="esmModalBody">
+        <!-- Content generated dynamically by excel-sync.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3 rounded-b-2xl">
+        <div class="text-[11px] text-gray-500" id="esmFooterNote">
+          Pilih mode sinkronisasi di atas lalu klik tombol terapkan.
+        </div>
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+          <button type="button" onclick="closeExcelSyncModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-white transition text-xs">
+            Batal
+          </button>
+          <button type="button" id="esmBtnApply" onclick="applyPendingExcelSync()" class="px-5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl shadow transition text-xs flex items-center gap-2">
+            <i data-lucide="check-check" class="w-4 h-4"></i> Terapkan Sinkronisasi ke Sistem
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================= MODAL KELOLA PENGGUNA & HAK AKSES ================= -->
+  <div id="userModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl animate-fade-in border border-gray-100">
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-gray-900 via-indigo-950 to-purple-950 text-white p-5 flex justify-between items-center shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="p-2 bg-white/10 rounded-xl backdrop-blur">
+            <i data-lucide="shield-check" class="w-5 h-5 text-indigo-300"></i>
+          </div>
+          <div>
+            <h3 id="umModalTitle" class="font-serif text-lg font-bold">Tambah Pengguna Baru & Hak Akses</h3>
+            <p class="text-xs text-indigo-200">Konfigurasi akun login, peran, dan matriks izin akses menu.</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeUserModal()" class="text-gray-400 hover:text-white p-1.5 rounded-lg transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <form id="userForm" onsubmit="saveUser(event)" class="p-6 overflow-y-auto space-y-5 text-xs flex-1">
+        <input type="hidden" id="umUserId">
+
+        <!-- Info Akun Dasar -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Nama Lengkap Pengguna <span class="text-red-500">*</span></label>
+            <input type="text" id="umFullName" required placeholder="Contoh: Jessica Gunawan" class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Username Login <span class="text-red-500">*</span></label>
+            <input type="text" id="umUsername" required placeholder="Contoh: jessica atau coach1" class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs font-mono focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Nomor WhatsApp / HP</label>
+            <input type="tel" id="umPhone" placeholder="081234567890" class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          </div>
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-700">Kata Sandi / Password <span class="text-red-500">*</span></label>
+            <div class="relative">
+              <input type="password" id="umPassword" required placeholder="Minimal 6 karakter" class="w-full border border-gray-300 rounded-xl pl-3 pr-10 py-2 text-xs font-mono focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+              <button type="button" onclick="togglePasswordVisibility('umPassword', this)" class="absolute right-3 top-2 text-gray-400 hover:text-gray-700 p-0.5">
+                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center bg-gray-50 p-3.5 rounded-xl border border-gray-200">
+          <div class="space-y-1">
+            <label class="block font-semibold text-gray-800">Template Peran & Jabatan</label>
+            <select id="umRoleTemplate" onchange="applyRoleTemplateToForm(this.value)" class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs bg-white font-medium focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+              <option value="owner">Super Admin / Owner (Akses Penuh)</option>
+              <option value="admin" selected>Admin Studio (Operasional & Kas Kecil)</option>
+              <option value="finance">Admin Keuangan (INCA Finance Penuh)</option>
+              <option value="coach">Instruktur / Coach (Kalender & Presensi)</option>
+              <option value="custom">Kustom (Tentukan Hak Akses Bebas)</option>
+            </select>
+          </div>
+          <div class="pt-4 sm:pt-0">
+            <label class="flex items-center gap-2 cursor-pointer font-medium text-gray-700">
+              <input type="checkbox" id="umActive" checked class="rounded text-indigo-600 focus:ring-indigo-500 h-4 w-4">
+              <span>Status Akun Aktif (Dapat Login)</span>
+            </label>
+            <p class="text-[10px] text-gray-500 mt-0.5 ml-6">Nonaktifkan jika staf sudah resign atau dinonaktifkan sementara.</p>
+          </div>
+        </div>
+
+        <!-- Matriks Hak Akses Menu (Granular Permissions) -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center justify-between border-b border-gray-200 pb-2">
+            <div>
+              <h4 class="font-bold text-gray-900 text-xs">Matriks Izin Akses Menu (21 Menu)</h4>
+              <p class="text-[11px] text-gray-500">Centang menu yang diizinkan untuk dibuka oleh pengguna ini.</p>
+            </div>
+            <div class="flex gap-2">
+              <button type="button" onclick="selectAllUserPermissions()" class="text-[11px] px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-lg font-medium hover:bg-indigo-100 transition">Pilih Semua</button>
+              <button type="button" onclick="clearAllUserPermissions()" class="text-[11px] px-2.5 py-1 bg-gray-100 text-gray-600 rounded-lg font-medium hover:bg-gray-200 transition">Kosongkan</button>
+            </div>
+          </div>
+
+          <!-- Modul Admin Studio Permissions -->
+          <div class="bg-sage-50/60 p-3 rounded-xl border border-sage-200 space-y-2">
+            <div class="flex items-center gap-1.5 text-sage-900 font-bold text-xs">
+              <i data-lucide="layout-grid" class="w-4 h-4 text-sage-700"></i>
+              <span>Menu Admin Studio (10 Menu Operasional)</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_dashboard" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">1. Dashboard & Kalender</span>
+                  <p class="text-[10px] text-gray-500">KPI studio & agenda kalender interaktif</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_members" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">2. Database Member</span>
+                  <p class="text-[10px] text-gray-500">Kelola data klien, kontak, dan riwayat paket</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_purchases" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">3. Transaksi Pembelian</span>
+                  <p class="text-[10px] text-gray-500">Pendaftaran paket klien & status bayar</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_packages" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">4. Master Tarif Paket</span>
+                  <p class="text-[10px] text-gray-500">Atur harga sesi, promo, & masa berlaku</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_classes" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">5. Master Jenis Kelas</span>
+                  <p class="text-[10px] text-gray-500">Mesin Pilates & kapasitas maks 4 orang</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_coaches" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">6. Master Instruktur/Coach</span>
+                  <p class="text-[10px] text-gray-500">Daftar coach dan sertifikasi mengajar</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_checkin" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">7. Presensi & Check-In</span>
+                  <p class="text-[10px] text-gray-500">Catat kehadiran klien di sesi kelas</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_leads" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">8. Leads & Prospek Baru</span>
+                  <p class="text-[10px] text-gray-500">Tindak lanjuti prospek & konversi member</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_studio_backup" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">9. Master Excel & Sinkron</span>
+                  <p class="text-[10px] text-gray-500">Sinkronisasi Excel cerdas & backup data</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-sage-100 hover:border-sage-300 cursor-pointer">
+                <input type="checkbox" id="perm_system_users" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">10. Kelola Akun & Akses</span>
+                  <p class="text-[10px] text-gray-500">Atur pengguna login & matriks hak akses</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Modul INCA Finance Permissions -->
+          <div class="bg-purple-50/60 p-3 rounded-xl border border-purple-200 space-y-2">
+            <div class="flex items-center gap-1.5 text-purple-900 font-bold text-xs">
+              <i data-lucide="wallet" class="w-4 h-4 text-purple-700"></i>
+              <span>Menu INCA Finance (11 Menu Pembukuan)</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_ringkasan" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-1. Ringkasan Keuangan</span>
+                  <p class="text-[10px] text-gray-500">Dashboard laba/rugi, saldo kas, & KPI</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_transaksi" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-2. Jurnal & Transaksi</span>
+                  <p class="text-[10px] text-gray-500">Catat transaksi mutasi kas/bank & jurnal</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_kas_bank" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-3. Kas & Bank</span>
+                  <p class="text-[10px] text-gray-500">Arus kas masuk & keluar rekening studio</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_buku_besar" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-4. Buku Besar</span>
+                  <p class="text-[10px] text-gray-500">Buku besar per akun lengkap</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_petty_cash" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-5. Kas Kecil Admin</span>
+                  <p class="text-[10px] text-gray-500">Petty cash operasional ruko harian</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_laporan" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-6. Laporan Laba Rugi</span>
+                  <p class="text-[10px] text-gray-500">Laporan eksekutif, rekomendasi & cetak PDF</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_proyeksi" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-7. Proyeksi & BEP</span>
+                  <p class="text-[10px] text-gray-500">Kalkulator BEP, dividen 3 owner & simulasi</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_modal_owner" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-8. Modal Owner</span>
+                  <p class="text-[10px] text-gray-500">Porsi ekuitas & setoran modal pemegang saham</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_daftar_akun" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-9. Bagan Akun (COA)</span>
+                  <p class="text-[10px] text-gray-500">Struktur kode rekening akuntansi</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_catatan_sumber" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-10. Catatan Sumber Data</span>
+                  <p class="text-[10px] text-gray-500">Audit trail verifikasi data & lampiran</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-2 p-2 bg-white rounded-lg border border-purple-100 hover:border-purple-300 cursor-pointer">
+                <input type="checkbox" id="perm_finance_data_backup" class="rounded text-indigo-600 focus:ring-indigo-500 mt-0.5">
+                <div>
+                  <span class="font-bold text-gray-800">F-11. Cadangan Data</span>
+                  <p class="text-[10px] text-gray-500">Backup & restore pembukuan JSON</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="flex items-center justify-end gap-2 pt-4 border-t border-gray-100 shrink-0">
+          <button type="button" onclick="closeUserModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition">
+            Batal
+          </button>
+          <button type="submit" class="px-5 py-2 bg-indigo-700 hover:bg-indigo-800 text-white font-semibold rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i> Simpan Data Pengguna
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= INCA FINANCE DIALOGS & SCRIPTS ================= -->
+  <dialog id="entry"><form id="form"><div class="dialoghead"><div><div class="eyebrow">JURNAL BARU</div><h2>Catat transaksi</h2></div><button type="button" onclick="entry.close()"></button></div><label>Jenis transaksi<select id="kind"><option value="income">Penerimaan pendapatan</option><option value="expense">Pembayaran beban</option><option value="capital">Setoran modal owner</option><option value="asset">Pembelian aset tunai</option><option value="receivable">Penjualan kredit / piutang</option><option value="collect">Penerimaan piutang</option><option value="payable">Beban belum dibayar / utang</option><option value="pay">Pembayaran utang</option><option value="transfer">Transfer kas / bank</option><option value="general">Jurnal umum / saldo awal</option></select></label><div class="formgrid"><label>Tanggal<input id="date" type="date" required></label><label>Nominal (Rp)<input id="amount" type="number" min="1" max="999999999999" step="1" required placeholder="0"></label></div><label>Uraian<input id="memo" maxlength="200" required placeholder="Contoh: Pembayaran paket Pilates"></label><label>Member / vendor / referensi<input id="party" maxlength="100" placeholder="Opsional"></label><div class="formgrid"><label><span id="dl">Akun debit</span><select id="debit"></select></label><label><span id="cl">Akun kredit</span><select id="credit"></select></label></div><p class="hint">Setiap transaksi menghasilkan debit dan kredit dengan nominal yang sama. Paket prabayar dapat dicatat sebagai pendapatan diterima di muka melalui jurnal umum.</p><div id="formerror" role="alert"></div><button class="primary full">Simpan transaksi</button></form></dialog>
+  <div id="toast" role="status"></div>
+  <input type="file" id="restore" accept="application/json" hidden><input type="file" id="excelFile" accept=".xlsx,.xls,.csv" hidden onchange="handleExcelImport(event)"><input type="file" id="excelBukuBesarFile" accept=".xlsx,.xls,.csv" hidden onchange="handleBukuBesarExcelImport(event)"><input type="file" id="excelPettyCashFile" accept=".xlsx,.xls,.csv" hidden onchange="handlePettyCashExcelImport(event)">
+  <dialog id="lpjDialog"><form id="unlockLPJ"><div class="dialoghead"><div style="display:flex;align-items:center;gap:14px;"><img src="logo.png" alt="INCA Logo" class="dialog-logo"><div><div class="eyebrow">DATA TERENKRIPSI</div><h2>Dashboard INCA</h2></div></div><button type="button" onclick="closeLPJ()"></button></div><p>Masukkan kode akses untuk membuka dashboard keuangan studio. Kode akses bawaan: <b>123456</b> atau <b>admin123</b>.</p><label>Kode akses dashboard<input id="lpjPassword" type="password" autocomplete="off" required placeholder="Contoh: 123456"></label><button class="primary full" id="unlockButton">Tampilkan dashboard</button><p id="unlockError" role="alert"></p></form><div id="importPreview"></div></dialog>
+
+  <!-- Scripts -->
+  <script src="js/xlsx.full.min.js"></script>
+  <script src="js/buku-besar-data.js"></script>
+  <script src="js/petty-cash-data.js"></script>
+  <script src="js/finance-app.js"></script>
+  <script src="js/lpj-data.js"></script>
+  <script src="js/lpj.js"></script>
+  <script src="js/studio-data.js"></script>
+  <script src="js/user-management.js"></script>
+  <script src="js/searchable-select.js"></script>
+  <script src="js/excel-sync.js"></script>
+  <script src="js/studio-app.js"></script>
+</body>
+</html>

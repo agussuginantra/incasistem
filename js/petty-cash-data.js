@@ -1,0 +1,233 @@
+window.INITIAL_PETTY_CASH = [
+  {
+    "id": "pc-1",
+    "sheet": "OCT 2026",
+    "no": 1,
+    "date": "2026-10-12",
+    "effectiveDate": "2026-10-12",
+    "keterangan": "REFIL PETTY CASH",
+    "masuk": 500000,
+    "keluar": 0,
+    "saldo": 500000
+  },
+  {
+    "id": "pc-2",
+    "sheet": "OCT 2026",
+    "no": 2,
+    "date": "",
+    "effectiveDate": "2026-10-12",
+    "keterangan": "TOKPED PRINTILAN INCA",
+    "masuk": 0,
+    "keluar": 74043,
+    "saldo": 425957
+  },
+  {
+    "id": "pc-3",
+    "sheet": "OCT 2026",
+    "no": 3,
+    "date": "",
+    "effectiveDate": "2026-10-12",
+    "keterangan": "TOKPED PRINTILAN INCA",
+    "masuk": 0,
+    "keluar": 75737,
+    "saldo": 350220
+  },
+  {
+    "id": "pc-4",
+    "sheet": "OCT 2026",
+    "no": 4,
+    "date": "2026-10-13",
+    "effectiveDate": "2026-10-13",
+    "keterangan": "2 GALON",
+    "masuk": 0,
+    "keluar": 12000,
+    "saldo": 338220
+  },
+  {
+    "id": "pc-5",
+    "sheet": "OCT 2026",
+    "no": 5,
+    "date": "2026-10-15",
+    "effectiveDate": "2026-10-15",
+    "keterangan": "IURAN SAMPAH",
+    "masuk": 0,
+    "keluar": 70000,
+    "saldo": 268220
+  },
+  {
+    "id": "pc-6",
+    "sheet": "OCT 2026",
+    "no": 6,
+    "date": "2026-10-16",
+    "effectiveDate": "2026-10-16",
+    "keterangan": "PETTY CASH MASUK",
+    "masuk": 161000,
+    "keluar": 0,
+    "saldo": 429220
+  },
+  {
+    "id": "pc-7",
+    "sheet": "OCT 2026",
+    "no": 7,
+    "date": "",
+    "effectiveDate": "2026-10-16",
+    "keterangan": "PIRING",
+    "masuk": 0,
+    "keluar": 35000,
+    "saldo": 394220
+  },
+  {
+    "id": "pc-8",
+    "sheet": "OCT 2026",
+    "no": 8,
+    "date": "",
+    "effectiveDate": "2026-10-16",
+    "keterangan": "SENDOK",
+    "masuk": 0,
+    "keluar": 4000,
+    "saldo": 390220
+  },
+  {
+    "id": "pc-9",
+    "sheet": "OCT 2026",
+    "no": 9,
+    "date": "2026-10-18",
+    "effectiveDate": "2026-10-18",
+    "keterangan": "MATRAI 10 RB",
+    "masuk": 0,
+    "keluar": 168000,
+    "saldo": 222220
+  },
+  {
+    "id": "pc-10",
+    "sheet": "OCT 2026",
+    "no": 10,
+    "date": "",
+    "effectiveDate": "2026-10-18",
+    "keterangan": "HVS A4 1 RIM",
+    "masuk": 0,
+    "keluar": 50000,
+    "saldo": 172220
+  },
+  {
+    "id": "pc-11",
+    "sheet": "OCT 2026",
+    "no": 11,
+    "date": "",
+    "effectiveDate": "2026-10-18",
+    "keterangan": "ONGKIR PENGIRIMAN BROSUR",
+    "masuk": 0,
+    "keluar": 17000,
+    "saldo": 155220
+  },
+  {
+    "id": "pc-12",
+    "sheet": "OCT 2026",
+    "no": 12,
+    "date": "2026-10-19",
+    "effectiveDate": "2026-10-19",
+    "keterangan": "GULA & THE",
+    "masuk": 0,
+    "keluar": 24000,
+    "saldo": 131220
+  },
+  {
+    "id": "pc-13",
+    "sheet": "OCT 2026",
+    "no": 13,
+    "date": "",
+    "effectiveDate": "2026-10-19",
+    "keterangan": "GALON",
+    "masuk": 0,
+    "keluar": 6000,
+    "saldo": 125220
+  },
+  {
+    "id": "pc-14",
+    "sheet": "OCT 2026",
+    "no": 14,
+    "date": "",
+    "effectiveDate": "2026-10-19",
+    "keterangan": "PETTY CASH MASUK",
+    "masuk": 200000,
+    "keluar": 0,
+    "saldo": 325220
+  },
+  {
+    "id": "pc-15",
+    "sheet": "OCT 2026",
+    "no": 15,
+    "date": "",
+    "effectiveDate": "2026-10-19",
+    "keterangan": "AQUA 2 DUS",
+    "masuk": 0,
+    "keluar": 100000,
+    "saldo": 225220
+  },
+  {
+    "id": "pc-16",
+    "sheet": "OCT 2026",
+    "no": 16,
+    "date": "2026-10-23",
+    "effectiveDate": "2026-10-23",
+    "keterangan": "PLASTIK OPP ",
+    "masuk": 0,
+    "keluar": 12000,
+    "saldo": 213220
+  },
+  {
+    "id": "pc-17",
+    "sheet": "OCT 2026",
+    "no": 17,
+    "date": "2026-10-25",
+    "effectiveDate": "2026-10-25",
+    "keterangan": "SABUN CUCI TANGAN ",
+    "masuk": 0,
+    "keluar": 51662,
+    "saldo": 161558
+  },
+  {
+    "id": "pc-18",
+    "sheet": "OCT 2026",
+    "no": 18,
+    "date": "2026-10-26",
+    "effectiveDate": "2026-10-26",
+    "keterangan": "1 GALON",
+    "masuk": 0,
+    "keluar": 6000,
+    "saldo": 155558
+  },
+  {
+    "id": "pc-19",
+    "sheet": "OCT 2026",
+    "no": 19,
+    "date": "2026-10-30",
+    "effectiveDate": "2026-10-30",
+    "keterangan": "2 PALA CASAN",
+    "masuk": 0,
+    "keluar": 100000,
+    "saldo": 55558
+  },
+  {
+    "id": "pc-20",
+    "sheet": "OCT 2026",
+    "no": 20,
+    "date": "2026-10-31",
+    "effectiveDate": "2026-10-31",
+    "keterangan": "GOSEN SD CARD",
+    "masuk": 0,
+    "keluar": 16000,
+    "saldo": 39558
+  },
+  {
+    "id": "pc-21",
+    "sheet": "OCT 2026",
+    "no": 21,
+    "date": "",
+    "effectiveDate": "2026-10-31",
+    "keterangan": "GALON",
+    "masuk": 0,
+    "keluar": 6000,
+    "saldo": 33558
+  }
+];
