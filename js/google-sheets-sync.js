@@ -11,13 +11,17 @@
 
 (function() {
   // Default URL Apps Script Web App (agar saat di-hosting di GitHub Pages / perangkat baru langsung otomatis tersambung)
-  const DEFAULT_WEB_APP_URL = '';
+  const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwaF2-bVnUdG6e3lj9Vm9OcHd0ivTgpKzkeQdJJhtNDq1mEnbAX_rgLdpy1bZM14pBi/exec';
   const STORAGE_KEY_URL = 'INCA_GOOGLE_SHEETS_URL';
   const STORAGE_KEY_AUTO = 'INCA_GOOGLE_SHEETS_AUTO_SYNC';
 
   window.GoogleSheetsSync = {
     getUrl: function() {
-      return localStorage.getItem(STORAGE_KEY_URL) || DEFAULT_WEB_APP_URL || '';
+      const stored = localStorage.getItem(STORAGE_KEY_URL);
+      if (stored && stored.trim().length > 0) {
+        return stored.trim();
+      }
+      return DEFAULT_WEB_APP_URL;
     },
     setUrl: function(url) {
       if (url) {

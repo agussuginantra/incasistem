@@ -135,7 +135,7 @@
 
       <!-- Footer Trademark & Copyright -->
       <div class="mt-6 pt-4 border-t border-gray-100 text-center text-[11px] text-gray-400 space-y-0.5">
-        <div>Dirancang khusus untuk Studio Pilates, Yoga & Kebugaran Mandiri. Beroperasi 100% Offline.</div>
+        <div>Dirancang khusus untuk Studio Pilates, Yoga & Kebugaran Mandiri. Terintegrasi Cloud Database Google Sheets.</div>
         <div class="text-[10.5px] font-semibold text-gray-600 mt-1">Trademark PUTI™</div>
         <div class="text-[10px] text-gray-400">Copyright &copy; 2026</div>
       </div>
@@ -178,9 +178,9 @@
         </div>
 
         <!-- Cloud Database Status Pill -->
-        <button id="cloudDbIndicator" onclick="openCloudDbModal()" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 text-[10.5px] font-medium cursor-pointer hover:bg-gray-800 transition whitespace-nowrap" title="Status Database: Lokal. Klik untuk integrasi Google Sheets.">
-          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-          <span>Database: Lokal</span>
+        <button id="cloudDbIndicator" onclick="openCloudDbModal()" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-800/80 text-emerald-300 text-[10.5px] font-medium cursor-pointer hover:bg-emerald-900/80 transition whitespace-nowrap" title="Terhubung ke Google Sheets Database. Klik untuk pengaturan.">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Cloud DB: Aktif</span>
         </button>
 
         <!-- Current User Profile & Logout -->
@@ -1056,9 +1056,9 @@
           🔒 Kunci / Logout
         </button>
       </div>
-      <div class="asidefoot"><span class="dot"></span> Pembukuan lokal<small>Data tersimpan di browser ini</small></div>
+      <div class="asidefoot"><span class="dot" style="background:#10b981;"></span> Cloud DB Aktif<small>Tersinkronisasi Google Sheets</small></div>
     </aside>
-    <div class="finance-main-content"><header><div>Workspace <span>/</span> <b id="crumb">Ringkasan</b></div><div title="INCA Pilates"><img src="favicon.png" alt="INCA Logo" class="avatar-logo"></div></header><section><div class="heading"><div><div class="eyebrow">INCA PILATES  FINANCE</div><h1 id="title"></h1><p id="subtitle"></p></div><button class="primary" onclick="openEntry()">+ Catat transaksi</button></div><div class="notice">? &nbsp; Data lokal di browser ini. Unduh backup berkala melalui menu Data & backup. <strong id="mode"></strong></div><div class="filters"><label>Periode laporan <input id="month" type="month"></label><button onclick="document.getElementById('month').value='';render()">Semua periode</button><span id="periodLabel"></span></div><div id="content"></div></section><footer>
+    <div class="finance-main-content"><header><div>Workspace <span>/</span> <b id="crumb">Ringkasan</b></div><div title="INCA Pilates"><img src="favicon.png" alt="INCA Logo" class="avatar-logo"></div></header><section><div class="heading"><div><div class="eyebrow">INCA PILATES  FINANCE</div><h1 id="title"></h1><p id="subtitle"></p></div><button class="primary" onclick="openEntry()">+ Catat transaksi</button></div><div class="notice">☁️ &nbsp; Tersinkronisasi Cloud Database Google Sheets & Tersimpan di Browser. <strong id="mode"></strong></div><div class="filters"><label>Periode laporan <input id="month" type="month"></label><button onclick="document.getElementById('month').value='';render()">Semua periode</button><span id="periodLabel"></span></div><div id="content"></div></section><footer>
         <div>INCA Finance <span>Pembukuan yang lebih tertata, ruang untuk bertumbuh.</span></div>
         <div style="text-align: right; font-size: 10.5px; line-height: 1.35;">
           <div style="font-weight: 600; color: #5c4b69;">Trademark PUTI™</div>
@@ -1076,7 +1076,7 @@
         <span>Sistem Operasional Studio & INCA Finance</span>
       </div>
       <div class="text-[11px] text-gray-400 text-center sm:text-right flex flex-col items-center sm:items-end gap-0.5">
-        <div>Dirancang khusus untuk Studio Pilates, Yoga & Kebugaran Mandiri. Beroperasi 100% Offline.</div>
+        <div>Dirancang khusus untuk Studio Pilates, Yoga & Kebugaran Mandiri. Terintegrasi Cloud Database Google Sheets.</div>
         <div class="text-[10.5px] font-semibold text-gray-600 mt-0.5">Trademark PUTI™</div>
         <div class="text-[10px] text-gray-400">Copyright &copy; 2026</div>
       </div>
@@ -2034,7 +2034,7 @@
         <form onsubmit="handleSaveCloudDbConfig(event)" class="space-y-3 pt-2 border-t border-gray-100">
           <div>
             <label class="block font-bold text-gray-700 text-xs mb-1">URL Google Apps Script Web App</label>
-            <input type="url" id="cloudDbUrl" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500 focus:bg-white font-mono">
+            <input type="url" id="cloudDbUrl" value="https://script.google.com/macros/s/AKfycbwaF2-bVnUdG6e3lj9Vm9OcHd0ivTgpKzkeQdJJhtNDq1mEnbAX_rgLdpy1bZM14pBi/exec" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500 focus:bg-white font-mono">
             <p class="text-[10px] text-gray-400 mt-1">Kosongkan URL jika ingin tetap berjalan dalam mode 100% Offline Lokal.</p>
           </div>
 
