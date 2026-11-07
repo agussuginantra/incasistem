@@ -12,15 +12,33 @@
  */
 
 (function() {
-  const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwaF2-bVnUdG6e3lj9Vm9OcHd0ivTgpKzkeQdJJhtNDq1mEnbAX_rgLdpy1bZM14pBi/exec';
+  const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzTyexsJv5vGvWYMcjN9uydLBdUJ5WHEPLmKBLpE7CFZvgOmSXU3tOJPt4953SZuYFV/exec';
+  const OLD_WEB_APP_URLS = [
+    'https://script.google.com/macros/s/AKfycbwaF2-bVnUdG6e3lj9Vm9OcHd0ivTgpKzkeQdJJhtNDq1mEnbAX_rgLdpy1bZM14pBi/exec'
+  ];
   const STORAGE_KEY_URL = 'INCA_GOOGLE_SHEETS_URL';
   const STORAGE_KEY_AUTO = 'INCA_GOOGLE_SHEETS_AUTO_SYNC';
 
+  // Otomatis migrasikan URL lama jika tersimpan di LocalStorage browser user ke URL v2.0
+  try {
+    const existingUrl = localStorage.getItem(STORAGE_KEY_URL);
+    if (!existingUrl || OLD_WEB_APP_URLS.includes(existingUrl.trim())) {
+      localStorage.setItem(STORAGE_KEY_URL, DEFAULT_WEB_APP_URL);
+    }
+  } catch (e) {}
+
   window.GoogleSheetsSync = {
     getUrl: function() {
-      const stored = localStorage.getItem(STORAGE_KEY_URL);
-      if (stored && stored.trim().length > 0) {
-        return stored.trim();
+      let stored = localStorage.getItem(STORAGE_KEY_URL);
+      if (stored) {
+        stored = stored.trim();
+        if (OLD_WEB_APP_URLS.includes(stored)) {
+          stored = DEFAULT_WEB_APP_URL;
+          localStorage.setItem(STORAGE_KEY_URL, DEFAULT_WEB_APP_URL);
+        }
+      }
+      if (stored && stored.length > 0) {
+        return stored;
       }
       return DEFAULT_WEB_APP_URL;
     },

@@ -102,6 +102,18 @@ const DEFAULT_SYSTEM_USERS = [
     permissions: SYSTEM_PERMISSIONS.map(p => p.id)
   },
   {
+    id: 'usr-titiswidya',
+    name: 'Titis Widya',
+    username: 'titiswidya',
+    password: '123456',
+    role: 'owner',
+    roleLabel: 'Super Admin / Owner',
+    phone: '-',
+    active: true,
+    createdDate: '07 Nov 2026',
+    permissions: SYSTEM_PERMISSIONS.map(p => p.id)
+  },
+  {
     id: 'usr-admin',
     name: 'Admin Studio Operasional',
     username: 'admin',
@@ -189,8 +201,80 @@ function getSystemAppState() {
   return { users: [] };
 }
 
+// Fetch and sync users directly from Google Sheets DB_Pengguna
+async function fetchUsersFromCloudDb() {
+  if (!window.GoogleSheetsSync) return null;
+  const url = window.GoogleSheetsSync.getUrl();
+  if (!url) return null;
+
+  try {
+    const fetchUrl = url + (url.includes('?') ? '&' : '?') + 'action=getTable&table=DB_Pengguna&t=' + Date.now();
+    const res = await fetch(fetchUrl);
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (json.status === 'success' && Array.isArray(json.rows) && json.rows.length > 0) {
+      const state = getSystemAppState();
+      if (!state.users) state.users = [];
+
+      json.rows.forEach(r => {
+        const username = String(r['Username'] || '').trim().toLowerCase();
+        if (!username) return;
+
+        const existing = state.users.find(u => u.username.toLowerCase() === username);
+        const role = String(r['Kode Peran'] || 'admin').toLowerCase();
+        const tpl = ROLE_TEMPLATES[role] || ROLE_TEMPLATES.admin;
+        
+        const userData = {
+          id: String(r['ID Pengguna'] || ('usr-' + username)),
+          name: String(r['Nama Lengkap'] || username),
+          username: username,
+          password: String(r['Kata Sandi'] || ''),
+          role: role,
+          roleLabel: String(r['Label Jabatan'] || tpl.label),
+          phone: String(r['Nomor Telepon'] || ''),
+          active: String(r['Status Akun'] || '').toLowerCase() !== 'nonaktif',
+          createdDate: String(r['Tanggal Dibuat'] || '12 Okt 2026'),
+          permissions: (existing && existing.permissions && existing.permissions.length) 
+            ? existing.permissions 
+            : tpl.defaultPermissions
+        };
+
+        if (existing) {
+          Object.assign(existing, userData);
+        } else {
+          state.users.push(userData);
+        }
+      });
+
+      if (typeof saveState === 'function') saveState();
+      if (document.getElementById('usersTableBody')) renderUsersTable();
+      return json.rows;
+    }
+  } catch (err) {
+    console.warn('[Cloud DB] fetchUsersFromCloudDb:', err);
+  }
+  return null;
+}
+
+window.fetchUsersFromCloudDb = fetchUsersFromCloudDb;
+
+window.refreshUsersFromCloud = async function() {
+  if (typeof showToast === 'function') showToast('Menghubungi Google Sheets DB_Pengguna...', 'info');
+  const rows = await fetchUsersFromCloudDb();
+  if (rows && rows.length > 0) {
+    if (typeof showToast === 'function') showToast(`✅ Berhasil menyinkronkan ${rows.length} akun pengguna dari Google Sheets!`, 'success');
+  } else {
+    if (typeof showToast === 'function') showToast('Belum dapat mengambil data dari Google Sheets. Periksa koneksi.', 'warning');
+  }
+};
+
 function initAuthGate() {
   ensureUsersInitialized();
+  // Fetch latest users from cloud in background
+  if (window.GoogleSheetsSync && window.GoogleSheetsSync.getUrl()) {
+    fetchUsersFromCloudDb();
+  }
+
   const sessionUser = getActiveAuthUser();
   const gateEl = document.getElementById('loginGateScreen');
   
@@ -216,7 +300,7 @@ function initAuthGate() {
   return false;
 }
 
-function handleGateLogin(event) {
+async function handleGateLogin(event) {
   if (event) event.preventDefault();
   const uInput = document.getElementById('gateUsername');
   const pInput = document.getElementById('gatePassword');
@@ -236,7 +320,19 @@ function handleGateLogin(event) {
   }
 
   ensureUsersInitialized();
-  const user = getSystemAppState().users.find(u => u.username.toLowerCase() === username && u.password === password);
+  let user = getSystemAppState().users.find(u => u.username.toLowerCase() === username && String(u.password) === String(password));
+
+  // If not found locally, try fetching latest users from Google Sheets
+  if (!user && window.GoogleSheetsSync && window.GoogleSheetsSync.getUrl()) {
+    try {
+      if (alertEl && alertText) {
+        alertText.innerHTML = '<span class="inline-flex items-center gap-1.5"><span class="animate-spin w-3 h-3 border-2 border-amber-600 border-t-transparent rounded-full"></span> Memeriksa akun ke Cloud Database...</span>';
+        alertEl.classList.remove('hidden');
+      }
+      await fetchUsersFromCloudDb();
+      user = getSystemAppState().users.find(u => u.username.toLowerCase() === username && String(u.password) === String(password));
+    } catch (e) {}
+  }
 
   if (!user) {
     if (alertEl && alertText) {
@@ -404,6 +500,17 @@ function ensureUsersInitialized() {
   if (!state.users || !Array.isArray(state.users) || state.users.length === 0) {
     state.users = JSON.parse(JSON.stringify(defUsers));
     if (typeof saveState === 'function') saveState();
+  } else {
+    // Pastikan user bawaan baru (misal titiswidya) otomatis masuk ke state jika belum ada
+    let changed = false;
+    defUsers.forEach(du => {
+      const exists = state.users.some(u => u.username.toLowerCase() === du.username.toLowerCase());
+      if (!exists) {
+        state.users.push(JSON.parse(JSON.stringify(du)));
+        changed = true;
+      }
+    });
+    if (changed && typeof saveState === 'function') saveState();
   }
 }
 
@@ -683,7 +790,13 @@ function saveUser(event) {
 
       showToast(`Data dan hak akses pengguna @${username} berhasil diperbarui!`, 'success');
       if (window.GoogleSheetsSync) {
-        window.GoogleSheetsSync.pushUser('saveUser', user);
+        window.GoogleSheetsSync.pushUser('saveUser', user).then(res => {
+          if (res && res.status === 'error') {
+            showToast(`⚠️ Google Apps Script: ${res.message}. Harap perbarui skrip di Google Sheets ke v2.0.`, 'warning');
+          } else if (res && res.status === 'success') {
+            showToast(`✅ Akun @${username} tersimpan ke Google Sheets DB_Pengguna!`, 'success');
+          }
+        });
       }
     }
   } else {
@@ -709,7 +822,13 @@ function saveUser(event) {
     state.users.push(newUser);
     showToast(`Pengguna baru @${username} berhasil ditambahkan!`, 'success');
     if (window.GoogleSheetsSync) {
-      window.GoogleSheetsSync.pushUser('saveUser', newUser);
+      window.GoogleSheetsSync.pushUser('saveUser', newUser).then(res => {
+        if (res && res.status === 'error') {
+          showToast(`⚠️ Google Apps Script: ${res.message}. Harap perbarui skrip di Google Sheets ke v2.0.`, 'warning');
+        } else if (res && res.status === 'success') {
+          showToast(`✅ Akun @${username} tersimpan ke Google Sheets DB_Pengguna!`, 'success');
+        }
+      });
     }
   }
 
@@ -797,3 +916,5 @@ window.saveUser = saveUser;
 window.promptResetPassword = promptResetPassword;
 window.toggleUserStatus = toggleUserStatus;
 window.deleteUser = deleteUser;
+window.fetchUsersFromCloudDb = fetchUsersFromCloudDb;
+window.refreshUsersFromCloud = refreshUsersFromCloud;

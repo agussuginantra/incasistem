@@ -960,9 +960,14 @@
             <h3 class="font-serif text-2xl font-bold">Kelola Pengguna & Hak Akses Menu</h3>
             <p class="text-xs text-gray-300 mt-1 max-w-2xl">Atur akun staf, resepsionis, coach, dan owner yang dapat login ke Sistem Terpadu INCA serta batasi menu mana saja yang dapat dibuka oleh masing-masing peran.</p>
           </div>
-          <button onclick="openAddUserModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2 shrink-0 cursor-pointer">
-            <i data-lucide="user-plus" class="w-4 h-4"></i> + Tambah Pengguna Baru
-          </button>
+          <div class="flex items-center gap-2 shrink-0 flex-wrap">
+            <button onclick="refreshUsersFromCloud()" class="bg-gray-800 hover:bg-gray-700 text-white text-xs font-semibold px-3 py-2.5 rounded-xl shadow transition flex items-center gap-1.5 cursor-pointer border border-gray-700" title="Tarik & sinkronkan ulang seluruh pengguna dari Google Sheets DB_Pengguna">
+              <i data-lucide="refresh-cw" class="w-4 h-4 text-emerald-400"></i> Sinkron dari Sheets
+            </button>
+            <button onclick="openAddUserModal()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2 cursor-pointer">
+              <i data-lucide="user-plus" class="w-4 h-4"></i> + Tambah Pengguna Baru
+            </button>
+          </div>
         </div>
 
         <!-- KPI Mini Cards -->
@@ -2034,7 +2039,7 @@
         <form onsubmit="handleSaveCloudDbConfig(event)" class="space-y-3 pt-2 border-t border-gray-100">
           <div>
             <label class="block font-bold text-gray-700 text-xs mb-1">URL Google Apps Script Web App</label>
-            <input type="url" id="cloudDbUrl" value="https://script.google.com/macros/s/AKfycbwaF2-bVnUdG6e3lj9Vm9OcHd0ivTgpKzkeQdJJhtNDq1mEnbAX_rgLdpy1bZM14pBi/exec" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500 focus:bg-white font-mono">
+            <input type="url" id="cloudDbUrl" value="https://script.google.com/macros/s/AKfycbzTyexsJv5vGvWYMcjN9uydLBdUJ5WHEPLmKBLpE7CFZvgOmSXU3tOJPt4953SZuYFV/exec" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500 focus:bg-white font-mono">
             <p class="text-[10px] text-gray-400 mt-1">Kosongkan URL jika ingin tetap berjalan dalam mode 100% Offline Lokal.</p>
           </div>
 
