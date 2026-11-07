@@ -682,6 +682,9 @@ function saveUser(event) {
       }
 
       showToast(`Data dan hak akses pengguna @${username} berhasil diperbarui!`, 'success');
+      if (window.GoogleSheetsSync) {
+        window.GoogleSheetsSync.pushUser('saveUser', user);
+      }
     }
   } else {
     // Check username duplicate
@@ -705,6 +708,9 @@ function saveUser(event) {
     };
     state.users.push(newUser);
     showToast(`Pengguna baru @${username} berhasil ditambahkan!`, 'success');
+    if (window.GoogleSheetsSync) {
+      window.GoogleSheetsSync.pushUser('saveUser', newUser);
+    }
   }
 
   saveState();
@@ -724,6 +730,9 @@ function promptResetPassword(userId) {
     saveState();
     renderUsersTable();
     showToast(`Kata sandi untuk @${user.username} berhasil diubah!`, 'success');
+    if (window.GoogleSheetsSync) {
+      window.GoogleSheetsSync.pushUser('saveUser', user);
+    }
   }
 }
 
@@ -740,6 +749,9 @@ function toggleUserStatus(userId) {
   saveState();
   renderUsersTable();
   showToast(`Status pengguna @${user.username} kini: ${user.active ? 'Aktif' : 'Nonaktif'}`, 'info');
+  if (window.GoogleSheetsSync) {
+    window.GoogleSheetsSync.pushUser('saveUser', user);
+  }
 }
 
 function deleteUser(userId) {
@@ -757,10 +769,14 @@ function deleteUser(userId) {
   }
 
   if (confirm(`Apakah Anda yakin ingin menghapus akun pengguna @${user.username} (${user.name})? Akses masuk akan dicabut secara permanen.`)) {
+    const deletedUserCopy = { id: user.id, username: user.username };
     state.users = state.users.filter(u => u.id !== userId);
     saveState();
     renderUsersTable();
     showToast(`Pengguna @${user.username} berhasil dihapus dari sistem.`, 'success');
+    if (window.GoogleSheetsSync) {
+      window.GoogleSheetsSync.pushUser('deleteUser', deletedUserCopy);
+    }
   }
 }
 

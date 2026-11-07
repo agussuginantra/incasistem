@@ -1021,6 +1021,7 @@ function saveMember(event) {
       m.birthDate = birthDate;
       m.address = address;
       m.source = source;
+      if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushMember('saveMember', m);
     }
     showToast('Data member berhasil diperbarui!', 'success');
   } else {
@@ -1045,7 +1046,7 @@ function saveMember(event) {
     };
     appState.members.unshift(newMember);
     showToast(`Member baru ${name} (${newCode}) berhasil didaftarkan!`, 'success');
-    if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushRecord('addMember', newMember);
+    if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushMember('saveMember', newMember);
   }
 
   saveState();
@@ -1064,6 +1065,7 @@ function deleteMember(memberId) {
   renderMembersTable();
   updateAdminStats();
   showToast(`Member ${m.name} telah dihapus.`, 'info');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushMember('deleteMember', { id: memberId });
 }
 
 // =========================================================================
@@ -1377,6 +1379,7 @@ function savePackage(event) {
     if (pkg) {
       Object.assign(pkg, { name, category, sessions, normalPrice, promoPrice, validityDays, firstTimerOnly, benefits, description });
       showToast('Paket berhasil diperbarui!', 'success');
+      if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushPackage('savePackage', pkg);
     }
   } else {
     const newPkg = {
@@ -1394,6 +1397,7 @@ function savePackage(event) {
     };
     appState.packages.push(newPkg);
     showToast('Paket baru berhasil ditambahkan!', 'success');
+    if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushPackage('savePackage', newPkg);
   }
 
   saveState();
@@ -1408,6 +1412,7 @@ function togglePackageStatus(packageId) {
     saveState();
     renderPackagesTable();
     showToast(`Status paket ${pkg.name} diubah menjadi ${pkg.active ? 'Aktif' : 'Nonaktif'}.`, 'info');
+    if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushPackage('savePackage', pkg);
   }
 }
 
@@ -1420,6 +1425,7 @@ function deletePackage(packageId) {
   saveState();
   renderPackagesTable();
   showToast(`Paket ${pkg.name} telah dihapus.`, 'info');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushPackage('deletePackage', { id: packageId });
 }
 
 // =========================================================================
@@ -1507,6 +1513,7 @@ function saveClass(event) {
     if (c) {
       Object.assign(c, { name, category, level, durationMinutes, defaultCapacity, dropinPrice, description });
       showToast('Master kelas berhasil diperbarui!', 'success');
+      if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushClass('saveClass', c);
     }
   } else {
     const newClass = {
@@ -1521,6 +1528,7 @@ function saveClass(event) {
     };
     appState.classes.push(newClass);
     showToast('Jenis kelas baru berhasil ditambahkan!', 'success');
+    if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushClass('saveClass', newClass);
   }
 
   saveState();
@@ -1537,6 +1545,7 @@ function deleteClass(classId) {
   saveState();
   renderClassesTable();
   showToast(`Kelas ${c.name} telah dihapus.`, 'info');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushClass('deleteClass', { id: classId });
 }
 
 // =========================================================================
@@ -1627,6 +1636,7 @@ function saveCoach(event) {
     if (c) {
       Object.assign(c, { name, role, specialties, phone, bio, avatar });
       showToast('Profil coach berhasil diperbarui!', 'success');
+      if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushCoach('saveCoach', c);
     }
   } else {
     const newCoach = {
@@ -1641,6 +1651,7 @@ function saveCoach(event) {
     };
     appState.coaches.push(newCoach);
     showToast(`Coach ${name} berhasil ditambahkan!`, 'success');
+    if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushCoach('saveCoach', newCoach);
   }
 
   saveState();
@@ -1657,6 +1668,7 @@ function deleteCoach(coachId) {
   saveState();
   renderCoachesGrid();
   showToast(`Coach ${c.name} telah dihapus.`, 'info');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushCoach('deleteCoach', { id: coachId });
 }
 
 // =========================================================================
@@ -2235,6 +2247,7 @@ function undoCheckInMemberFromModal(attendanceId, scheduleId) {
   renderCalendarGrid();
   updateAdminStats();
   showToast(`Status kehadiran ${att.memberName} direset.`, 'info');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushAttendance(att);
 }
 
 function openDaySchedulesView(isoDate) {
@@ -2393,6 +2406,7 @@ function saveSchedule(event) {
   closeScheduleModal();
   renderSchedulesTab();
   updateAdminStats();
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushSchedule('saveSchedule', newSchedule);
 
   showToast(`Sesi ${cls.name} bersama ${coach.name} pada ${date} berhasil dijadwalkan!`, 'success');
 }
@@ -2407,6 +2421,7 @@ function deleteSchedule(scheduleId) {
   renderSchedulesTab();
   updateAdminStats();
   showToast(`Sesi kelas telah dihapus.`, 'info');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushSchedule('deleteSchedule', { id: scheduleId });
 }
 
 // =========================================================================
@@ -2794,6 +2809,12 @@ function submitEnrollMember(event) {
   updateAdminStats();
 
   showToast(`${member.name} berhasil didaftarkan ke sesi kelas!`, 'success');
+  if (window.GoogleSheetsSync) {
+    window.GoogleSheetsSync.pushAttendance(newAttendance);
+    if (member && member.id) {
+      window.GoogleSheetsSync.pushRecord('updateMemberQuota', { memberId: member.id, remainingSessions: member.remainingSessions });
+    }
+  }
 }
 
 function performCheckIn(attendanceId) {
@@ -2812,6 +2833,7 @@ function performCheckIn(attendanceId) {
   updateAdminStats();
 
   showToast(`Check-In Berhasil: ${att.memberName} hadir pada ${timeStr} WIB!`, 'success');
+  if (window.GoogleSheetsSync) window.GoogleSheetsSync.pushAttendance(att);
 }
 
 function cancelAttendance(attendanceId) {
@@ -2820,8 +2842,9 @@ function cancelAttendance(attendanceId) {
   if (!confirm(`Batalkan pendaftaran ${att.memberName}? Kuota 1 sesi akan dikembalikan ke akun member.`)) return;
 
   // Kembalikan kuota sesi ke member jika tipe paket
+  let member = null;
   if (att.paymentType === 'package' && att.memberId) {
-    const member = appState.members.find(m => m.id === att.memberId);
+    member = appState.members.find(m => m.id === att.memberId);
     if (member) {
       member.remainingSessions = (member.remainingSessions || 0) + 1;
     }
@@ -2836,6 +2859,12 @@ function cancelAttendance(attendanceId) {
   updateAdminStats();
 
   showToast(`Pendaftaran ${att.memberName} dibatalkan. Kuota 1 sesi telah dikembalikan.`, 'info');
+  if (window.GoogleSheetsSync) {
+    window.GoogleSheetsSync.pushAttendance(att);
+    if (member && member.id) {
+      window.GoogleSheetsSync.pushRecord('updateMemberQuota', { memberId: member.id, remainingSessions: member.remainingSessions });
+    }
+  }
 }
 
 // =========================================================================

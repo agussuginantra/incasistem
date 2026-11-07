@@ -768,6 +768,16 @@
     if (window.updateMasterTopBannerStats) updateMasterTopBannerStats();
     closeExcelSyncModal();
 
+    // Auto-Sync ke Cloud Database Google Sheets
+    if (window.GoogleSheetsSync) {
+      window.GoogleSheetsSync.syncExcelStudioData({
+        members: appState.members || [],
+        packagePurchases: appState.packagePurchases || [],
+        classAttendances: appState.classAttendances || [],
+        schedules: appState.schedules || []
+      });
+    }
+
     // Notifikasi hasil sinkronisasi
     if (isFull) {
       const delMsg = a.summary.totalDeleted > 0 ? `, dan -${a.summary.totalDeleted} data dihapus sesuai Excel` : '';

@@ -1911,11 +1911,13 @@ function syncBukuBesarToJournals(notify = true) {
   if (persist({ ...state, entries: newEntries, demo: false, lpj: { status: 'synced_from_buku_besar' } })) {
     render();
     if (notify) {
-      toast(`Berhasil menyinkronkan ${newEntries.length} transaksi ke Jurnal & Laporan!`);
+      toast(Berhasil menyinkronkan  transaksi ke Jurnal & Laporan!);
+    }
+    if (window.GoogleSheetsSync) {
+      window.GoogleSheetsSync.syncExcelFinanceData(newEntries);
     }
   }
 }
-
 function downloadBukuBesarExcel() {
   if (!window.XLSX) {
     alert('Library SheetJS belum siap.');
