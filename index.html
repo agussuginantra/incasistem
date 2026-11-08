@@ -2039,7 +2039,7 @@
         <form onsubmit="handleSaveCloudDbConfig(event)" class="space-y-3 pt-2 border-t border-gray-100">
           <div>
             <label class="block font-bold text-gray-700 text-xs mb-1">URL Google Apps Script Web App</label>
-            <input type="url" id="cloudDbUrl" value="https://script.google.com/macros/s/AKfycbzTyexsJv5vGvWYMcjN9uydLBdUJ5WHEPLmKBLpE7CFZvgOmSXU3tOJPt4953SZuYFV/exec" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500 focus:bg-white font-mono">
+            <input type="url" id="cloudDbUrl" value="https://script.google.com/macros/s/AKfycbxDTJURVmOluphpJjTxZYGPymW5TBHLNFtnJAQByBaVTdEWUUG1HOPwQeCDu_MiiQ0W/exec" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-emerald-500 focus:bg-white font-mono">
             <p class="text-[10px] text-gray-400 mt-1">Kosongkan URL jika ingin tetap berjalan dalam mode 100% Offline Lokal.</p>
           </div>
 
@@ -2050,10 +2050,15 @@
             </label>
           </div>
 
-          <div class="flex items-center justify-between pt-3 border-t border-gray-100">
-            <button type="button" id="btnBulkSyncCloud" onclick="handleBulkSyncToGoogleSheets()" class="px-3 py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 rounded-xl font-medium transition flex items-center gap-1.5 text-xs cursor-pointer">
-              <i data-lucide="upload-cloud" class="w-4 h-4"></i> Upload Semua Data Lokal ke Sheets
-            </button>
+          <div class="flex items-center justify-between pt-3 border-t border-gray-100 gap-2 flex-wrap">
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="handlePullAllFromCloud()" class="px-3 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 rounded-xl font-medium transition flex items-center gap-1.5 text-xs cursor-pointer" title="Perbarui seluruh tabel lokal dengan data terbaru dari Google Sheets">
+                <i data-lucide="download-cloud" class="w-4 h-4"></i> Tarik dari Sheets
+              </button>
+              <button type="button" id="btnBulkSyncCloud" onclick="handleBulkSyncToGoogleSheets()" class="px-3 py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 rounded-xl font-medium transition flex items-center gap-1.5 text-xs cursor-pointer" title="Kirim seluruh data lokal ke Google Sheets">
+                <i data-lucide="upload-cloud" class="w-4 h-4"></i> Upload ke Sheets
+              </button>
+            </div>
             <div class="flex items-center gap-2">
               <button type="button" onclick="closeCloudDbModal()" class="px-4 py-2 border border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition text-xs cursor-pointer">
                 Tutup

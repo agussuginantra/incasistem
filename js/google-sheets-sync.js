@@ -12,17 +12,18 @@
  */
 
 (function() {
-  const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzTyexsJv5vGvWYMcjN9uydLBdUJ5WHEPLmKBLpE7CFZvgOmSXU3tOJPt4953SZuYFV/exec';
+  const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxDTJURVmOluphpJjTxZYGPymW5TBHLNFtnJAQByBaVTdEWUUG1HOPwQeCDu_MiiQ0W/exec';
   const OLD_WEB_APP_URLS = [
+    'https://script.google.com/macros/s/AKfycbzTyexsJv5vGvWYMcjN9uydLBdUJ5WHEPLmKBLpE7CFZvgOmSXU3tOJPt4953SZuYFV/exec',
     'https://script.google.com/macros/s/AKfycbwaF2-bVnUdG6e3lj9Vm9OcHd0ivTgpKzkeQdJJhtNDq1mEnbAX_rgLdpy1bZM14pBi/exec'
   ];
   const STORAGE_KEY_URL = 'INCA_GOOGLE_SHEETS_URL';
   const STORAGE_KEY_AUTO = 'INCA_GOOGLE_SHEETS_AUTO_SYNC';
 
-  // Otomatis migrasikan URL lama jika tersimpan di LocalStorage browser user ke URL v2.0
+  // Otomatis migrasikan URL lama jika tersimpan di LocalStorage browser user ke URL v2.0 terbaru
   try {
     const existingUrl = localStorage.getItem(STORAGE_KEY_URL);
-    if (!existingUrl || OLD_WEB_APP_URLS.includes(existingUrl.trim())) {
+    if (!existingUrl || OLD_WEB_APP_URLS.includes(existingUrl.trim()) || existingUrl.trim() !== DEFAULT_WEB_APP_URL) {
       localStorage.setItem(STORAGE_KEY_URL, DEFAULT_WEB_APP_URL);
     }
   } catch (e) {}
@@ -30,17 +31,11 @@
   window.GoogleSheetsSync = {
     getUrl: function() {
       let stored = localStorage.getItem(STORAGE_KEY_URL);
-      if (stored) {
-        stored = stored.trim();
-        if (OLD_WEB_APP_URLS.includes(stored)) {
-          stored = DEFAULT_WEB_APP_URL;
-          localStorage.setItem(STORAGE_KEY_URL, DEFAULT_WEB_APP_URL);
-        }
+      if (!stored || OLD_WEB_APP_URLS.includes(stored.trim()) || stored.trim() !== DEFAULT_WEB_APP_URL) {
+        stored = DEFAULT_WEB_APP_URL;
+        try { localStorage.setItem(STORAGE_KEY_URL, DEFAULT_WEB_APP_URL); } catch (e) {}
       }
-      if (stored && stored.length > 0) {
-        return stored;
-      }
-      return DEFAULT_WEB_APP_URL;
+      return stored || DEFAULT_WEB_APP_URL;
     },
     setUrl: function(url) {
       if (url && url.trim().length > 0) {
@@ -365,6 +360,89 @@
       }
     } finally {
       if (btn) btn.disabled = false;
+    }
+  };
+
+  window.handlePullAllFromCloud = async function() {
+    if (typeof showToast === 'function') showToast('Mengunduh seluruh database dari Google Sheets...', 'info');
+    try {
+      const res = await window.GoogleSheetsSync.pullFromCloud();
+      if (res && res.status === 'success' && res.data) {
+        if (typeof appState !== 'undefined') {
+          // 1. Members
+          if (Array.isArray(res.data.DB_Member) && res.data.DB_Member.length > 0) {
+            appState.members = res.data.DB_Member.map(r => ({
+              id: r['ID Member'] || r['Kode Member'],
+              memberCode: r['Kode Member'] || r['ID Member'],
+              name: r['Nama Lengkap'] || '',
+              phone: r['Nomor WhatsApp'] || '',
+              email: r['Email'] || '',
+              joinedDate: r['Tanggal Bergabung'] || '',
+              packageName: r['Nama Paket'] || r['Paket Aktif'] || 'Belum Ada Paket',
+              remainingSessions: Number(r['Sisa Sesi'] !== undefined ? r['Sisa Sesi'] : r['Sisa Kuota Sesi']) || 0,
+              totalSessions: Number(r['Total Sesi'] !== undefined ? r['Total Sesi'] : r['Total Kuota Sesi']) || 0,
+              status: r['Status'] || r['Status Akun'] || 'active',
+              source: r['Sumber'] || r['Sumber Data'] || 'Sistem Web',
+              notes: r['Catatan'] || ''
+            }));
+          }
+          // 2. Purchases
+          if (Array.isArray(res.data.DB_Pembelian) && res.data.DB_Pembelian.length > 0) {
+            appState.packagePurchases = res.data.DB_Pembelian.map(r => ({
+              id: r['ID Transaksi'],
+              invoiceNo: r['Nomor Invoice'] || r['ID Transaksi'],
+              date: r['Tanggal'],
+              memberId: r['ID Member'],
+              memberName: r['Nama Member'],
+              packageId: r['ID Paket'],
+              packageName: r['Nama Paket'],
+              sessions: Number(r['Jumlah Sesi']) || 0,
+              normalPrice: Number(r['Harga Normal (Rp)']) || 0,
+              discount: Number(r['Diskon (Rp)']) || 0,
+              price: Number(r['Total Bayar (Rp)']) || 0,
+              paymentMethod: r['Metode Pembayaran'],
+              paymentStatus: r['Status Pembayaran'] || 'Lunas',
+              startDate: r['Mulai Aktif'] || '',
+              expireDate: r['Berlaku Sampai'] || '',
+              usedSessions: Number(r['Sesi Terpakai']) || 0,
+              remainingSessions: Number(r['Sisa Sesi']) || 0,
+              status: r['Status'] || r['Status Transaksi'] || 'Aktif'
+            }));
+          }
+          // 3. Presensi
+          if (Array.isArray(res.data.DB_Presensi) && res.data.DB_Presensi.length > 0) {
+            appState.classAttendances = res.data.DB_Presensi.map(r => ({
+              id: r['ID Presensi'],
+              date: r['Tanggal Sesi'],
+              classDate: r['Tanggal Sesi'],
+              time: r['Jam Sesi'],
+              classTime: r['Jam Sesi'],
+              className: r['Nama Kelas'],
+              coachName: r['Instruktur / Coach'],
+              memberId: r['ID Member'],
+              memberName: r['Nama Member'],
+              memberPhone: r['Nomor WhatsApp'],
+              paymentType: r['Tipe Pembayaran'],
+              packageName: r['Paket Digunakan'],
+              checkInStatus: r['Status Check-In'] || 'checked_in',
+              checkInTime: r['Waktu Check-In'],
+              sessionsDeducted: Number(r['Potong Sesi']) || 1,
+              attendanceStatus: r['Status Kehadiran'] || 'Hadir',
+              notes: r['Catatan']
+            }));
+          }
+        }
+        // 4. Users
+        if (typeof window.fetchUsersFromCloudDb === 'function') {
+          await window.fetchUsersFromCloudDb();
+        }
+        if (typeof saveState === 'function') saveState();
+        if (typeof renderAdminCurrentTab === 'function') renderAdminCurrentTab();
+        if (typeof updateAdminStats === 'function') updateAdminStats();
+        if (typeof showToast === 'function') showToast(`✅ Sinkronisasi Berhasil: ${appState.members.length} Member, ${appState.packagePurchases.length} Pembelian aktif.`, 'success');
+      }
+    } catch (e) {
+      if (typeof showToast === 'function') showToast('Gagal sinkronisasi dari Cloud: ' + e.message, 'error');
     }
   };
 

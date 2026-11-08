@@ -1,81 +1,129 @@
 /**
  * ============================================================================
  * INCA PILATES & MINDFUL MOVEMENT - CLOUD DATABASE API (GOOGLE APPS SCRIPT)
- * Versi 2.0 - Universal Sync (Mendukung Seluruh 10 Tabel & Auto-Sync Excel/Manual)
+ * Versi 2.0 (Stabil & Anti-Error) - Universal Sync 10 Tabel Database
  * ============================================================================
  * Skrip ini dipasang pada Google Spreadsheet Database INCA:
  * "INCA_PILATES_DATABASE_MASTER"
  * 
- * CARA MEMPERBARUI / PASANG KE GOOGLE SHEETS (HANYA 1 MENIT):
- * 1. Buka Google Spreadsheet Database INCA Anda:
+ * PANDUAN CEPAT MEMPERBARUI KE VERSI 2.0 (HANYA 1 MENIT):
+ * 1. Buka Spreadsheet Database INCA:
  *    https://docs.google.com/spreadsheets/d/1kJ6fRrPtEIPPOm2E8yScJlOXVw3_HcBBXP_T9UiK3Vw/edit
  * 2. Klik menu atas: "Ekstensi" (Extensions) > "Apps Script".
- * 3. Hapus seluruh isi kode lama di Apps Script, lalu PASTE SELURUH KODE DI FILE INI.
- * 4. Klik ikon Disket (Simpan).
- * 5. Klik tombol biru di kanan atas: "Terapkan" (Deploy) > "Kelola penerapan" (Manage deployments).
- * 6. Klik ikon Pensil (Edit) di samping penerapan Web App Anda.
- * 7. Pada baris "Versi" (Version), pilih: "Versi baru" (New version).
- * 8. Klik tombol "Terapkan" (Deploy).
- * SELESAI! URL Web App tetap sama persis dan langsung mendukung seluruh tabel.
+ * 3. Hapus SEMUA kode lama di editor Apps Script (tekan Ctrl+A lalu Delete).
+ * 4. Paste/tempel SELURUH KODE di file ini ke editor tersebut.
+ * 5. Klik ikon DISKET (Simpan) di toolbar atas.
+ * 6. (Opsional untuk tes) Klik tombol [▷ Jalankan] — akan muncul status hijau sukses.
+ * 7. Klik tombol biru di kanan atas: "Terapkan" (Deploy) > "Kelola penerapan" (Manage deployments).
+ * 8. Klik ikon PENSIL (Edit ✏️) di samping Web App Anda.
+ * 9. Pada dropdown "Versi", pilih "Versi baru" (New version).
+ * 10. Klik tombol "Terapkan" (Deploy).
+ * SELESAI! URL Web App tetap sama persis dan sistem langsung 100% aktif & bebas error.
  * ============================================================================
  */
 
-function doGet(e) {
-  var params = e ? e.parameter : {};
-  var action = params.action || 'ping';
+/**
+ * 0. FUNGSI TES KONEKSI (Bisa dijalankan langsung di editor Apps Script tanpa error)
+ */
+function testKoneksiDatabase() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  
-  if (action === 'ping') {
-    return jsonResponse({
-      status: 'success',
-      code: 200,
-      message: 'INCA Google Sheets Database API v2.0 is Online & Ready!',
-      spreadsheetTitle: ss.getName(),
-      sheets: ss.getSheets().map(function(s) { return s.getName(); }),
-      timestamp: new Date().toISOString()
-    });
-  }
-  
-  if (action === 'getAll') {
-    var result = {
-      status: 'success',
-      timestamp: new Date().toISOString(),
-      data: {}
-    };
-    var sheets = [
-      'DB_Member', 'DB_Pembelian', 'DB_Presensi', 'DB_Jadwal', 'DB_Kelas',
-      'DB_Paket', 'DB_Coach', 'DB_Leads', 'DB_Keuangan_Jurnal', 'DB_Pengguna'
-    ];
-    sheets.forEach(function(shName) {
-      result.data[shName] = readSheetData(ss, shName);
-    });
-    return jsonResponse(result);
-  }
-  
-  if (action === 'getTable') {
-    var tableName = params.table;
-    if (!tableName) return jsonResponse({ status: 'error', message: 'Parameter table tidak disertakan.' });
-    return jsonResponse({
-      status: 'success',
-      table: tableName,
-      rows: readSheetData(ss, tableName)
-    });
-  }
-  
-  return jsonResponse({ status: 'error', message: 'Action GET tidak dikenali.' });
+  var sheets = ss.getSheets().map(function(s) { return s.getName(); });
+  Logger.log('====================================================');
+  Logger.log('✅ SUKSES: INCA Google Sheets Database API v2.0 SIAP!');
+  Logger.log('Spreadsheet: ' + ss.getName());
+  Logger.log('Jumlah Sheet: ' + sheets.length + ' (' + sheets.join(', ') + ')');
+  Logger.log('====================================================');
+  return 'Koneksi Berhasil! API v2.0 Siap Digunakan.';
 }
 
-function doPost(e) {
+/**
+ * 1. HTTP GET ROUTER (Ping, Read All, Read Table)
+ */
+function doGet(e) {
   try {
-    var contents = e.postData ? e.postData.contents : '';
-    if (!contents) {
-      return jsonResponse({ status: 'error', message: 'Payload data kosong.' });
+    var params = (e && e.parameter) ? e.parameter : {};
+    var action = params.action || 'ping';
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    
+    if (action === 'ping' || action === 'test') {
+      return jsonResponse({
+        status: 'success',
+        code: 200,
+        message: 'INCA Google Sheets Database API v2.0 is Online & Ready!',
+        spreadsheetTitle: ss.getName(),
+        sheets: ss.getSheets().map(function(s) { return s.getName(); }),
+        timestamp: new Date().toISOString()
+      });
     }
     
-    var payload = JSON.parse(contents);
+    if (action === 'getAll') {
+      var result = {
+        status: 'success',
+        timestamp: new Date().toISOString(),
+        data: {}
+      };
+      var sheets = [
+        'DB_Member', 'DB_Pembelian', 'DB_Presensi', 'DB_Jadwal', 'DB_Kelas',
+        'DB_Paket', 'DB_Coach', 'DB_Leads', 'DB_Keuangan_Jurnal', 'DB_Pengguna'
+      ];
+      sheets.forEach(function(shName) {
+        result.data[shName] = readSheetData(ss, shName);
+      });
+      return jsonResponse(result);
+    }
+    
+    if (action === 'getTable') {
+      var tableName = params.table;
+      if (!tableName) return jsonResponse({ status: 'error', message: 'Parameter table tidak disertakan.' });
+      return jsonResponse({
+        status: 'success',
+        table: tableName,
+        rows: readSheetData(ss, tableName)
+      });
+    }
+    
+    return jsonResponse({ status: 'error', message: 'Action GET (' + action + ') tidak dikenali.' });
+  } catch (err) {
+    return jsonResponse({ status: 'error', message: 'doGet Error: ' + err.toString() });
+  }
+}
+
+/**
+ * 2. HTTP POST ROUTER (Universal Sync & Realtime CRUD Push)
+ */
+function doPost(e) {
+  try {
+    // Penanganan aman jika doPost diklik langsung dari editor Apps Script
+    if (!e || !e.postData || !e.postData.contents) {
+      Logger.log('doPost dipanggil langsung dari editor tanpa payload data POST.');
+      return jsonResponse({
+        status: 'success',
+        code: 200,
+        message: 'Endpoint doPost Web App v2.0 aktif dan siap menerima data POST dari Sistem INCA.'
+      });
+    }
+    
+    var payload;
+    try {
+      payload = JSON.parse(e.postData.contents);
+    } catch (parseErr) {
+      return jsonResponse({ status: 'error', message: 'Format JSON payload tidak valid: ' + parseErr.message });
+    }
+    
     var action = payload.action;
     var data = payload.data || {};
     var ss = SpreadsheetApp.getActiveSpreadsheet();
+    
+    // Ping via POST
+    if (action === 'ping') {
+      return jsonResponse({
+        status: 'success',
+        code: 200,
+        message: 'INCA Google Sheets Database API v2.0 is Online & Ready (POST)!',
+        spreadsheetTitle: ss.getName(),
+        timestamp: new Date().toISOString()
+      });
+    }
     
     // ------------------------------------------------------------------------
     // 1. DATA PENGGUNA (DB_Pengguna)
@@ -141,19 +189,38 @@ function doPost(e) {
       var sh = getOrCreateSheet(ss, 'DB_Member');
       var m = data;
       var code = m.memberCode || m.id;
-      // Format INC + nomor urut mengikuti baris terakhir (misal INC167)
-      if (!code || String(code).indexOf('mem-') === 0) {
+      
+      // Hitung nomor urut berikutnya dari baris sheet jika code belum ada atau berformat temporary
+      if (!code || String(code).indexOf('mem-') === 0 || !String(code).match(/^(?:INC|NC)\d+$/i)) {
         var lastRow = sh.getLastRow();
         var maxNum = 0;
         if (lastRow > 1) {
-          var colVals = sh.getRange(2, 1, lastRow - 1, 1).getValues();
+          var colVals = sh.getRange(2, 1, lastRow - 1, 2).getValues();
           for (var i = 0; i < colVals.length; i++) {
-            var n = parseInt(String(colVals[i][0]).replace(/\D/g, ''), 10);
-            if (!isNaN(n) && n > maxNum) maxNum = n;
+            var val1 = String(colVals[i][0] || '');
+            var val2 = String(colVals[i][1] || '');
+            var m1 = val1.match(/(?:INC|NC)(\d+)/i);
+            var m2 = val2.match(/(?:INC|NC)(\d+)/i);
+            if (m1) {
+              var n1 = parseInt(m1[1], 10);
+              if (!isNaN(n1) && n1 < 100000 && n1 > maxNum) maxNum = n1;
+            }
+            if (m2) {
+              var n2 = parseInt(m2[1], 10);
+              if (!isNaN(n2) && n2 < 100000 && n2 > maxNum) maxNum = n2;
+            }
           }
         }
-        code = 'INC' + ('000' + (maxNum + 1)).slice(-3);
+        var nextNum = maxNum + 1;
+        code = 'INC' + ('000' + nextNum).slice(-3);
+      } else {
+        // Normalisasi format, misal NC154 -> INC154
+        var cleanMatch = String(code).match(/(?:INC|NC)(\d+)/i);
+        if (cleanMatch) {
+          code = 'INC' + ('000' + parseInt(cleanMatch[1], 10)).slice(-3);
+        }
       }
+
       var row = [
         code,
         code,
@@ -164,17 +231,29 @@ function doPost(e) {
         m.packageName || 'Belum Ada Paket',
         Number(m.remainingSessions) || 0,
         Number(m.totalSessions) || 0,
-        m.status || 'Aktif',
+        m.status || 'active',
         m.source || 'Sistem Web',
         m.notes || ''
       ];
-      var res = upsertByCols(sh, [0, 1], [row[0], row[1]], row);
-      return jsonResponse({ status: 'success', action: res.action, memberId: code, message: 'Data member ' + m.name + ' berhasil disimpan ke Google Sheets' });
+      var res = upsertByCols(sh, [0, 1], [code, code], row);
+      return jsonResponse({
+        status: 'success',
+        action: res.action,
+        id: code,
+        memberId: code,
+        memberCode: code,
+        message: 'Data member ' + (m.name || code) + ' (' + code + ') berhasil disimpan ke Google Sheets'
+      });
     }
 
     if (action === 'deleteMember') {
       var sh = getOrCreateSheet(ss, 'DB_Member');
-      var delRes = deleteByCols(sh, [0, 1], [data.id, data.memberCode]);
+      var targetId = data.id || payload.id || data.memberCode || payload.memberCode;
+      var targetName = data.name || payload.name;
+      var delRes = deleteByCols(sh, [0, 1], [targetId, targetId]);
+      if (delRes.action === 'not_found' && targetName) {
+        delRes = deleteByCols(sh, [2], [targetName]);
+      }
       return jsonResponse({ status: 'success', action: delRes.action, message: 'Member berhasil dihapus dari Google Sheets' });
     }
 
@@ -199,20 +278,36 @@ function doPost(e) {
       var sh = getOrCreateSheet(ss, 'DB_Pembelian');
       var p = data;
       var purId = p.id;
+      
       // Format ID + nomor urut mengikuti baris terakhir (misal ID231)
-      if (!purId || String(purId).indexOf('pur-') === 0) {
+      if (!purId || String(purId).indexOf('pur-') === 0 || !String(purId).match(/^ID\d+$/i)) {
         var lastRow = sh.getLastRow();
         var maxNum = 0;
         if (lastRow > 1) {
-          var colVals = sh.getRange(2, 1, lastRow - 1, 1).getValues();
+          var colVals = sh.getRange(2, 1, lastRow - 1, 2).getValues();
           for (var i = 0; i < colVals.length; i++) {
-            var n = parseInt(String(colVals[i][0]).replace(/\D/g, ''), 10);
-            if (!isNaN(n) && n > maxNum) maxNum = n;
+            var m1 = String(colVals[i][0] || '').match(/^ID(\d+)/i);
+            var m2 = String(colVals[i][1] || '').match(/^ID(\d+)/i);
+            if (m1) {
+              var n1 = parseInt(m1[1], 10);
+              if (!isNaN(n1) && n1 < 100000 && n1 > maxNum) maxNum = n1;
+            }
+            if (m2) {
+              var n2 = parseInt(m2[1], 10);
+              if (!isNaN(n2) && n2 < 100000 && n2 > maxNum) maxNum = n2;
+            }
           }
         }
-        purId = 'ID' + ('000' + (maxNum + 1)).slice(-3);
+        var nextPurNum = maxNum + 1;
+        purId = 'ID' + ('000' + nextPurNum).slice(-3);
+      } else {
+        var mPur = String(purId).match(/^ID(\d+)/i);
+        if (mPur) {
+          purId = 'ID' + ('000' + parseInt(mPur[1], 10)).slice(-3);
+        }
       }
-      var invNo = p.invoiceNo && String(p.invoiceNo).indexOf('INV-') !== 0 ? p.invoiceNo : purId;
+      
+      var invNo = (p.invoiceNo && String(p.invoiceNo).indexOf('INV-') !== 0 && String(p.invoiceNo).match(/^ID\d+$/i)) ? p.invoiceNo : purId;
       var row = [
         purId,
         invNo,
@@ -233,8 +328,22 @@ function doPost(e) {
         Number(p.remainingSessions) || 0,
         p.status || 'Aktif'
       ];
-      var res = upsertByCols(sh, [0, 1], [row[0], row[1]], row);
-      return jsonResponse({ status: 'success', action: res.action, purchaseId: purId, message: 'Transaksi paket ' + purId + ' berhasil disimpan ke Google Sheets' });
+      var res = upsertByCols(sh, [0, 1], [purId, invNo], row);
+      return jsonResponse({
+        status: 'success',
+        action: res.action,
+        id: purId,
+        purchaseId: purId,
+        invoiceNo: invNo,
+        message: 'Transaksi paket ' + purId + ' berhasil disimpan ke Google Sheets'
+      });
+    }
+
+    if (action === 'deletePurchase') {
+      var sh = getOrCreateSheet(ss, 'DB_Pembelian');
+      var targetId = data.id || payload.id || data.invoiceNo || payload.invoiceNo;
+      var delRes = deleteByCols(sh, [0, 1], [targetId, targetId]);
+      return jsonResponse({ status: 'success', action: delRes.action, message: 'Transaksi pembelian berhasil dihapus dari Google Sheets' });
     }
 
     // ------------------------------------------------------------------------
@@ -262,6 +371,13 @@ function doPost(e) {
       ];
       var res = upsertByCols(sh, [0], [row[0]], row);
       return jsonResponse({ status: 'success', action: res.action, message: 'Presensi member berhasil disimpan ke Google Sheets' });
+    }
+
+    if (action === 'deleteAttendance') {
+      var sh = getOrCreateSheet(ss, 'DB_Presensi');
+      var targetId = data.id || payload.id;
+      var delRes = deleteByCols(sh, [0], [targetId]);
+      return jsonResponse({ status: 'success', action: delRes.action, message: 'Presensi berhasil dihapus dari Google Sheets' });
     }
 
     // ------------------------------------------------------------------------
@@ -422,6 +538,13 @@ function doPost(e) {
       return jsonResponse({ status: 'success', action: res.action, message: 'Jurnal keuangan berhasil disimpan ke Google Sheets' });
     }
 
+    if (action === 'deleteFinanceEntry') {
+      var sh = getOrCreateSheet(ss, 'DB_Keuangan_Jurnal');
+      var targetId = data.id || payload.id;
+      var delRes = deleteByCols(sh, [0], [targetId]);
+      return jsonResponse({ status: 'success', action: delRes.action, message: 'Jurnal keuangan berhasil dihapus dari Google Sheets' });
+    }
+
     // ------------------------------------------------------------------------
     // 11. SINKRONISASI HASIL IMPORT EXCEL (STUDIO & FINANCE)
     // ------------------------------------------------------------------------
@@ -433,8 +556,8 @@ function doPost(e) {
         var shM = getOrCreateSheet(ss, 'DB_Member');
         d.members.forEach(function(m) {
           var code = m.memberCode || m.id;
-          var r = [m.id || code, code, m.name || '', m.phone || '', m.email || '', m.joinedDate || '', m.packageName || '', Number(m.remainingSessions) || 0, Number(m.totalSessions) || 0, m.status || 'Aktif', m.source || 'Excel Import', m.notes || ''];
-          upsertByCols(shM, [0, 1], [r[0], r[1]], r);
+          var r = [code, code, m.name || '', m.phone || '', m.email || '', m.joinedDate || '', m.packageName || '', Number(m.remainingSessions) || 0, Number(m.totalSessions) || 0, m.status || 'active', m.source || 'Excel Import', m.notes || ''];
+          upsertByCols(shM, [0, 1], [code, code], r);
         });
         stats.members = d.members.length;
       }
@@ -442,8 +565,10 @@ function doPost(e) {
       if (d.packagePurchases && d.packagePurchases.length > 0) {
         var shP = getOrCreateSheet(ss, 'DB_Pembelian');
         d.packagePurchases.forEach(function(p) {
-          var r = [p.id, p.invoiceNo || '', p.date || '', p.memberId || '', p.memberName || '', p.packageId || '', p.packageName || '', Number(p.sessions) || 0, Number(p.normalPrice) || 0, Number(p.discount) || 0, Number(p.price) || 0, p.paymentMethod || '', p.paymentStatus || 'Lunas', p.startDate || '', p.expireDate || '', Number(p.usedSessions) || 0, Number(p.remainingSessions) || 0, p.status || 'Aktif'];
-          upsertByCols(shP, [0, 1], [r[0], r[1]], r);
+          var purId = p.id;
+          var invNo = p.invoiceNo || purId;
+          var r = [purId, invNo, p.date || '', p.memberId || '', p.memberName || '', p.packageId || '', p.packageName || '', Number(p.sessions) || 0, Number(p.normalPrice) || 0, Number(p.discount) || 0, Number(p.price) || 0, p.paymentMethod || '', p.paymentStatus || 'Lunas', p.startDate || '', p.expireDate || '', Number(p.usedSessions) || 0, Number(p.remainingSessions) || 0, p.status || 'Aktif'];
+          upsertByCols(shP, [0, 1], [purId, invNo], r);
         });
         stats.purchases = d.packagePurchases.length;
       }
@@ -516,16 +641,18 @@ function doPost(e) {
         var shM = getOrCreateSheet(ss, 'DB_Member');
         d.members.forEach(function(m) {
           var code = m.memberCode || m.id;
-          var r = [m.id, code, m.name, m.phone, m.email, m.joinedDate, m.packageName, m.remainingSessions, m.totalSessions, m.status, m.source, m.notes];
-          upsertByCols(shM, [0, 1], [r[0], r[1]], r);
+          var r = [code, code, m.name, m.phone, m.email, m.joinedDate, m.packageName, m.remainingSessions, m.totalSessions, m.status, m.source, m.notes];
+          upsertByCols(shM, [0, 1], [code, code], r);
         });
       }
       // Purchases
       if (d.packagePurchases && d.packagePurchases.length) {
         var shP = getOrCreateSheet(ss, 'DB_Pembelian');
         d.packagePurchases.forEach(function(p) {
-          var r = [p.id, p.invoiceNo, p.date, p.memberId, p.memberName, p.packageId, p.packageName, p.sessions, p.normalPrice, p.discount, p.price, p.paymentMethod, p.paymentStatus, p.startDate, p.expireDate, p.usedSessions, p.remainingSessions, p.status];
-          upsertByCols(shP, [0, 1], [r[0], r[1]], r);
+          var purId = p.id;
+          var invNo = p.invoiceNo || purId;
+          var r = [purId, invNo, p.date, p.memberId, p.memberName, p.packageId, p.packageName, p.sessions, p.normalPrice, p.discount, p.price, p.paymentMethod, p.paymentStatus, p.startDate, p.expireDate, p.usedSessions, p.remainingSessions, p.status];
+          upsertByCols(shP, [0, 1], [purId, invNo], r);
         });
       }
       // Presensi
@@ -590,7 +717,7 @@ function doPost(e) {
 
     return jsonResponse({ status: 'error', message: 'Aksi (' + action + ') tidak dikenali' });
   } catch (err) {
-    return jsonResponse({ status: 'error', message: err.toString() });
+    return jsonResponse({ status: 'error', message: 'doPost Exception: ' + err.toString() });
   }
 }
 

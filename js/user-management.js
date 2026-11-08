@@ -111,7 +111,12 @@ const DEFAULT_SYSTEM_USERS = [
     phone: '-',
     active: true,
     createdDate: '07 Nov 2026',
-    permissions: SYSTEM_PERMISSIONS.filter(p => !['finance_proyeksi', 'finance_modal_owner', 'finance_data_backup'].includes(p.id)).map(p => p.id)
+    permissions: [
+      'studio_dashboard', 'studio_members', 'studio_purchases',
+      'finance_ringkasan', 'finance_transaksi', 'finance_kas_bank', 'finance_buku_besar',
+      'finance_petty_cash', 'finance_laporan', 'finance_proyeksi', 'finance_modal_owner',
+      'finance_daftar_akun', 'finance_catatan_sumber', 'finance_data_backup'
+    ]
   },
   {
     id: 'usr-owner',
@@ -224,6 +229,7 @@ function hasPermission(permId) {
   const u = window.currentAuthUser;
   if (!u) return false;
   if (u.role === 'owner') return true;
+  if (u.role === 'finance' && permId.startsWith('finance_')) return true;
   return Array.isArray(u.permissions) && u.permissions.includes(permId);
 }
 window.hasPermission = hasPermission;
@@ -265,6 +271,11 @@ async function fetchUsersFromCloudDb() {
           perms = existing.permissions;
         } else if (role === 'owner') {
           perms = SYSTEM_PERMISSIONS.map(p => p.id);
+        } else if (role === 'finance') {
+          perms = Array.from(new Set([
+            ...(existing && Array.isArray(existing.permissions) ? existing.permissions : []),
+            ...ROLE_TEMPLATES.finance.permissions
+          ]));
         } else if (role === 'coach') {
           perms = ['studio_dashboard', 'studio_checkin'];
         } else if (role === 'admin') {

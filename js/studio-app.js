@@ -994,9 +994,12 @@ function getNextMemberCode() {
   let maxNum = 0;
   (appState.members || []).forEach(m => {
     const raw = String(m.memberCode || m.id || '');
-    const num = parseInt(raw.replace(/\D/g, ''), 10);
-    if (!isNaN(num) && num > maxNum) {
-      maxNum = num;
+    const match = raw.match(/(?:INC|NC)(\d+)/i);
+    if (match) {
+      const num = parseInt(match[1], 10);
+      if (!isNaN(num) && num < 100000 && num > maxNum) {
+        maxNum = num;
+      }
     }
   });
   const nextNum = maxNum > 0 ? (maxNum + 1) : ((appState.members || []).length + 1);
@@ -1214,10 +1217,13 @@ function updatePurchaseModalPrice() {
 function getNextPurchaseId() {
   let maxNum = 0;
   (appState.packagePurchases || []).forEach(p => {
-    const raw = String(p.id || p.invoiceNo || '');
-    const num = parseInt(raw.replace(/\D/g, ''), 10);
-    if (!isNaN(num) && num > maxNum) {
-      maxNum = num;
+    const raw = String(p.id || '');
+    const match = raw.match(/^ID(\d+)/i);
+    if (match) {
+      const num = parseInt(match[1], 10);
+      if (!isNaN(num) && num < 100000 && num > maxNum) {
+        maxNum = num;
+      }
     }
   });
   const nextNum = maxNum > 0 ? (maxNum + 1) : ((appState.packagePurchases || []).length + 1);
