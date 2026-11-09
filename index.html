@@ -161,7 +161,7 @@
         <!-- Live Quick Stats (Hidden on smaller screens to ensure strict single-line fit) -->
         <div class="hidden xl:flex items-center gap-3 text-[11px] text-gray-400 pl-2.5 border-l border-gray-800 whitespace-nowrap">
           <span class="flex items-center gap-1"><i data-lucide="wallet" class="w-3 h-3 text-emerald-400"></i> Kas & Bank: <strong id="bannerCashStat" class="text-emerald-300 font-mono">Rp 17.518.721</strong></span>
-          <span class="flex items-center gap-1"><i data-lucide="calendar-check" class="w-3 h-3 text-amber-400"></i> <strong id="bannerBookingsStat" class="text-amber-200 font-mono">0 Presensi Kelas</strong></span>
+          <span class="flex items-center gap-1"><i data-lucide="calendar-check" class="w-3 h-3 text-amber-400"></i> <strong id="bannerBookingsStat" class="text-amber-200 font-mono">254 Presensi Kelas</strong></span>
         </div>
       </div>
 
@@ -192,6 +192,9 @@
             <div class="font-bold text-gray-200 text-[10.5px] truncate" id="headerUserDisplayName">Owner & Direktur</div>
             <div class="text-[9px] text-purple-300 font-semibold truncate" id="headerUserRoleBadge">Super Admin / Owner</div>
           </div>
+          <button type="button" onclick="clearAllIncaCacheAndReload()" class="px-2 py-1 rounded-md bg-amber-950/80 hover:bg-amber-900 text-amber-200 border border-amber-800/60 font-semibold transition flex items-center gap-1 text-[11px] shadow-xs cursor-pointer shrink-0" title="Bersihkan cache browser & pulihkan 71 jadwal resmi">
+            <i data-lucide="rotate-ccw" class="w-3 h-3 text-amber-400"></i> <span class="hidden md:inline">Reset Cache</span>
+          </button>
           <button type="button" onclick="logoutSystem()" class="px-2.5 py-1 rounded-md bg-red-950/80 hover:bg-red-900 text-red-200 border border-red-800/60 font-semibold transition flex items-center gap-1 text-[11px] shadow-xs cursor-pointer shrink-0 ml-0.5" title="Keluar dari Akun">
             <i data-lucide="log-out" class="w-3.5 h-3.5"></i> <span class="hidden md:inline">Keluar</span>
           </button>
@@ -508,11 +511,20 @@
           <!-- ================= VIEW 2: DAFTAR TABEL JADWAL ================= -->
           <div id="scheduleTableContainer" class="hidden space-y-4">
             <div class="flex items-center justify-between gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
-              <div class="flex items-center gap-1.5 text-xs">
+              <div class="flex flex-wrap items-center gap-2 text-xs">
                 <i data-lucide="filter" class="w-3.5 h-3.5 text-gray-500"></i>
-                <span class="text-gray-500 font-medium">Filter Tgl:</span>
-                <input type="date" id="filterScheduleDate" onchange="filterSchedules()" class="text-xs border border-gray-300 rounded-lg px-2 py-1 bg-white focus:outline-none font-medium">
-                <button onclick="document.getElementById('filterScheduleDate').value=''; filterSchedules()" class="text-[10px] text-sage-700 hover:underline ml-1">Reset</button>
+                <span class="text-gray-600 font-semibold text-xs">Filter Tgl:</span>
+                <input type="date" id="filterScheduleDate" onchange="filterSchedules()" class="text-xs border border-gray-300 rounded-lg px-2.5 py-1.5 bg-white focus:ring-2 focus:ring-sage-500 font-medium shadow-2xs">
+                <button type="button" onclick="setQuickScheduleFilter('2026-11-09')" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 text-[11px] font-bold border border-amber-200 transition flex items-center gap-1 shadow-2xs">
+                  <span>📅</span> 09 Nov (Besok)
+                </button>
+                <button type="button" onclick="setQuickScheduleFilter(getTodayString())" class="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 text-[11px] font-semibold border border-gray-200 transition">
+                  Hari Ini
+                </button>
+                <button type="button" onclick="document.getElementById('filterScheduleDate').value=''; filterSchedules()" class="px-2 py-1 rounded-lg text-[11px] text-gray-500 hover:text-gray-800 font-medium hover:bg-gray-100 transition">
+                  Reset (Semua)
+                </button>
+                <span id="filterScheduleActiveLabel" class="ml-1 text-[11px]"></span>
               </div>
             </div>
 
@@ -725,7 +737,7 @@
                 Sesi Terjadwal & Presensi
               </button>
               <button type="button" onclick="switchCheckInSubView('all_logs')" id="btnSubViewAllLogs" class="px-3 py-1.5 rounded-lg text-gray-500 hover:text-gray-800 transition">
-                Log Seluruh Absensi (<span id="totalAttendanceBadge">222</span>)
+                Log Seluruh Absensi (<span id="totalAttendanceBadge">254</span>)
               </button>
             </div>
           </div>
@@ -734,10 +746,14 @@
           <div id="checkInSubViewSchedule" class="block space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-gray-50 rounded-xl border border-gray-200">
               <div class="w-full sm:w-auto">
-                <label class="block text-[11px] font-semibold text-gray-500 uppercase mb-1">Pilih Sesi Kelas:</label>
+                <label class="block text-[11px] font-semibold text-gray-500 uppercase mb-1">Pilih Sesi Jadwal Kelas:</label>
                 <select id="checkinScheduleSelect" onchange="onCheckInScheduleChange()" class="text-xs font-semibold border border-gray-300 rounded-xl px-3 py-2 bg-white w-full sm:w-80 shadow-sm focus:ring-2 focus:ring-sage-500 focus:outline-none">
                   <!-- Dynamically populated -->
                 </select>
+              </div>
+              <div class="text-[11px] text-gray-500 bg-white px-3 py-2 rounded-xl border border-gray-200 flex items-center gap-2">
+                <i data-lucide="info" class="w-4 h-4 text-sage-600 flex-shrink-0"></i>
+                <span>Tampilan ini menampilkan peserta pada <b>slot jadwal terpilih</b>. Untuk melihat seluruh 254+ riwayat absensi, klik tab <b>Log Seluruh Absensi</b> di atas.</span>
               </div>
             </div>
 
@@ -2074,17 +2090,17 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/xlsx.full.min.js"></script>
-  <script src="js/buku-besar-data.js"></script>
-  <script src="js/petty-cash-data.js"></script>
-  <script src="js/finance-app.js"></script>
-  <script src="js/lpj-data.js"></script>
-  <script src="js/lpj.js"></script>
-  <script src="js/studio-data.js"></script>
-  <script src="js/user-management.js"></script>
-  <script src="js/searchable-select.js"></script>
-  <script src="js/excel-sync.js"></script>
-  <script src="js/studio-app.js"></script>
-  <script src="js/google-sheets-sync.js"></script>
+  <script src="js/xlsx.full.min.js?v=20261109_v1"></script>
+  <script src="js/buku-besar-data.js?v=20261109_v1"></script>
+  <script src="js/petty-cash-data.js?v=20261109_v1"></script>
+  <script src="js/finance-app.js?v=20261109_v1"></script>
+  <script src="js/lpj-data.js?v=20261109_v1"></script>
+  <script src="js/lpj.js?v=20261109_v1"></script>
+  <script src="js/studio-data.js?v=20261109_v1"></script>
+  <script src="js/user-management.js?v=20261109_v1"></script>
+  <script src="js/searchable-select.js?v=20261109_v1"></script>
+  <script src="js/excel-sync.js?v=20261109_v1"></script>
+  <script src="js/studio-app.js?v=20261109_v1"></script>
+  <script src="js/google-sheets-sync.js?v=20261109_v1"></script>
 </body>
 </html>

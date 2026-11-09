@@ -142,7 +142,7 @@
     if (purchaseSheetName) {
       analysis.sheetsFound.push(purchaseSheetName);
       const rawRows = XLSX.utils.sheet_to_json(wb.Sheets[purchaseSheetName]);
-      const validRows = rawRows.filter(r => r['ID Transaksi Paket'] || r['ID Transaksi'] || r['ID Member'] || r['mey'] || r['Nama Member']);
+      const validRows = rawRows.filter(r => (r['ID Member'] || r['ID Member (otomatis)'] || r['Nama Member (otomatis)'] || r['Nama Member']) && (r['mey'] || r['ID Transaksi Paket'] || r['ID Transaksi']));
 
       const excelPurchases = validRows.map((r, idx) => {
         const inv = String(r['ID Transaksi Paket'] || r['ID Transaksi'] || r['Invoice'] || r['No Invoice'] || r['mey'] || ('ID' + String(idx + 1).padStart(3, '0'))).trim();
@@ -228,9 +228,21 @@
     if (attendanceSheetName) {
       analysis.sheetsFound.push(attendanceSheetName);
       const rawRows = XLSX.utils.sheet_to_json(wb.Sheets[attendanceSheetName]);
-      const validRows = rawRows.filter(r => r['Tanggal Kelas'] || r['Nama Member'] || r['ID Member']);
+      const validRows = rawRows.filter(r => (r['Tanggal Kelas'] || r['Tanggal'] || r['Tgl Kelas']) && (r['ID Member (otomatis)'] || r['ID Member'] || r['Nama Member (otomatis)'] || r['Nama Member']));
 
       const excelAttendances = validRows.map((r, idx) => {
+        let rawDate = r['Tanggal Kelas'] || r['Tgl Kelas'] || r['Tanggal'] || '';
+        if (typeof rawDate === 'number' || (!isNaN(rawDate) && !isNaN(parseFloat(rawDate)) && String(rawDate).length === 5)) {
+          const serial = parseFloat(rawDate);
+          const utc_days = Math.floor(serial - 25569);
+          const date_info = new Date(utc_days * 86400 * 1000);
+          rawDate = date_info.toISOString().split('T')[0];
+        }
+        let timeStr = String(r['Jam Kelas'] || r['Jam'] || '09:00').trim();
+        if (timeStr && !timeStr.includes(':')) {
+          const hr = parseInt(timeStr, 10);
+          if (!isNaN(hr)) timeStr = String(hr).padStart(2, '0') + ':00';
+        }
         const st = String(r['Status Kehadiran'] || 'Hadir').trim();
         const isNoShow = st.toLowerCase().includes('no show');
         return {
@@ -239,8 +251,8 @@
           memberId: String(r['ID Member (otomatis)'] || r['ID Member'] || '').trim(),
           memberName: String(r['Nama Member (otomatis)'] || r['Nama Member'] || '').trim(),
           className: String(r['Jenis Kelas'] || r['Kelas'] || '').trim(),
-          classDate: String(r['Tanggal Kelas'] || r['Tgl Kelas'] || r['Tanggal'] || '').trim(),
-          classTime: String(r['Jam Kelas'] || r['Jam'] || '').trim(),
+          classDate: String(rawDate).trim(),
+          classTime: timeStr,
           coachName: String(r['Instruktur'] || r['Coach'] || '').trim(),
           attendanceStatus: st,
           checkInStatus: isNoShow ? 'no_show' : 'checked_in',

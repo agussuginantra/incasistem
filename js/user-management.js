@@ -228,8 +228,16 @@ function getActiveAuthUser() {
 function hasPermission(permId) {
   const u = window.currentAuthUser;
   if (!u) return false;
-  if (u.role === 'owner') return true;
-  if (u.role === 'finance' && permId.startsWith('finance_')) return true;
+  const role = String(u.role || '').toLowerCase();
+  // Owner memiliki hak akses mutlak untuk seluruh modul (Studio + Finance)
+  if (role === 'owner' || role === 'super admin' || role === 'superadmin') return true;
+  // Peran Finance default selalu dapat mengakses semua menu finance
+  if ((role === 'finance' || role === 'admin keuangan' || role === 'keuangan') && permId.startsWith('finance_')) return true;
+  // Peran Admin Studio default selalu dapat mengakses semua menu studio
+  if ((role === 'admin' || role === 'admin studio') && permId.startsWith('studio_')) return true;
+  // Peran Coach default dapat mengakses dashboard jadwal dan presensi checkin
+  if (role === 'coach' && (permId === 'studio_dashboard' || permId === 'studio_checkin')) return true;
+  // Cek daftar izin spesifik pengguna
   return Array.isArray(u.permissions) && u.permissions.includes(permId);
 }
 window.hasPermission = hasPermission;

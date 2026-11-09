@@ -100,9 +100,16 @@ window.filterFinanceNavigationByPermissions = function() {
     b.style.display = allowed ? '' : 'none';
     if (allowed && !firstVisiblePage) firstVisiblePage = p;
   });
+  // Jaminan pengaman mutlak: Jika karena alasan apa pun semua tombol tersembunyi, tampilkan kembali menu inti agar sidebar tidak kosong
+  if (!firstVisiblePage) {
+    buttons.forEach(b => {
+      b.style.display = '';
+    });
+    firstVisiblePage = 'Ringkasan';
+  }
   const currentPerm = FINANCE_PAGE_PERM_MAP[page];
   if (typeof window.hasPermission === 'function' && currentPerm && !window.hasPermission(currentPerm)) {
-    if (firstVisiblePage) {
+    if (firstVisiblePage && firstVisiblePage !== page) {
       page = firstVisiblePage;
       render();
     }
